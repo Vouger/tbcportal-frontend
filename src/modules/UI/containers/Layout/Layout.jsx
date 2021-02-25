@@ -7,12 +7,10 @@ import TopMenu from "../TopMenu/TopMenu";
 import styles from './Layout.module.scss'
 
 function Layout(props) {
-    const [open, setOpen] = useState(false);
-
     return (
         <div className={styles.root}>
 
-            <TopMenu open={open} setOpen={setOpen} isAuth={props.isAuth} title={props.title}/>
+            <TopMenu isAuth={props.isAuth} title={props.title}/>
 
             <Container component="main" maxWidth={props.maxWidth || "lg"} className={styles.content}>
                 <div className={styles.appBarSpacer} />

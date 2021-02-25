@@ -37,6 +37,7 @@ function LoginForm(props) {
             <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
                 <FormInput
                     variant="outlined"
+                    color="primary"
                     margin="normal"
                     label="Email Address"
                     required

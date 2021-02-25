@@ -1,12 +1,8 @@
 .appBar {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid #2f3135;
+  background-color: #020200;
   display: flex;
   z-index: 1201;
-}
-
-.appBarShift {
-  margin-left: 240px;
-  width: calc(100% - 240px);
 }
 
 .toolbar {
@@ -20,12 +16,4 @@
 
 .link {
   margin: 8px 12px;
-}
-
-.menuButton {
-  margin-right: 36px;
-}
-
-.menuButtonHidden {
-  display: none;
 }
