@@ -1,0 +1,14 @@
+.root {
+  display: flex;
+}
+
+.appBarSpacer {
+  min-height: 64px;
+}
+
+.content {
+    flex-grow: 1;
+    height: 100vh;
+    overflow: auto;
+    padding-top: 24px;
+}

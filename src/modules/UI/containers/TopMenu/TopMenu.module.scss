@@ -1,0 +1,31 @@
+.appBar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  display: flex;
+  z-index: 1201;
+}
+
+.appBarShift {
+  margin-left: 240px;
+  width: calc(100% - 240px);
+}
+
+.toolbar {
+  flex-wrap: wrap;
+}
+
+.toolbarTitle {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.link {
+  margin: 8px 12px;
+}
+
+.menuButton {
+  margin-right: 36px;
+}
+
+.menuButtonHidden {
+  display: none;
+}

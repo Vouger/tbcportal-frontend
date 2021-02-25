@@ -1,0 +1,26 @@
+import React from 'react';
+import { Avatar, CssBaseline, Typography } from '@material-ui/core';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+
+import Layout from "../../../UI/containers/Layout/Layout";
+import PasswordForm from '../../components/PasswordForm/PasswordForm'
+import styles from './PasswordView.module.scss'
+
+export default function PasswordView() {
+    return (
+        <Layout title="Reset password">
+            <CssBaseline />
+            <div className={styles.paper}>
+                <Avatar className={styles.avatar}>
+                    <LockOutlinedIcon />
+                </Avatar>
+                <Typography component="h1" variant="h5">
+                    Password recovery
+                </Typography>
+
+                <PasswordForm />
+
+            </div>
+        </Layout>
+    );
+}
