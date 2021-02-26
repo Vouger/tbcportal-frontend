@@ -4,10 +4,12 @@ import {
     AppBar,
     Toolbar,
     Typography,
-    Button,
-    Avatar, Grid, Paper
+    Avatar,
+    IconButton
 } from '@material-ui/core'
 import { Else, If, Then } from 'react-if'
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 import {TRoutes} from "../../../../shared/types";
 import { cleanToken } from "../../../../shared/helpers";
@@ -31,17 +33,14 @@ export default function TopMenu(props) {
                 <div className={styles.menu} > </div>
                 <If condition={props.isAuth}>
                     <Then>
-                        <Button onClick={handleLogout} color="primary" variant="contained" className={styles.link}>
-                            Logout
-                        </Button>
+                        <IconButton onClick={handleLogout} color="secondary" variant="contained" className={styles.link}>
+                            <ExitToAppIcon />
+                        </IconButton>
                     </Then>
                     <Else>
-                        <Button component={Link} to={TRoutes.SIGNUP} color="primary" variant="contained" className={styles.link}>
-                            Sign up
-                        </Button>
-                        <Button component={Link} to={TRoutes.LOGIN} color="primary" variant="contained" className={styles.link}>
-                            Login
-                        </Button>
+                        <IconButton component={Link} to={TRoutes.LOGIN} color="secondary" variant="contained" className={styles.link}>
+                            <AccountCircleIcon />
+                        </IconButton>
                     </Else>
                 </If>
             </Toolbar>

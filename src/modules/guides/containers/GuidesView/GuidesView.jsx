@@ -1,5 +1,5 @@
 import React from "react";
-import {Grid, Paper, Toolbar, Typography} from "@material-ui/core";
+import {Button, Grid, Paper, Toolbar, Typography} from "@material-ui/core";
 import ClassFilter from "../../components/ClassFilter/ClassFilter";
 import GuideCard from "../../components/GuideCard/GuideCard";
 
@@ -12,7 +12,7 @@ export default function GuidesView() {
                 Guides & Strategy
             </Typography>
 
-            <Toolbar component="nav" variant="dense">
+            <Toolbar component="nav" variant="dense" classes={{root: styles.filterContainer}}>
                 <Grid container spacing={3}>
                     <Grid item lg={4} xs={12} className={styles.classFilter}>
                         <ClassFilter />
