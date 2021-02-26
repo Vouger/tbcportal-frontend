@@ -3,7 +3,9 @@ import {Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typog
 
 import styles from './GuideCard.module.scss'
 
-export default function GuideCard() {
+export default function GuideCard(props) {
+    const {title, text} = props.guide;
+
     return (
         <Card>
             <CardActionArea>
@@ -16,11 +18,10 @@ export default function GuideCard() {
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                        Warrior guide
+                        {title}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                        across all continents except Antarctica
+                    <Typography variant="body2" color="textSecondary" component="p" textOverflow="ellipsis" className={styles.text}>
+                        {text}
                     </Typography>
                 </CardContent>
             </CardActionArea>

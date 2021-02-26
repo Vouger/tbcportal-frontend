@@ -59,4 +59,14 @@ export class Queries {
             }
         }
     `;
+
+    static GET_GUIDES = gql`
+        query guides ($filterClass: String!) {
+            guides (filterClass: $filterClass) {
+                id
+                title
+                text
+            }
+        }
+    `;
 }
