@@ -33,7 +33,7 @@ function App() {
             },
             background: {
                 default: '#f8b700',
-                paper: "#0f0"
+                paper: "#020405"
             },
             action:{
                 active: '#f8b700',

@@ -8,7 +8,7 @@ import styles from './PasswordView.module.scss'
 
 export default function PasswordView() {
     return (
-        <Layout title="Reset password">
+        <Layout maxWidth="xs">
             <CssBaseline />
             <div className={styles.paper}>
                 <Avatar className={styles.avatar}>

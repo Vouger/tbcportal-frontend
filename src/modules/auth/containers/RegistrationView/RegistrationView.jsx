@@ -12,7 +12,7 @@ import styles from './RegistrationView.module.scss'
 
 export default function RegistrationView() {
     return (
-        <Layout title="Sign up" maxWidth="xs">
+        <Layout maxWidth="xs">
             <CssBaseline />
             <div className={styles.paper}>
                 <Avatar className={styles.avatar}>

@@ -16,7 +16,7 @@ import styles from './LoginView.module.scss'
 
 export default function LoginView() {
     return (
-        <Layout title="Login" maxWidth="xs">
+        <Layout maxWidth="xs">
             <CssBaseline />
             <div className={styles.paper}>
                 <Avatar className={styles.avatar}>

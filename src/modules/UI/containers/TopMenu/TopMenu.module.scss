@@ -5,6 +5,16 @@
   z-index: 1201;
 }
 
+.title {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.menu {
+  flex: 1;
+}
+
 .toolbar {
   flex-wrap: wrap;
 }
