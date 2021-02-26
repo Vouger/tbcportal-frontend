@@ -16,7 +16,7 @@ export default function FilterButton(props) {
             onClick={handleClick}
             disableFocusRipple={true}
         >
-            <Avatar alt={props.title} src={`static/classes/${props.name}.png`} className={clsx(styles.filter, styles[props.name] )}/>
+            <Avatar alt={props.title} src={`static/icons/classes/${props.name}.png`} className={clsx(styles.filter, styles[props.name] )}/>
             {props.title}
         </Button>
     )

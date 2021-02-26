@@ -13,7 +13,11 @@ export default function GuidesView() {
             </Typography>
 
             <Toolbar component="nav" variant="dense">
-                <ClassFilter />
+                <Grid container spacing={3}>
+                    <Grid item lg={4} xs={12} className={styles.classFilter}>
+                        <ClassFilter />
+                    </Grid>
+                </Grid>
             </Toolbar>
 
             <Grid container spacing={3} className={styles.list}>
