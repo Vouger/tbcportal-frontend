@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Container } from "@material-ui/core";
@@ -16,6 +16,7 @@ function Layout(props) {
                 <div className={styles.appBarSpacer} />
 
                 {props.children}
+
             </Container>
 
         </div>

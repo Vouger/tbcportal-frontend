@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Button, Grid, Paper, Toolbar, Typography} from "@material-ui/core";
+import { Grid, Paper, Toolbar, Typography } from "@material-ui/core";
 import ClassFilter from "../../components/ClassFilter/ClassFilter";
 import GuideCard from "../../components/GuideCard/GuideCard";
 
@@ -10,7 +10,7 @@ import {Queries} from "../../../../shared/queries";
 export default function GuidesView() {
     const [filterClass, setFilterClass] = useState('all');
 
-    const { loading, data, refetch } = useQuery(Queries.GET_GUIDES, {
+    const { loading, data } = useQuery(Queries.GET_GUIDES, {
         variables: { filterClass }
     });
 
@@ -30,7 +30,7 @@ export default function GuidesView() {
 
             <Grid container spacing={3} className={styles.list}>
                 {!loading && data && data.guides.map((item) => (
-                    <Grid item lg={2} xs={12}>
+                    <Grid item xl={2} lg={3} sm={6} md={6} xs={12}>
                         <GuideCard guide={item} />
                     </Grid>
                 ))}

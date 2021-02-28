@@ -1,5 +1,5 @@
-import React, {useLayoutEffect, useState} from "react";
-import {Grid} from "@material-ui/core";
+import React from "react";
+import { Grid } from "@material-ui/core";
 
 import FilterButton from "../FilterButton/FilterButton";
 import styles from './ClassFilter.module.scss'
