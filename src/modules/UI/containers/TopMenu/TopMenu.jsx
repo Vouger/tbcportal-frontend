@@ -5,12 +5,14 @@ import {
     Toolbar,
     Typography,
     Avatar,
-    IconButton
+    IconButton,
+    Box
 } from '@material-ui/core'
 import { Else, If, Then } from 'react-if'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
+import MenuLink from "../../components/MenuLink/MenuLink";
 import {TRoutes} from "../../../../shared/types";
 import { cleanToken } from "../../../../shared/helpers";
 import styles from './TopMenu.module.scss'
@@ -30,7 +32,17 @@ export default function TopMenu(props) {
                         {props.title || "TBC portal" }
                     </Typography>
                 </Link>
-                <div className={styles.menu} > </div>
+                <Box className={styles.menu} display={{ xs: 'none', sm: 'block' }}>
+                    <MenuLink to={TRoutes.MAIN}>
+                        Home
+                    </MenuLink>
+                    <MenuLink to={TRoutes.GUIDES}>
+                        Guides
+                    </MenuLink>
+                    <MenuLink to={TRoutes.COMMUNITY}>
+                        Community
+                    </MenuLink>
+                </Box>
                 <If condition={props.isAuth}>
                     <Then>
                         <IconButton onClick={handleLogout} color="secondary" variant="contained" className={styles.link}>

@@ -2,7 +2,6 @@
   border-bottom: 1px solid #2f3135;
   background-color: #020200;
   display: flex;
-  z-index: 1201;
 }
 
 .title {
@@ -13,6 +12,7 @@
 
 .menu {
   flex: 1;
+  margin: 0 15px;
 }
 
 .toolbar {
@@ -26,4 +26,9 @@
 
 .link {
   margin: 8px 12px;
+}
+
+.menuLink {
+  margin: 8px 12px;
+  text-transform: uppercase;
 }

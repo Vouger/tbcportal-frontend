@@ -1,11 +1,12 @@
 import React, {useState} from "react";
-import { Grid, Paper, Toolbar, Typography } from "@material-ui/core";
+import { Grid, Toolbar, Typography } from "@material-ui/core";
 import ClassFilter from "../../components/ClassFilter/ClassFilter";
 import GuideCard from "../../components/GuideCard/GuideCard";
 
 import styles from './GuidesView.module.scss'
 import {useQuery} from "@apollo/client";
 import {Queries} from "../../../../shared/queries";
+import Layout from "../../../UI/containers/Layout/Layout";
 
 export default function GuidesView() {
     const [filterClass, setFilterClass] = useState('all');
@@ -15,7 +16,7 @@ export default function GuidesView() {
     });
 
     return (
-        <Paper>
+        <Layout maxWidth="xl">
             <Typography component="h1" variant="h4" color="secondary" className={styles.title}>
                 Guides & Strategy
             </Typography>
@@ -35,6 +36,6 @@ export default function GuidesView() {
                     </Grid>
                 ))}
             </Grid>
-        </Paper>
+        </Layout>
     )
 }

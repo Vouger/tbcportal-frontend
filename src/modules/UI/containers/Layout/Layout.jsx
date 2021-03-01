@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Container } from "@material-ui/core";
-
 import TopMenu from "../TopMenu/TopMenu";
 import styles from './Layout.module.scss'
 
@@ -16,7 +15,6 @@ function Layout(props) {
                 <div className={styles.appBarSpacer} />
 
                 {props.children}
-
             </Container>
 
         </div>

@@ -1,0 +1,14 @@
+.link {
+  margin: 8px 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.current {
+  text-shadow: 1px 1px 15px #fff;
+  color: #fff;
+}
