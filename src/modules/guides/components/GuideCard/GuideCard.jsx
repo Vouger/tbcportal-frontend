@@ -1,14 +1,24 @@
 import React from "react";
-import {Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography} from "@material-ui/core";
+import {
+    Button,
+    Card,
+    CardActionArea,
+    CardActions,
+    CardContent,
+    CardMedia,
+    Typography
+} from "@material-ui/core";
 
 import styles from './GuideCard.module.scss'
+import {Link} from "react-router-dom";
+import {TRoutes} from "../../../../shared/types";
 
 export default function GuideCard(props) {
-    const {title, text} = props.guide;
+    const {id, title, text} = props.guide;
 
     return (
         <Card>
-            <CardActionArea>
+            <CardActionArea component={Link} to={TRoutes.GUIDE(id)}>
                 <CardMedia
                     component="img"
                     alt="Contemplative Reptile"
@@ -24,15 +34,15 @@ export default function GuideCard(props) {
                         {text}
                     </Typography>
                 </CardContent>
+                <CardActions>
+                    <Button size="small" color="primary">
+                        Share
+                    </Button>
+                    <Button size="small" color="primary">
+                        Learn More
+                    </Button>
+                </CardActions>
             </CardActionArea>
-            <CardActions>
-                <Button size="small" color="primary">
-                    Share
-                </Button>
-                <Button size="small" color="primary">
-                    Learn More
-                </Button>
-            </CardActions>
         </Card>
     )
 }

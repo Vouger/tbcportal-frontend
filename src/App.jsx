@@ -32,7 +32,7 @@ function App() {
                 hint: '#fff',
             },
             background: {
-                default: '#f8b700',
+                default: '#201815',
                 paper: "#020405"
             },
             action:{

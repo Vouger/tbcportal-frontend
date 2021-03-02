@@ -12,6 +12,7 @@ import Password from '../pages/Password'
 import ChangePassword from '../pages/ChangePassword'
 import Notification from '../pages/Notification'
 import Guides from '../pages/Guides'
+import Guide from '../pages/Guide'
 
 function Routes() {
     return (
@@ -29,6 +30,8 @@ function Routes() {
             <Route exact path={TRoutes.MAIN} component={Landing} />
             <Route exact path={TRoutes.GUIDES} component={Guides} />
             <Route exact path={TRoutes.COMMUNITY} component={Guides} />
+
+            <Route exact path={TRoutes.GUIDE()} component={Guide} />
         </Switch>
     )
 }

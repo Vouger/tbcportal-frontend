@@ -1,14 +1,18 @@
-.list {
+.root {
   padding: 20px;
 }
 
+.list {
+  padding: 20px 0;
+}
+
 .title {
-  padding: 20px;
+  padding: 20px 0;
 }
 
 .filterContainer {
   border-bottom: 1px solid #2f3135;
-  padding-bottom: 20px;
+  padding: 20px 6px;
 }
 
 .classFilter {
