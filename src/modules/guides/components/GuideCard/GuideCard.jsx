@@ -1,6 +1,5 @@
 import React from "react";
 import {
-    Button,
     Card,
     CardActionArea,
     CardActions,
@@ -8,13 +7,14 @@ import {
     CardMedia,
     Typography
 } from "@material-ui/core";
+import {Visibility} from "@material-ui/icons";
 
 import styles from './GuideCard.module.scss'
 import {Link} from "react-router-dom";
 import {TRoutes} from "../../../../shared/types";
 
 export default function GuideCard(props) {
-    const {id, title, text} = props.guide;
+    const {id, title, text, views} = props.guide;
 
     return (
         <Card>
@@ -26,7 +26,7 @@ export default function GuideCard(props) {
                     image="/static/tpl.jpg"
                     title="Contemplative Reptile"
                 />
-                <CardContent>
+                <CardContent className={styles.content}>
                     <Typography gutterBottom variant="h5" component="h2">
                         {title}
                     </Typography>
@@ -35,12 +35,7 @@ export default function GuideCard(props) {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small" color="primary">
-                        Share
-                    </Button>
-                    <Button size="small" color="primary">
-                        Learn More
-                    </Button>
+                    <Visibility className={styles.views}/> {views}
                 </CardActions>
             </CardActionArea>
         </Card>

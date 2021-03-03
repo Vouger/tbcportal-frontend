@@ -66,6 +66,7 @@ export class Queries {
                 id
                 title
                 text
+                views
             }
         }
     `;

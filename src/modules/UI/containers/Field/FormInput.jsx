@@ -13,7 +13,6 @@ function FormInput(props) {
             control={control}
             defaultValue=""
             label={label}
-            fullWidth={true}
             {...props}
         />
     );
