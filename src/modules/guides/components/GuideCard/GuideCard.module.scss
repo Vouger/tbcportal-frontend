@@ -12,3 +12,43 @@
   padding-right: 10px;
   padding-top: 2px;
 }
+
+.root:hover {
+  box-shadow: 0 0 15px #5b1a10;
+}
+
+.druid:hover {
+  box-shadow: 0 0 15px #ff7d0a;
+}
+
+.hunter:hover {
+  box-shadow: 0 0 15px #abd473;
+}
+
+.mage:hover {
+  box-shadow: 0 0 15px #40c7eb;
+}
+
+.paladin:hover {
+  box-shadow: 0 0 15px #f58cba;
+}
+
+.priest:hover {
+  box-shadow: 0 0 15px #fff;
+}
+
+.rogue:hover {
+  box-shadow: 0 0 15px #fff569;
+}
+
+.shaman:hover {
+  box-shadow: 0 0 15px #0070de;
+}
+
+.warlock:hover {
+  box-shadow: 0 0 15px #8787ed;
+}
+
+.warrior:hover {
+  box-shadow: 0 0 15px #c79c6e;
+}

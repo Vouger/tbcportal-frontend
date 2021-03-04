@@ -21,7 +21,7 @@ export default function GuideView() {
 
     return (
         <Layout maxWidth="xl">
-            <Paper>
+            <Paper className={styles[data && data.guide.className]}>
                 <Grid container spacing={3}>
                     <Grid item xs={12}>
                         {!loading && data?

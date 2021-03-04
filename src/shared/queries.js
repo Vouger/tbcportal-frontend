@@ -70,6 +70,7 @@ export class Queries {
                 id
                 title
                 views
+                className
                 user {
                     nickname
                 }

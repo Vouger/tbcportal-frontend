@@ -9,16 +9,17 @@ import {
 } from "@material-ui/core";
 import {Visibility} from "@material-ui/icons";
 import {Link} from "react-router-dom";
+import clsx from "clsx";
 
 import styles from './GuideCard.module.scss'
 import {TRoutes} from "../../../../shared/types";
 
 export default function GuideCard(props) {
-    const { id, title, views, user } = props.guide;
+    const { id, title, views, user, className } = props.guide;
     const { nickname } = user;
 
     return (
-        <Card>
+        <Card className={clsx(styles.root, styles[className])}>
             <CardActionArea component={Link} to={TRoutes.GUIDE(id)}>
                 <CardMedia
                     component="img"
