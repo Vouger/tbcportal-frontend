@@ -14,8 +14,8 @@ import styles from './GuideCard.module.scss'
 import {TRoutes} from "../../../../shared/types";
 
 export default function GuideCard(props) {
-    const {id, title, views, user} = props.guide;
-    const {firstname, lastname} = user;
+    const { id, title, views, user } = props.guide;
+    const { nickname } = user;
 
     return (
         <Card>
@@ -32,7 +32,7 @@ export default function GuideCard(props) {
                         {title}
                     </Typography>
                     <Typography gutterBottom variant="h7">
-                        {firstname} {lastname}
+                        {nickname}
                     </Typography>
                 </CardContent>
                 <CardActions>

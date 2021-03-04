@@ -60,22 +60,11 @@ export default function RegistrationForm(props) {
                 <FormInput
                     variant="outlined"
                     margin="normal"
-                    label="Firstname"
+                    label="Nickname"
                     required
                     fullWidth
-                    id="firstname"
-                    name="firstname"
-                    defaultValue=""
-                />
-
-                <FormInput
-                    variant="outlined"
-                    margin="normal"
-                    label="Lastname"
-                    required
-                    fullWidth
-                    id="lastname"
-                    name="lastname"
+                    id="nickname"
+                    name="nickname"
                     defaultValue=""
                 />
 

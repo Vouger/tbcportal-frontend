@@ -20,13 +20,12 @@ export class Queries {
     `;
 
     static REGISTRATION = gql`
-        mutation Registration($email: String!, $password: String!, $firstname: String!, $lastname: String!) {
+        mutation Registration($email: String!, $password: String!, $nickname: String!) {
             register (
                 data: {
                     email: $email,
                     password: $password,
-                    firstname: $firstname,
-                    lastname: $lastname
+                    nickname: $nickname
                 }
             ){
                 email
@@ -72,8 +71,7 @@ export class Queries {
                 title
                 views
                 user {
-                    firstname
-                    lastname
+                    nickname
                 }
             }
         }
