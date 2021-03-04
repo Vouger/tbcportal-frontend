@@ -44,7 +44,7 @@ export default function GuideForm(props) {
 
                     <Grid item lg={4} xs={12}>
                         <SelectInput
-                            name="class"
+                            name="className"
                             label="Class"
                             control={control}
                             variant="outlined"
@@ -59,15 +59,15 @@ export default function GuideForm(props) {
                             <MenuItem value="priest">Priest</MenuItem>
                             <MenuItem value="rogue">Rogue</MenuItem>
                             <MenuItem value="shaman">Shaman</MenuItem>
-                            <MenuItem value="Warlock">Warlock</MenuItem>
+                            <MenuItem value="warlock">Warlock</MenuItem>
                             <MenuItem value="warrior">Warrior</MenuItem>
                         </SelectInput>
                     </Grid>
 
                     <Grid item lg={4} xs={12}>
                         <SelectInput
-                            name="content"
-                            label="Content"
+                            name="contentType"
+                            label="Content Type"
                             control={control}
                             variant="outlined"
                             defaultValue="all"

@@ -1,13 +1,13 @@
 import React, {useEffect} from "react";
 import { useParams } from "react-router-dom";
-
-import Layout from "../../../UI/containers/Layout/Layout";
-import { Box, Paper, Typography } from "@material-ui/core";
-
-import styles from './GuideView.module.scss'
 import { useQuery } from "@apollo/client";
-import { Queries } from "../../../../shared/queries";
+import { Box, Grid, Paper } from "@material-ui/core";
+
+import DetailsHeader from "../DetailsHeader/DetailsHeader";
+import Layout from "../../../UI/containers/Layout/Layout";
 import RawHtml from "../../../UI/components/RawHtml/RawHtml";
+import { Queries } from "../../../../shared/queries";
+import styles from './GuideView.module.scss'
 
 export default function GuideView() {
     const { id } = useParams()
@@ -22,17 +22,22 @@ export default function GuideView() {
     return (
         <Layout maxWidth="xl">
             <Paper>
-                <Box className={styles.header}>
-                    <Typography component="h1" variant="h4" color="secondary" className={styles.title}>
-                        {!loading && data.guide.title}
-                    </Typography>
-                </Box>
-                <Box className={styles.content}>
-                    {!loading ?
-                        (<RawHtml>{data.guide.text}</RawHtml>)
-                        : ""
-                    }
-                </Box>
+                <Grid container spacing={3}>
+                    <Grid item xs={12}>
+                        {!loading && data?
+                            (
+                                <DetailsHeader guide={data.guide} />
+                            ) : "" }
+                    </Grid>
+                    <Grid item lg={8} xs={12}>
+                        <Box className={styles.content}>
+                            {!loading && data ?
+                                (<RawHtml>{data.guide.text}</RawHtml>)
+                                : ""
+                            }
+                        </Box>
+                    </Grid>
+                </Grid>
             </Paper>
         </Layout>
     )

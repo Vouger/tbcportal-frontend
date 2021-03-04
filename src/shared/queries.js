@@ -83,18 +83,20 @@ export class Queries {
                 id
                 title
                 text
+                className
+                contentType
             }
         }
     `;
 
     static CREATE_GUIDE = gql`
-        mutation CreateGuide($title: String!, $text: String!, $class: String!, $content: String!) {
+        mutation CreateGuide($title: String!, $text: String!, $className: String!, $contentType: String!) {
             createGuide (
                 data: {
                     title: $title,
                     text: $text,
-                    class: $class,
-                    content: $content
+                    className: $className,
+                    contentType: $contentType
                 }
             ) {
                 text
