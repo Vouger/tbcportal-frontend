@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 
 import { Queries } from "../../../../shared/queries"
 import styles from './ChangePasswordForm.module.scss'
-import PasswordInput from "../../../UI/containers/Field/PasswordInput";
+import PasswordInput from "../../../UI/components/Field/PasswordInput";
 import * as userActions from "../../../../redux/ducks/user";
 import {setToken} from "../../../../shared/helpers";
 

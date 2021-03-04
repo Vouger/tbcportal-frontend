@@ -61,12 +61,20 @@ export class Queries {
     `;
 
     static GET_GUIDES = gql`
-        query guides ($filterClass: String!) {
-            guides (filterClass: $filterClass) {
+        query guides ($filterClass: String!, $filterContent: String!) {
+            guides (
+                data: {
+                    filterClass: $filterClass
+                    filterContent: $filterContent
+                }
+            ) {
                 id
                 title
-                text
                 views
+                user {
+                    firstname
+                    lastname
+                }
             }
         }
     `;
@@ -76,6 +84,21 @@ export class Queries {
             guide (id: $id) {
                 id
                 title
+                text
+            }
+        }
+    `;
+
+    static CREATE_GUIDE = gql`
+        mutation CreateGuide($title: String!, $text: String!, $class: String!, $content: String!) {
+            createGuide (
+                data: {
+                    title: $title,
+                    text: $text,
+                    class: $class,
+                    content: $content
+                }
+            ) {
                 text
             }
         }

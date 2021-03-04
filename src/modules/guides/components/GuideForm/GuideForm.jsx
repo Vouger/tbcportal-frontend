@@ -1,34 +1,95 @@
 import React from "react";
-import {FormProvider, useForm} from "react-hook-form";
+import {FormProvider, Controller, useForm} from "react-hook-form";
+import {Button, Grid, MenuItem} from "@material-ui/core";
+import {useMutation} from "@apollo/client";
+import { toast } from "react-toastify";
 
-import FormInput from "../../../UI/containers/Field/FormInput";
+import FormInput from "../../../UI/components/Field/FormInput";
 import ContentEditor from "../../../UI/components/ContentEditor/ContentEditor";
+import {Queries} from "../../../../shared/queries";
+import SelectInput from "../../../UI/components/Field/SelectInput";
 import styles from "./GuideForm.module.scss";
-import {Button} from "@material-ui/core";
+
 
 export default function GuideForm(props) {
     const methods = useForm();
-    const { register, handleSubmit } = methods;
+    const { handleSubmit, control } = methods;
+
+    const [ createGuide ] = useMutation(Queries.CREATE_GUIDE);
 
     const onSubmit = data => {
+        console.log(data);
 
+        createGuide({ variables: data }).then(response => {
+            toast.success("added");
+        }).catch(e => {});
     }
 
     return (
         <FormProvider {...methods}>
             <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-                <FormInput
-                    variant="outlined"
-                    color="primary"
-                    margin="normal"
-                    label="Title"
-                    required
-                    halfWidth
-                    id="title"
-                    name="title"
-                />
+                <Grid container spacing={2}>
+                    <Grid item lg={4} xs={12}>
+                        <FormInput
+                            variant="outlined"
+                            color="primary"
+                            margin="normal"
+                            label="Title"
+                            required
+                            fullWidth
+                            id="title"
+                            name="title"
+                        />
+                    </Grid>
 
-                <ContentEditor />
+                    <Grid item lg={4} xs={12}>
+                        <SelectInput
+                            name="class"
+                            label="Class"
+                            control={control}
+                            variant="outlined"
+                            defaultValue="all"
+                            fullWidth
+                        >
+                            <MenuItem value="all">All</MenuItem>
+                            <MenuItem value="druid">Druid</MenuItem>
+                            <MenuItem value="hunter">Hunter</MenuItem>
+                            <MenuItem value="mage">Mage</MenuItem>
+                            <MenuItem value="paladin">Paladin</MenuItem>
+                            <MenuItem value="priest">Priest</MenuItem>
+                            <MenuItem value="rogue">Rogue</MenuItem>
+                            <MenuItem value="shaman">Shaman</MenuItem>
+                            <MenuItem value="Warlock">Warlock</MenuItem>
+                            <MenuItem value="warrior">Warrior</MenuItem>
+                        </SelectInput>
+                    </Grid>
+
+                    <Grid item lg={4} xs={12}>
+                        <SelectInput
+                            name="content"
+                            label="Content"
+                            control={control}
+                            variant="outlined"
+                            defaultValue="all"
+                            fullWidth
+                        >
+                            <MenuItem value="all">All</MenuItem>
+                            <MenuItem value="pve">PVE</MenuItem>
+                            <MenuItem value="pvp">PVP</MenuItem>
+                            <MenuItem value="leveling">Leveling</MenuItem>
+                            <MenuItem value="lore">Lore</MenuItem>
+                        </SelectInput>
+                    </Grid>
+
+                    <Grid item xs={12}>
+                        <Controller
+                            as={<ContentEditor />}
+                            name="text"
+                            control={control}
+                        />
+                    </Grid>
+                </Grid>
+
 
                 <Button
                     type="submit"

@@ -9,7 +9,7 @@ export default function GuidesSubmitView() {
     return (
         <Layout maxWidth="xl">
             <Paper className={styles.paper}>
-                <Typography component="h1" variant="h5">
+                <Typography component="h1" variant="h5" color="secondary">
                     Submit guide
                 </Typography>
 

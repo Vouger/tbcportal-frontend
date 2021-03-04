@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { useQuery } from "@apollo/client";
 import { Paper } from "@material-ui/core";
 
@@ -13,9 +13,15 @@ export default function GuidesView() {
     const [filterClass, setFilterClass] = useState('all');
     const [filterContent, setFilterContent] = useState('all');
 
-    const { loading, data } = useQuery(Queries.GET_GUIDES, {
-        variables: { filterClass }
+    const { loading, data, refetch } = useQuery(Queries.GET_GUIDES, {
+        variables: { filterClass, filterContent }
     });
+
+    useEffect(() => {
+        if (!loading) {
+            refetch();
+        }
+    }, [])
 
     return (
         <Layout maxWidth="xl">

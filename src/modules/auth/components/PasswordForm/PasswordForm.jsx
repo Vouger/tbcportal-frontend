@@ -3,7 +3,7 @@ import { Button } from '@material-ui/core'
 import { useForm, FormProvider  } from 'react-hook-form'
 import { useMutation } from '@apollo/client'
 
-import FormInput from "../../../UI/containers/Field/FormInput"
+import FormInput from "../../../UI/components/Field/FormInput"
 import { Queries } from "../../../../shared/queries"
 import styles from './PasswordForm.module.scss'
 import { TRoutes } from "../../../../shared/types";

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useParams } from "react-router-dom";
 
 import Layout from "../../../UI/containers/Layout/Layout";
@@ -7,12 +7,17 @@ import { Box, Paper, Typography } from "@material-ui/core";
 import styles from './GuideView.module.scss'
 import { useQuery } from "@apollo/client";
 import { Queries } from "../../../../shared/queries";
+import RawHtml from "../../../UI/components/RawHtml/RawHtml";
 
 export default function GuideView() {
     const { id } = useParams()
     const { loading, data } = useQuery(Queries.GET_GUIDE, {
         variables: { id }
     });
+
+    useEffect(() => {
+        window.$WowheadPower.refreshLinks();
+    })
 
     return (
         <Layout maxWidth="xl">
@@ -23,7 +28,10 @@ export default function GuideView() {
                     </Typography>
                 </Box>
                 <Box className={styles.content}>
-                    {!loading && data.guide.text}
+                    {!loading ?
+                        (<RawHtml>{data.guide.text}</RawHtml>)
+                        : ""
+                    }
                 </Box>
             </Paper>
         </Layout>

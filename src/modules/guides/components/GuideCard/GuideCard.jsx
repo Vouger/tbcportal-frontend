@@ -8,13 +8,14 @@ import {
     Typography
 } from "@material-ui/core";
 import {Visibility} from "@material-ui/icons";
+import {Link} from "react-router-dom";
 
 import styles from './GuideCard.module.scss'
-import {Link} from "react-router-dom";
 import {TRoutes} from "../../../../shared/types";
 
 export default function GuideCard(props) {
-    const {id, title, text, views} = props.guide;
+    const {id, title, views, user} = props.guide;
+    const {firstname, lastname} = user;
 
     return (
         <Card>
@@ -30,8 +31,8 @@ export default function GuideCard(props) {
                     <Typography gutterBottom variant="h5" component="h2">
                         {title}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p" textOverflow="ellipsis" className={styles.text}>
-                        {text}
+                    <Typography gutterBottom variant="h7">
+                        {firstname} {lastname}
                     </Typography>
                 </CardContent>
                 <CardActions>

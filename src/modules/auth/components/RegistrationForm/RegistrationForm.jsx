@@ -4,11 +4,11 @@ import { useForm, FormProvider  } from 'react-hook-form'
 import { useHistory } from 'react-router-dom'
 import { useMutation } from '@apollo/client'
 
-import FormInput from "../../../UI/containers/Field/FormInput"
+import FormInput from "../../../UI/components/Field/FormInput"
 import { Queries } from "../../../../shared/queries";
 import { TRoutes } from "../../../../shared/types";
 import styles from './RegistrationForm.module.scss'
-import PasswordInput from "../../../UI/containers/Field/PasswordInput";
+import PasswordInput from "../../../UI/components/Field/PasswordInput";
 
 export default function RegistrationForm(props) {
     const [passErr, setPassErr] = useState('');
