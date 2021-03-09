@@ -14,7 +14,7 @@ import Layout from "../../../UI/containers/Layout/Layout";
 import LoginForm from '../../components/LoginForm/LoginForm'
 import styles from './LoginView.module.scss'
 
-export default function LoginView() {
+export default function LoginView(props) {
     return (
         <Layout maxWidth="xs">
             <CssBaseline />
@@ -26,7 +26,7 @@ export default function LoginView() {
                     Sign in
                 </Typography>
 
-                <LoginForm />
+                <LoginForm {...props} />
 
                 <Grid container>
                     <Grid item xs>

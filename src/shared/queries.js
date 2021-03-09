@@ -71,6 +71,7 @@ export class Queries {
                 title
                 views
                 className
+                thumbnailUrl
                 user {
                     nickname
                 }
@@ -91,13 +92,20 @@ export class Queries {
     `;
 
     static CREATE_GUIDE = gql`
-        mutation CreateGuide($title: String!, $text: String!, $className: String!, $contentType: String!) {
+        mutation CreateGuide(
+            $title: String!, 
+            $text: String!, 
+            $className: String!, 
+            $contentType: String!, 
+            $thumbnailUrl: String!
+        ) {
             createGuide (
                 data: {
                     title: $title,
                     text: $text,
                     className: $className,
-                    contentType: $contentType
+                    contentType: $contentType,
+                    thumbnailUrl: $thumbnailUrl
                 }
             ) {
                 text

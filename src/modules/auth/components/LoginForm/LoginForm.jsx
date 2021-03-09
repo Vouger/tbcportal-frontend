@@ -1,8 +1,9 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { Button, FormControlLabel, Checkbox } from '@material-ui/core'
 import { useForm, FormProvider  } from 'react-hook-form'
 import { useMutation } from '@apollo/client'
-import { connect } from 'react-redux'
+import {useHistory} from "react-router-dom";
 
 import FormInput from "../../../UI/components/Field/FormInput"
 import { Queries } from "../../../../shared/queries"
@@ -13,10 +14,21 @@ import PasswordInput from "../../../UI/components/Field/PasswordInput"
 import GoogleButton from "../SocialAuth/GoogleButton/GoogleButton";
 
 function LoginForm(props) {
+    const { state } = props.location;
+    const history = useHistory()
     const methods = useForm();
     const { register, handleSubmit } = methods;
 
     const [ login ] = useMutation(Queries.LOGIN);
+
+
+    const handleLogin = token => {
+        setToken(token);
+
+        props.logInAction();
+
+        history.push(state && state.from && state.from.pathname)
+    }
 
     const onSubmit = data => {
         data.remember = !!data.remember;
@@ -25,9 +37,7 @@ function LoginForm(props) {
             const token = response && response.data && response.data.login.token
 
             if (token) {
-                setToken(token);
-
-                props.logInAction();
+                handleLogin(token);
             }
         }).catch(e => {});
     }
@@ -75,7 +85,7 @@ function LoginForm(props) {
                 </Button>
 
                 <GoogleButton
-                    logInAction={props.logInAction}
+                    handleLogin={handleLogin}
                 />
             </form>
         </FormProvider>

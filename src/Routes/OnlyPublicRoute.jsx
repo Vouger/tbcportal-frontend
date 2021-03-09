@@ -7,13 +7,13 @@ function OnlyRoute({ isAuth, component: Component, ...rest }) {
     return (
         <Route
             {...rest}
-            render={() =>
+            render={props =>
                 isAuth ? (
                     <Redirect
                         to={TRoutes.MAIN}
                     />
                 ) : (
-                    <Component/>
+                    <Component  {...props} />
                 )
             }
         />

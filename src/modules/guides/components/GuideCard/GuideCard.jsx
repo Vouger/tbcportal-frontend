@@ -15,7 +15,7 @@ import styles from './GuideCard.module.scss'
 import {TRoutes} from "../../../../shared/types";
 
 export default function GuideCard(props) {
-    const { id, title, views, user, className } = props.guide;
+    const { id, title, views, user, className, thumbnailUrl } = props.guide;
     const { nickname } = user;
 
     return (
@@ -23,10 +23,10 @@ export default function GuideCard(props) {
             <CardActionArea component={Link} to={TRoutes.GUIDE(id)}>
                 <CardMedia
                     component="img"
-                    alt="Contemplative Reptile"
+                    alt={title}
                     height="160"
-                    image="/static/tpl.jpg"
-                    title="Contemplative Reptile"
+                    image={thumbnailUrl || "/static/tpl.jpg"}
+                    title={title}
                 />
                 <CardContent className={styles.content}>
                     <Typography gutterBottom variant="h5" component="h2">

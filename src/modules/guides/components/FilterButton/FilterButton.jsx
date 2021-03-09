@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import {Avatar, Box, Button} from "@material-ui/core";
+import { Button } from "@material-ui/core";
 
 import styles from './FilterButton.module.scss'
 import ClassAvatar from "../ClassAvatar/ClassAvatar";

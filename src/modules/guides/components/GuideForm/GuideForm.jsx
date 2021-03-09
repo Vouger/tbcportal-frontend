@@ -81,6 +81,18 @@ export default function GuideForm(props) {
                         </SelectInput>
                     </Grid>
 
+                    <Grid item lg={8} xs={12}>
+                        <FormInput
+                            variant="outlined"
+                            color="primary"
+                            margin="normal"
+                            label="Thumbnail Url"
+                            fullWidth
+                            id="thumbnailUrl"
+                            name="thumbnailUrl"
+                        />
+                    </Grid>
+
                     <Grid item xs={12}>
                         <Controller
                             as={<ContentEditor />}

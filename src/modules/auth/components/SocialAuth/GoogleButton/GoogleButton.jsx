@@ -5,7 +5,6 @@ import { Button } from "@material-ui/core"
 
 import GoogleIcon from "../../../../UI/components/icons/GoogleIcon";
 import { Queries } from "../../../../../shared/queries"
-import { setToken } from "../../../../../shared/helpers"
 import styles from "./GoogleButton.module.scss"
 
 function GoogleButton(props) {
@@ -20,8 +19,7 @@ function GoogleButton(props) {
             const token = response && response.data && response.data.googleAuth.token
 
             if (token) {
-                setToken(token);
-                props.logInAction();
+                props.handleLogin(token);
             }
         }).catch(e => {});
     }
