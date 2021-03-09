@@ -8,7 +8,7 @@ import {
     IconButton,
     ListItem,
     ListItemIcon,
-    ListItemText, Box, Toolbar
+    ListItemText
 } from '@material-ui/core'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import HomeIcon from '@material-ui/icons/Home';

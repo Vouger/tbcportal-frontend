@@ -2,7 +2,7 @@ import React from 'react'
 import { Paper, Grid, Typography } from '@material-ui/core'
 import { useParams } from "react-router-dom";
 
-import Layout from "../../../UI/containers/Layout/Layout";
+import Layout from "../../../layout/containers/Layout/Layout";
 import styles from './NotificationView.module.scss'
 
 export default function NotificationView() {

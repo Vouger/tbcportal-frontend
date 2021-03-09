@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import { useQuery } from "@apollo/client";
 import { Paper } from "@material-ui/core";
 
-import Layout from "../../../UI/containers/Layout/Layout";
+import Layout from "../../../layout/containers/Layout/Layout";
 import FilterView from "../FilterView/FilterView";
 import GuidesListView from "../GuidesListView/GuidesListView";
 import GuidesHeaderView from "../GuidesHeaderView/GuidesHeaderView";

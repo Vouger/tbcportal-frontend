@@ -5,7 +5,7 @@ import { Else, If, Then } from 'react-if'
 import { Paper, Grid, Typography, LinearProgress } from '@material-ui/core'
 import { connect } from "react-redux";
 
-import Layout from "../../../UI/containers/Layout/Layout";
+import Layout from "../../../layout/containers/Layout/Layout";
 import { Queries } from "../../../../shared/queries";
 import { setToken } from "../../../../shared/helpers";
 import * as userActions from "../../../../redux/ducks/user";

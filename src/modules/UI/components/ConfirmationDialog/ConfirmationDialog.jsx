@@ -1,8 +1,6 @@
 import React from "react";
 import {Button, Dialog, DialogActions, DialogContent, DialogTitle} from "@material-ui/core";
 
-import styles from "../../containers/Layout/Layout.module.scss";
-
 export default function ConfirmationDialog(props) {
     const { confirmAction, cancelAction, value: valueProp, open, children, title, ...other } = props;
 

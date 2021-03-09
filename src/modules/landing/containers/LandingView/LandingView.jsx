@@ -1,4 +1,4 @@
-import Layout from "../../../UI/containers/Layout/Layout";
+import Layout from "../../../layout/containers/Layout/Layout";
 
 export default function LandingView() {
     return (

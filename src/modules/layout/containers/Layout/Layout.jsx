@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import {Box, Container} from "@material-ui/core";
+import {Container} from "@material-ui/core";
 
-import TopMenu from "../TopMenu/TopMenu";
+import Header from "../Header/Header";
 import SideMenu from "../SideMenu/SideMenu";
 import styles from './Layout.module.scss'
 
@@ -13,9 +13,9 @@ function Layout(props) {
     return (
         <div className={styles.root}>
 
-            <TopMenu open={open} setOpen={setOpen} isAuth={props.isAuth} title={props.title}/>
+            <Header open={open} setOpen={setOpen} isAuth={props.isAuth} title={props.title}/>
 
-            <SideMenu display={{ xs: 'block', sm: 'none' }} open={open} setOpen={setOpen} isAuth={props.isAuth} />
+            <SideMenu open={open} setOpen={setOpen} isAuth={props.isAuth} />
 
             <Container component="main" maxWidth={props.maxWidth || "lg"} className={styles.content}>
                 <div className={styles.appBarSpacer} />
@@ -27,7 +27,7 @@ function Layout(props) {
     )
 }
 
-TopMenu.propTypes = {
+Header.propTypes = {
     isAuth: PropTypes.bool.isRequired
 }
 

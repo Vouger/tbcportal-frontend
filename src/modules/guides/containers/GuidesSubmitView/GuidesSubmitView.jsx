@@ -1,7 +1,7 @@
 import React from "react";
 import {Paper, Typography} from "@material-ui/core";
 
-import Layout from "../../../UI/containers/Layout/Layout";
+import Layout from "../../../layout/containers/Layout/Layout";
 import GuideForm from "../../components/GuideForm/GuideForm";
 import styles from "./GuidesSubmitView.module.scss";
 

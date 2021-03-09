@@ -1,0 +1,18 @@
+.root {
+  border-bottom: 1px solid #2f3135;
+  background-color: #020200;
+  display: flex;
+}
+
+.menu {
+  flex: 1;
+  margin: 0 15px;
+}
+
+.toolbar {
+  flex-wrap: wrap;
+}
+
+.menuButton {
+  margin-right: 36px;
+}

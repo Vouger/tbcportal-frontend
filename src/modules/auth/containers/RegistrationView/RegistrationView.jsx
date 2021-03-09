@@ -6,7 +6,7 @@ import {
 } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
-import Layout from "../../../UI/containers/Layout/Layout";
+import Layout from "../../../layout/containers/Layout/Layout";
 import RegistrationForm from '../../components/RegistrationForm/RegistrationForm'
 import styles from './RegistrationView.module.scss'
 
