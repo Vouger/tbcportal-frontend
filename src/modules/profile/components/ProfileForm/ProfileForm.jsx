@@ -11,14 +11,20 @@ import styles from './ProfileForm.module.scss'
 export default function ProfileForm() {
     const methods = useForm();
     const {handleSubmit, setValue} = methods;
-    const { loading, data } = useQuery(Queries.PROFILE);
+    const { loading, data, refetch } = useQuery(Queries.PROFILE);
     const [ UpdateProfile ] = useMutation(Queries.UPDATE_PROFILE);
+
+    useEffect(() => {
+        if (!loading) {
+            refetch()
+        }
+    }, [])
 
     useEffect(() => {
         if (!loading && data && data.profileInfo) {
             setValue('nickname', data.profileInfo.nickname);
         }
-    }, [loading])
+    }, [data])
 
     const onSubmit = data => {
         UpdateProfile({variables: data}).then(response => {

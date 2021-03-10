@@ -2,26 +2,26 @@ import React from "react";
 import {FormProvider, Controller, useForm} from "react-hook-form";
 import {Button, Grid, MenuItem} from "@material-ui/core";
 import {useMutation} from "@apollo/client";
-import { toast } from "react-toastify";
+import {useHistory} from "react-router-dom";
 
 import FormInput from "../../../UI/components/Field/FormInput";
 import ContentEditor from "../../../UI/components/ContentEditor/ContentEditor";
 import {Queries} from "../../../../shared/queries";
 import SelectInput from "../../../UI/components/Field/SelectInput";
+import {TRoutes} from "../../../../shared/types";
 import styles from "./GuideForm.module.scss";
 
 
 export default function GuideForm(props) {
+    const history = useHistory()
     const methods = useForm();
     const { handleSubmit, control } = methods;
 
     const [ createGuide ] = useMutation(Queries.CREATE_GUIDE);
 
     const onSubmit = data => {
-        console.log(data);
-
         createGuide({ variables: data }).then(response => {
-            toast.success("added");
+            history.push(TRoutes.GUIDES)
         }).catch(e => {});
     }
 
