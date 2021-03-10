@@ -12,4 +12,5 @@ export class TRoutes {
     static GUIDES = '/guides'
     static COMMUNITY = '/community'
     static GUIDES_SUBMIT = '/guides/submit'
+    static PROFILE = '/profile'
 }

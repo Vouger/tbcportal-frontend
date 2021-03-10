@@ -14,6 +14,7 @@ import Notification from '../pages/Notification'
 import Guides from '../pages/Guides'
 import Guide from '../pages/Guide'
 import GuidesSubmit from '../pages/GuidesSubmit'
+import Profile from "../pages/Profile";
 
 function Routes() {
     return (
@@ -33,6 +34,7 @@ function Routes() {
             <Route exact path={TRoutes.COMMUNITY} component={Guides} />
 
             <PrivateRoute exact path={TRoutes.GUIDES_SUBMIT} component={GuidesSubmit} />
+            <PrivateRoute exact path={TRoutes.PROFILE} component={Profile} />
 
             <Route exact path={TRoutes.GUIDE()} component={Guide} />
         </Switch>

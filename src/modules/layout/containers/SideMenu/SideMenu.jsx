@@ -66,6 +66,12 @@ export default function SideMenu(props) {
             <List>
                 <If condition={props.isAuth}>
                     <Then>
+                        <ListItem button component={Link} to={TRoutes.PROFILE}>
+                            <ListItemIcon>
+                                <AccountCircleIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Profile" />
+                        </ListItem>
                         <ListItem button onClick={handleLogout}>
                             <ListItemIcon>
                                 <ExitToAppIcon />
