@@ -1,0 +1,15 @@
+.root {
+  border-top: 1px solid #2f3135;
+}
+
+.online {
+  &:before {
+    content:"\A";
+    width:10px;
+    height:10px;
+    margin-right: 5px;
+    border-radius:50%;
+    background: #f00;
+    display:inline-block;
+  }
+}
