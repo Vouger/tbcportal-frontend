@@ -5,7 +5,7 @@ import { useMutation } from '@apollo/client'
 import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 
-import { Queries } from "../../../../shared/queries"
+import queries from "../../../../queries"
 import styles from './ChangePasswordForm.module.scss'
 import PasswordInput from "../../../UI/components/Field/PasswordInput";
 import * as userActions from "../../../../redux/ducks/user";
@@ -16,7 +16,7 @@ function ChangePasswordForm(props) {
     const methods = useForm();
     const { handleSubmit } = methods;
 
-    const [ passwordChange ] = useMutation(Queries.PASSWORD_CHANGE);
+    const [ passwordChange ] = useMutation(queries.auth.PASSWORD_CHANGE);
 
     const onSubmit = data => {
         data.token = confToken;

@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom'
 import { useMutation } from '@apollo/client'
 
 import FormInput from "../../../UI/components/Field/FormInput"
-import { Queries } from "../../../../shared/queries";
+import queries from "../../../../queries";
 import { TRoutes } from "../../../../shared/types";
 import styles from './RegistrationForm.module.scss'
 import PasswordInput from "../../../UI/components/Field/PasswordInput";
@@ -19,7 +19,7 @@ export default function RegistrationForm(props) {
     const password = watch('password');
     const verify = watch('verify');
 
-    const [Registration] = useMutation(Queries.REGISTRATION);
+    const [Registration] = useMutation(queries.auth.REGISTRATION);
 
     const onSubmit = data => {
         if (data.password !== data.verify) {

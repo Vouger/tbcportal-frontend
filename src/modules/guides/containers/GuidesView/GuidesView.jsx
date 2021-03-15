@@ -6,14 +6,14 @@ import Layout from "../../../layout/containers/Layout/Layout";
 import FilterView from "../FilterView/FilterView";
 import GuidesListView from "../GuidesListView/GuidesListView";
 import GuidesHeaderView from "../GuidesHeaderView/GuidesHeaderView";
-import { Queries } from "../../../../shared/queries";
+import queries from "../../../../queries";
 import styles from './GuidesView.module.scss'
 
 export default function GuidesView() {
     const [filterClass, setFilterClass] = useState('all');
     const [filterContent, setFilterContent] = useState('all');
 
-    const { loading, data, refetch } = useQuery(Queries.GET_GUIDES, {
+    const { loading, data, refetch } = useQuery(queries.guides.GET_GUIDES, {
         variables: { filterClass, filterContent }
     });
 

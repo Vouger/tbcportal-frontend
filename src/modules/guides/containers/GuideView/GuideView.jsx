@@ -6,12 +6,12 @@ import { Box, Grid, Paper } from "@material-ui/core";
 import DetailsHeader from "../DetailsHeader/DetailsHeader";
 import Layout from "../../../layout/containers/Layout/Layout";
 import RawHtml from "../../../UI/components/RawHtml/RawHtml";
-import { Queries } from "../../../../shared/queries";
+import queries from "../../../../queries";
 import styles from './GuideView.module.scss'
 
 export default function GuideView() {
     const { id } = useParams()
-    const { loading, data } = useQuery(Queries.GET_GUIDE, {
+    const { loading, data } = useQuery(queries.guides.GET_GUIDE, {
         variables: { id }
     });
 

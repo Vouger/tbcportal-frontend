@@ -4,7 +4,7 @@ import { useForm, FormProvider  } from 'react-hook-form'
 import { useMutation } from '@apollo/client'
 
 import FormInput from "../../../UI/components/Field/FormInput"
-import { Queries } from "../../../../shared/queries"
+import queries from "../../../../queries"
 import styles from './PasswordForm.module.scss'
 import { TRoutes } from "../../../../shared/types";
 import { useHistory } from "react-router-dom";
@@ -14,7 +14,7 @@ export default function PasswordForm() {
     const methods = useForm();
     const { handleSubmit } = methods;
 
-    const [ passwordRequest ] = useMutation(Queries.PASSWORD_REQUEST);
+    const [ passwordRequest ] = useMutation(queries.auth.PASSWORD_REQUEST);
 
     const onSubmit = data => {
         passwordRequest({ variables: data }).then(response => {

@@ -6,7 +6,7 @@ import {useHistory} from "react-router-dom";
 
 import FormInput from "../../../UI/components/Field/FormInput";
 import ContentEditor from "../../../UI/components/ContentEditor/ContentEditor";
-import {Queries} from "../../../../shared/queries";
+import queries from "../../../../queries";
 import SelectInput from "../../../UI/components/Field/SelectInput";
 import {TRoutes} from "../../../../shared/types";
 import styles from "./GuideForm.module.scss";
@@ -17,7 +17,7 @@ export default function GuideForm(props) {
     const methods = useForm();
     const { handleSubmit, control } = methods;
 
-    const [ createGuide ] = useMutation(Queries.CREATE_GUIDE);
+    const [ createGuide ] = useMutation(queries.guides.CREATE_GUIDE);
 
     const onSubmit = data => {
         createGuide({ variables: data }).then(response => {

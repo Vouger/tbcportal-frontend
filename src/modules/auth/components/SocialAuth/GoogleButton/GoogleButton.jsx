@@ -4,11 +4,11 @@ import { useMutation } from "@apollo/client"
 import { Button } from "@material-ui/core"
 
 import GoogleIcon from "../../../../UI/components/icons/GoogleIcon";
-import { Queries } from "../../../../../shared/queries"
+import queries from "../../../../../queries"
 import styles from "./GoogleButton.module.scss"
 
 function GoogleButton(props) {
-    const [ GoogleAuth ] = useMutation(Queries.GOOGLE);
+    const [ GoogleAuth ] = useMutation(queries.auth.GOOGLE);
 
     const handleGoogleLogin = async googleData => {
         if (!googleData.tokenId) {

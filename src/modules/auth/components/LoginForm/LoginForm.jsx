@@ -6,7 +6,7 @@ import { useMutation } from '@apollo/client'
 import {useHistory} from "react-router-dom";
 
 import FormInput from "../../../UI/components/Field/FormInput"
-import { Queries } from "../../../../shared/queries"
+import queries from "../../../../queries"
 import * as userActions from '../../../../redux/ducks/user'
 import { setToken } from "../../../../shared/helpers"
 import styles from './LoginForm.module.scss'
@@ -19,7 +19,7 @@ function LoginForm(props) {
     const methods = useForm();
     const { register, handleSubmit } = methods;
 
-    const [ login ] = useMutation(Queries.LOGIN);
+    const [ login ] = useMutation(queries.auth.LOGIN);
 
 
     const handleLogin = token => {

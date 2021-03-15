@@ -6,7 +6,7 @@ import { Paper, Grid, Typography, LinearProgress } from '@material-ui/core'
 import { connect } from "react-redux";
 
 import Layout from "../../../layout/containers/Layout/Layout";
-import { Queries } from "../../../../shared/queries";
+import queries from "../../../../queries";
 import { setToken } from "../../../../shared/helpers";
 import * as userActions from "../../../../redux/ducks/user";
 import styles from './ConfirmationView.module.scss'
@@ -15,7 +15,7 @@ function ConfirmationView(props) {
     const { token: confToken } = useParams()
     const [isConfirmed, setConfirmed] = useState(false)
     const [error, setError] = useState('')
-    const [ confirmation ] = useMutation(Queries.CONFIRMATION, {
+    const [ confirmation ] = useMutation(queries.auth.CONFIRMATION, {
         onError: error => {
             setError(error.message);
         }
