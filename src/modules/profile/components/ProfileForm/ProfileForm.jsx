@@ -5,14 +5,14 @@ import {toast} from "react-toastify";
 import {useMutation, useQuery} from "@apollo/client";
 
 import FormInput from "../../../UI/components/Field/FormInput";
-import {Queries} from "../../../../shared/queries";
+import queries from "../../../../queries";
 import styles from './ProfileForm.module.scss'
 
 export default function ProfileForm() {
     const methods = useForm();
     const {handleSubmit, setValue} = methods;
-    const { loading, data, refetch } = useQuery(Queries.PROFILE);
-    const [ UpdateProfile ] = useMutation(Queries.UPDATE_PROFILE);
+    const { loading, data, refetch } = useQuery(queries.profile.PROFILE);
+    const [ UpdateProfile ] = useMutation(queries.profile.UPDATE_PROFILE);
 
     useEffect(() => {
         if (!loading) {
