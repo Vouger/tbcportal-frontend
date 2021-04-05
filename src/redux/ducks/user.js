@@ -1,21 +1,25 @@
-import { getToken } from "../../shared/helpers";
+import { getAuth } from "../../shared/helpers";
 
 const name = 'user'
 const LOG_IN = `${name}/LOG_IN`
 const CLEAN = `${name}/CLEAN`
-const token = getToken()
+const auth = getAuth();
 
 const initialState = () => ({
-    isAuth: !!token,
+    isAuth: !!auth.token,
+    role: auth.role,
 })
 
 export default function reducer(state = initialState(), action = {}) {
     const { payload } = action
+    const auth = getAuth();
+
     switch (action.type) {
         case LOG_IN: {
             return {
                 ...state,
-                isAuth: true,
+                isAuth: !!auth.token,
+                role: auth.role,
                 ...payload
             }
         }

@@ -7,9 +7,8 @@ import { connect } from "react-redux";
 
 import Layout from "../../../layout/containers/Layout/Layout";
 import queries from "../../../../queries";
-import { setToken } from "../../../../shared/helpers";
+import { setAuth } from "../../../../shared/helpers";
 import * as userActions from "../../../../redux/ducks/user";
-import styles from './ConfirmationView.module.scss'
 
 function ConfirmationView(props) {
     const { token: confToken } = useParams()
@@ -23,12 +22,12 @@ function ConfirmationView(props) {
 
     useEffect(() => {
         confirmation({ variables: { token: confToken } }).then(response => {
-            const token = response && response.data && response.data.confirmation.token
+            const {token, role} = response && response.data && response.data.confirmation;
 
             if (token) {
                 setConfirmed(true);
 
-                setToken(token);
+                setAuth({token, role});
 
                 setTimeout(function () {
                     props.logInAction();

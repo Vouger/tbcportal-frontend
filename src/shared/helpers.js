@@ -1,16 +1,16 @@
 import store from '../redux'
 import { clean as userStoreClean } from '../redux/ducks/user'
 
-export function setToken(token) {
-    localStorage.setItem('token', token)
+export function setAuth({token, role}) {
+    localStorage.setItem('auth', JSON.stringify({ token, role }))
 }
 
-export function getToken() {
-    return localStorage.getItem('token');
+export function getAuth() {
+    return JSON.parse(localStorage.getItem('auth') || '{}')
 }
 
-export function cleanToken() {
-    localStorage.removeItem('token')
+export function cleanAuth() {
+    localStorage.removeItem('auth')
 
     store.dispatch(userStoreClean())
 }

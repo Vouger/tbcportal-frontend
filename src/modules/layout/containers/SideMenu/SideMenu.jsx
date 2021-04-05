@@ -17,13 +17,13 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 import {TRoutes} from "../../../../shared/types";
 import styles from './SideMenu.module.scss'
-import {cleanToken} from "../../../../shared/helpers";
+import { cleanAuth } from "../../../../shared/helpers";
 import {Else, If, Then} from "react-if";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 
 export default function SideMenu(props) {
     const handleLogout = () => {
-        cleanToken();
+        cleanAuth();
     }
 
     return (

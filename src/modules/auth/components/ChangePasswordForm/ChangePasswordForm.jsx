@@ -9,7 +9,7 @@ import queries from "../../../../queries"
 import styles from './ChangePasswordForm.module.scss'
 import PasswordInput from "../../../UI/components/Field/PasswordInput";
 import * as userActions from "../../../../redux/ducks/user";
-import {setToken} from "../../../../shared/helpers";
+import { setAuth } from "../../../../shared/helpers";
 
 function ChangePasswordForm(props) {
     const { token: confToken } = useParams()
@@ -22,10 +22,10 @@ function ChangePasswordForm(props) {
         data.token = confToken;
 
         passwordChange({ variables: data }).then(response => {
-            const token = response && response.data && response.data.passwordChange.token
+            const {token, role} = response && response.data && response.data.passwordChange;
 
             if (token) {
-                setToken(token);
+                setAuth({token, role});
 
                 props.logInAction();
             }

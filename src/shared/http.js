@@ -4,7 +4,7 @@ import { onError } from "@apollo/client/link/error";
 import { toast } from "react-toastify";
 import jwt_decode from "jwt-decode";
 
-import { cleanToken, getToken } from "./helpers";
+import {cleanAuth, getAuth} from "./helpers";
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
     if (graphQLErrors)
@@ -20,17 +20,19 @@ const httpLink = createHttpLink({
 });
 
 const authLink = setContext((_, { headers }) => {
-    let token = getToken();
+    let auth = getAuth();
+    let token = auth.token;
 
     if (token) {
         const { exp } = jwt_decode(token);
 
         if (exp * 1000 < Date.now()) {
-            cleanToken();
+            cleanAuth();
         }
     }
 
-    token = getToken();
+    auth = getAuth();
+    token = auth.token;
 
     return {
         headers: {

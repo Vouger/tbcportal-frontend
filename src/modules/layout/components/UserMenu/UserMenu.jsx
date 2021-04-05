@@ -4,7 +4,7 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import {Else, If, Then} from "react-if";
 import {Link} from "react-router-dom";
 
-import {cleanToken} from "../../../../shared/helpers";
+import { cleanAuth } from "../../../../shared/helpers";
 import {TRoutes} from "../../../../shared/types";
 import styles from "./UserMenu.module.scss";
 
@@ -12,7 +12,7 @@ export default function UserMenu(props) {
     const [anchorEl, setAnchorEl] = useState(null);
 
     const handleLogout = () => {
-        cleanToken();
+        cleanAuth();
     }
 
     const handleClose = () => {

@@ -1,7 +1,7 @@
 import twitch from './twitch'
 import guides from './guides'
 import profile from './profile'
-import auth from './profile'
+import auth from './auth'
 
 const queries = {
     twitch,

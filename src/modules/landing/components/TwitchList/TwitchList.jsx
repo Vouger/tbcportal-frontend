@@ -8,8 +8,8 @@ export default function TwitchList(props) {
 
     return (
         <List>
-            {data && data.twitch.map((item) => (
-                <TwitchItem item={item} />
+            {data && data.twitch.map((item, i) => (
+                <TwitchItem item={item} key={i} />
             ))}
         </List>
     )

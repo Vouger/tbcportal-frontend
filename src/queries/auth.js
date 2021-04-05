@@ -5,6 +5,7 @@ export default class Auth {
         mutation Login($email: String!, $password: String!, $remember: Boolean!) {
             login (data: { email: $email, password: $password, remember: $remember }) {
                 email
+                role
                 token
             }
         }
@@ -14,6 +15,7 @@ export default class Auth {
         mutation Confirmation($token: String!) {
             confirmation (data: { token: $token }) {
                 email
+                role
                 token
             }
         }
@@ -37,6 +39,7 @@ export default class Auth {
         mutation GoogleAuth($token: String!) {
             googleAuth (data: { token: $token }) {
                 email
+                role
                 token
             }
         }
@@ -54,6 +57,7 @@ export default class Auth {
         mutation PasswordChange($token: String!, $password: String!) {
             passwordChange (data: { token: $token, password: $password }) {
                 email
+                role
                 token
             }
         }

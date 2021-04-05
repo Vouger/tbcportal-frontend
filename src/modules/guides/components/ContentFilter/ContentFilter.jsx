@@ -2,7 +2,6 @@ import React from "react";
 import { Grid } from "@material-ui/core";
 
 import FilterButton from "../FilterButton/FilterButton";
-import styles from './ContentFilter.module.scss'
 
 export default function ContentFilter(props) {
     const {filterContent, setFilterContent} = props;

@@ -16,10 +16,10 @@ function GoogleButton(props) {
         }
 
         GoogleAuth({ variables: {token: googleData.tokenId} }).then(response => {
-            const token = response && response.data && response.data.googleAuth.token
+            const {token, role} = response && response.data && response.data.googleAuth
 
             if (token) {
-                props.handleLogin(token);
+                props.handleLogin(token, role);
             }
         }).catch(e => {});
     }

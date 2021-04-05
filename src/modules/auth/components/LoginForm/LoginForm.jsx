@@ -8,12 +8,12 @@ import {useHistory} from "react-router-dom";
 import FormInput from "../../../UI/components/Field/FormInput"
 import queries from "../../../../queries"
 import * as userActions from '../../../../redux/ducks/user'
-import { setToken } from "../../../../shared/helpers"
+import { setAuth } from "../../../../shared/helpers"
 import styles from './LoginForm.module.scss'
 import PasswordInput from "../../../UI/components/Field/PasswordInput"
 import GoogleButton from "../SocialAuth/GoogleButton/GoogleButton";
 
-function LoginForm(props) {
+function LoginForm (props) {
     const { state } = props.location;
     const history = useHistory()
     const methods = useForm();
@@ -21,9 +21,8 @@ function LoginForm(props) {
 
     const [ login ] = useMutation(queries.auth.LOGIN);
 
-
-    const handleLogin = token => {
-        setToken(token);
+    const handleLogin = (token, role) => {
+        setAuth({token, role});
 
         props.logInAction();
 
@@ -34,10 +33,10 @@ function LoginForm(props) {
         data.remember = !!data.remember;
 
         login({ variables: data }).then(response => {
-            const token = response && response.data && response.data.login.token
+            const {token, role} = response && response.data && response.data.login
 
             if (token) {
-                handleLogin(token);
+                handleLogin(token, role);
             }
         }).catch(e => {});
     }
