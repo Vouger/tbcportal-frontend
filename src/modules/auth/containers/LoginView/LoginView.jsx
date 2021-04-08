@@ -9,8 +9,9 @@ import {
 } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
-import {TRoutes} from "../../../../shared/types";
-import Layout from "../../../layout/containers/Layout/Layout";
+import {TRoutes} from "shared/types";
+
+import Layout from "modules/layout/containers/Layout/Layout";
 import LoginForm from '../../components/LoginForm/LoginForm'
 import styles from './LoginView.module.scss'
 

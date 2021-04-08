@@ -4,11 +4,12 @@ import {Button, Grid, MenuItem} from "@material-ui/core";
 import {useMutation} from "@apollo/client";
 import {useHistory} from "react-router-dom";
 
+import queries from "@queries";
+import {TRoutes} from "shared/types";
+
 import FormInput from "../../../UI/components/Field/FormInput";
 import ContentEditor from "../../../UI/components/ContentEditor/ContentEditor";
-import queries from "../../../../queries";
 import SelectInput from "../../../UI/components/Field/SelectInput";
-import {TRoutes} from "../../../../shared/types";
 import styles from "./GuideForm.module.scss";
 
 

@@ -1,7 +1,8 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { TRoutes } from '../shared/types'
+
+import { TRoutes } from 'shared/types'
 
 function OnlyRoute({ isAuth, component: Component, ...rest }) {
     return (

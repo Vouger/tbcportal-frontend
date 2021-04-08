@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
 
-import Layout from "../../../layout/containers/Layout/Layout";
+import Layout from "modules/layout/containers/Layout/Layout";
 import TwitchView from "../TwitchView/TwitchView";
 
 export default function LandingView() {

@@ -1,7 +1,8 @@
 import React from "react";
 
+import {TRoutes} from "shared/types";
+
 import MenuLink from "../MenuLink/MenuLink";
-import {TRoutes} from "../../../../shared/types";
 
 export default function Navigation(props) {
     return (

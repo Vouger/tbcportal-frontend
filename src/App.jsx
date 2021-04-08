@@ -4,8 +4,8 @@ import { ToastContainer } from 'react-toastify'
 import {createMuiTheme, StylesProvider, ThemeProvider} from "@material-ui/core";
 import { ApolloProvider } from '@apollo/client';
 
-import client from './shared/http'
-import history from './shared/history'
+import client from 'shared/http'
+import history from 'shared/history'
 import Routes from './Routes'
 
 import 'react-toastify/dist/ReactToastify.css'

@@ -4,9 +4,10 @@ import { Else, If, Then } from "react-if";
 import { Divider, List } from "@material-ui/core";
 import { AccountCircle, Dashboard, ExitToApp, Home, SupervisorAccount } from "@material-ui/icons";
 
+import { TRoles, TRoutes } from "shared/types";
+import { cleanAuth } from "shared/helpers";
+
 import SideMenuItem from "../SideMenuItem/SideMenuItem";
-import { TRoles, TRoutes } from "../../../../shared/types";
-import { cleanAuth } from "../../../../shared/helpers";
 
 export default function SideMenuList (props) {
     const handleLogout = () => {

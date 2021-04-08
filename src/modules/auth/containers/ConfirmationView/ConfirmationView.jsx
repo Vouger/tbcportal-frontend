@@ -5,10 +5,10 @@ import { Else, If, Then } from 'react-if'
 import { Paper, Grid, Typography, LinearProgress } from '@material-ui/core'
 import { connect } from "react-redux";
 
-import Layout from "../../../layout/containers/Layout/Layout";
-import queries from "../../../../queries";
-import { setAuth } from "../../../../shared/helpers";
-import * as userActions from "../../../../redux/ducks/user";
+import Layout from "modules/layout/containers/Layout/Layout";
+import queries from "@queries";
+import { setAuth } from "shared/helpers";
+import * as userActions from "redux/ducks/user";
 
 function ConfirmationView(props) {
     const { token: confToken } = useParams()

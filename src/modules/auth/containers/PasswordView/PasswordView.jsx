@@ -2,7 +2,7 @@ import React from 'react';
 import { Avatar, CssBaseline, Typography } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
-import Layout from "../../../layout/containers/Layout/Layout";
+import Layout from "modules/layout/containers/Layout/Layout";
 import PasswordForm from '../../components/PasswordForm/PasswordForm'
 import styles from './PasswordView.module.scss'
 

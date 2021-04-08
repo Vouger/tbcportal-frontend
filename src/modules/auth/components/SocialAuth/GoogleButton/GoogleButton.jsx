@@ -3,8 +3,9 @@ import GoogleLogin from "react-google-login"
 import { useMutation } from "@apollo/client"
 import { Button } from "@material-ui/core"
 
-import GoogleIcon from "../../../../UI/components/icons/GoogleIcon";
-import queries from "../../../../../queries"
+import queries from "@queries";
+import GoogleIcon from "modules/UI/components/icons/GoogleIcon";
+
 import styles from "./GoogleButton.module.scss"
 
 function GoogleButton(props) {

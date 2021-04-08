@@ -5,13 +5,14 @@ import { useForm, FormProvider  } from 'react-hook-form'
 import { useMutation } from '@apollo/client'
 import {useHistory} from "react-router-dom";
 
+import queries from "@queries";
+import { setAuth } from "shared/helpers"
+import * as userActions from 'redux/ducks/user'
+
 import FormInput from "../../../UI/components/Field/FormInput"
-import queries from "../../../../queries"
-import * as userActions from '../../../../redux/ducks/user'
-import { setAuth } from "../../../../shared/helpers"
-import styles from './LoginForm.module.scss'
 import PasswordInput from "../../../UI/components/Field/PasswordInput"
 import GoogleButton from "../SocialAuth/GoogleButton/GoogleButton";
+import styles from './LoginForm.module.scss'
 
 function LoginForm (props) {
     const { state } = props.location;

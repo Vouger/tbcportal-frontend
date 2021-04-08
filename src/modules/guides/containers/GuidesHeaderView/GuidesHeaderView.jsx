@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import {Button, Grid, Typography} from "@material-ui/core";
 
+import {TRoutes} from "shared/types";
+
 import styles from "./GuidesHeaderView.module.scss";
-import {TRoutes} from "../../../../shared/types";
 
 export default function GuidesHeaderView(props) {
     const { title } = props;

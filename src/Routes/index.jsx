@@ -1,6 +1,7 @@
 import { Route, Switch } from 'react-router-dom'
 
-import { TRoutes } from '../shared/types'
+import { TRoutes } from 'shared/types'
+
 import OnlyPublicRoute from "./OnlyPublicRoute";
 import PrivateRoute from './PrivateRoute'
 

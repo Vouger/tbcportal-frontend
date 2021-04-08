@@ -2,12 +2,13 @@ import React from 'react'
 import { Button } from '@material-ui/core'
 import { useForm, FormProvider  } from 'react-hook-form'
 import { useMutation } from '@apollo/client'
+import { useHistory } from "react-router-dom"
+
+import queries from "@queries";
+import { TRoutes } from "shared/types";
 
 import FormInput from "../../../UI/components/Field/FormInput"
-import queries from "../../../../queries"
 import styles from './PasswordForm.module.scss'
-import { TRoutes } from "../../../../shared/types";
-import { useHistory } from "react-router-dom";
 
 export default function PasswordForm() {
     const history = useHistory()

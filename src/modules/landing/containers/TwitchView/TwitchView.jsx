@@ -2,7 +2,7 @@ import React from "react";
 import { Paper, Typography } from "@material-ui/core";
 import {useQuery} from "@apollo/client";
 
-import queries from "../../../../queries";
+import queries from "@queries";
 import TwitchList from "../../components/TwitchList/TwitchList";
 import styles from "./TwitchView.module.scss";
 

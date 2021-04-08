@@ -5,7 +5,7 @@ import {toast} from "react-toastify";
 import {useMutation, useQuery} from "@apollo/client";
 
 import FormInput from "../../../UI/components/Field/FormInput";
-import queries from "../../../../queries";
+import queries from "@queries";
 import styles from './ProfileForm.module.scss'
 
 export default function ProfileForm() {

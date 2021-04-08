@@ -4,7 +4,7 @@ import { routerMiddleware } from 'react-router-redux'
 
 import ducksReducers from './ducks'
 
-import history from '../shared/history'
+import history from 'shared/history'
 
 const middleware = [routerMiddleware(history)]
 

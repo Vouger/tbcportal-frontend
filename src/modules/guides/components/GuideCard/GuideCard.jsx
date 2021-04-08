@@ -11,8 +11,9 @@ import {Visibility} from "@material-ui/icons";
 import {Link} from "react-router-dom";
 import clsx from "clsx";
 
+import {TRoutes} from "shared/types";
+
 import styles from './GuideCard.module.scss'
-import {TRoutes} from "../../../../shared/types";
 
 export default function GuideCard(props) {
     const { id, title, views, user, className, thumbnailUrl } = props.guide;

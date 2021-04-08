@@ -4,9 +4,9 @@ import { useQuery } from "@apollo/client";
 import { Box, Grid, Paper } from "@material-ui/core";
 
 import DetailsHeader from "../DetailsHeader/DetailsHeader";
-import Layout from "../../../layout/containers/Layout/Layout";
+import Layout from "modules/layout/containers/Layout/Layout";
 import RawHtml from "../../../UI/components/RawHtml/RawHtml";
-import queries from "../../../../queries";
+import queries from "@queries";
 import styles from './GuideView.module.scss'
 
 export default function GuideView() {

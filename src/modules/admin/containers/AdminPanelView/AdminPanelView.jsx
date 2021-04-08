@@ -1,10 +1,10 @@
 import React from "react";
 
-import Layout from "../../layout/containers/Layout/Layout";
+import Layout from "modules/layout/containers/Layout/Layout";
 
 export default function AdminPanelView() {
     return (
-        <Layout maxWidth="sm">
+        <Layout maxWidth="xl">
             admin panel
         </Layout>
     )

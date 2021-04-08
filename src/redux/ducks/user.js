@@ -1,4 +1,4 @@
-import { getAuth } from "../../shared/helpers";
+import { getAuth } from "shared/helpers";
 
 const name = 'user'
 const LOG_IN = `${name}/LOG_IN`

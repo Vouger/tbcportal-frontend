@@ -2,11 +2,12 @@ import React, {useEffect, useState} from "react";
 import { useQuery } from "@apollo/client";
 import { Paper } from "@material-ui/core";
 
-import Layout from "../../../layout/containers/Layout/Layout";
+import queries from "@queries";
+
+import Layout from "modules/layout/containers/Layout/Layout";
 import FilterView from "../FilterView/FilterView";
 import GuidesListView from "../GuidesListView/GuidesListView";
 import GuidesHeaderView from "../GuidesHeaderView/GuidesHeaderView";
-import queries from "../../../../queries";
 import styles from './GuidesView.module.scss'
 
 export default function GuidesView() {

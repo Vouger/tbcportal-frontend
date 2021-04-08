@@ -4,9 +4,10 @@ import { useForm, FormProvider  } from 'react-hook-form'
 import { useHistory } from 'react-router-dom'
 import { useMutation } from '@apollo/client'
 
+import queries from "@queries";
+import { TRoutes } from "shared/types";
+
 import FormInput from "../../../UI/components/Field/FormInput"
-import queries from "../../../../queries";
-import { TRoutes } from "../../../../shared/types";
 import styles from './RegistrationForm.module.scss'
 import PasswordInput from "../../../UI/components/Field/PasswordInput";
 

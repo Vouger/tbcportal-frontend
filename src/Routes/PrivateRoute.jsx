@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Route, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import { TRoutes } from '../shared/types'
+import { TRoutes } from 'shared/types'
 
 function PrivateRoute({ isAuth, component: Component, ...rest }) {
     return (

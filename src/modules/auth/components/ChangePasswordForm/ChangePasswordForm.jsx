@@ -5,11 +5,12 @@ import { useMutation } from '@apollo/client'
 import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 
-import queries from "../../../../queries"
-import styles from './ChangePasswordForm.module.scss'
+import queries from "@queries";
+import { setAuth } from "shared/helpers";
+import * as userActions from "redux/ducks/user";
+
 import PasswordInput from "../../../UI/components/Field/PasswordInput";
-import * as userActions from "../../../../redux/ducks/user";
-import { setAuth } from "../../../../shared/helpers";
+import styles from './ChangePasswordForm.module.scss'
 
 function ChangePasswordForm(props) {
     const { token: confToken } = useParams()
