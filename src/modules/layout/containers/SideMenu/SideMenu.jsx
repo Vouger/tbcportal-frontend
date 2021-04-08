@@ -5,21 +5,19 @@ import {
     Drawer,
     Divider,
     List,
-    IconButton,
-    ListItem,
-    ListItemIcon,
-    ListItemText
+    IconButton
 } from '@material-ui/core'
+import {Else, If, Then} from "react-if";
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import HomeIcon from '@material-ui/icons/Home';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-
-import {TRoutes} from "../../../../shared/types";
-import styles from './SideMenu.module.scss'
-import { cleanAuth } from "../../../../shared/helpers";
-import {Else, If, Then} from "react-if";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+
+import SideMenuItem from "../../components/SideMenuItem/SideMenuItem";
+import {TRoutes} from "../../../../shared/types";
+import { cleanAuth } from "../../../../shared/helpers";
+import styles from './SideMenu.module.scss'
 
 export default function SideMenu(props) {
     const handleLogout = () => {
@@ -47,45 +45,18 @@ export default function SideMenu(props) {
             <Divider />
 
             <List>
-                <ListItem button component={Link} to={TRoutes.MAIN}>
-                    <ListItemIcon>
-                        <HomeIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Home" />
-                </ListItem>
-                <ListItem button component={Link} to={TRoutes.GUIDES}>
-                    <ListItemIcon>
-                        <DashboardIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Guides" />
-                </ListItem>
-            </List>
+                <SideMenuItem component={Link} to={TRoutes.MAIN} label="Home" icon={HomeIcon} />
+                <SideMenuItem component={Link} to={TRoutes.GUIDES} label="Guides" icon={DashboardIcon} />
 
-            <Divider />
+                <Divider />
 
-            <List>
                 <If condition={props.isAuth}>
                     <Then>
-                        <ListItem button component={Link} to={TRoutes.PROFILE}>
-                            <ListItemIcon>
-                                <AccountCircleIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Profile" />
-                        </ListItem>
-                        <ListItem button onClick={handleLogout}>
-                            <ListItemIcon>
-                                <ExitToAppIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Logout" />
-                        </ListItem>
+                        <SideMenuItem component={Link} to={TRoutes.PROFILE} label="Profile" icon={AccountCircleIcon} />
+                        <SideMenuItem onClick={handleLogout} label="Logout" icon={ExitToAppIcon} />
                     </Then>
                     <Else>
-                        <ListItem button component={Link} to={TRoutes.LOGIN}>
-                            <ListItemIcon>
-                                <AccountCircleIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Login" />
-                        </ListItem>
+                        <SideMenuItem component={Link} to={TRoutes.LOGIN} label="Login" icon={AccountCircleIcon} />
                     </Else>
                 </If>
             </List>
