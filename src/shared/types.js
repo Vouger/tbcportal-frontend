@@ -13,4 +13,11 @@ export class TRoutes {
     static COMMUNITY = '/community'
     static GUIDES_SUBMIT = '/guides/submit'
     static PROFILE = '/profile'
+
+    static ADMIN_PANEL = '/admin'
+}
+
+export class TRoles {
+    static USER = 'User'
+    static ADMIN = 'Admin'
 }

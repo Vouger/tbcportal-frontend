@@ -15,6 +15,7 @@ import Guides from '../pages/Guides'
 import Guide from '../pages/Guide'
 import GuidesSubmit from '../pages/GuidesSubmit'
 import Profile from "../pages/Profile";
+import AdminPanel from "../pages/AdminPanel";
 
 function Routes() {
     return (
@@ -35,6 +36,8 @@ function Routes() {
 
             <PrivateRoute exact path={TRoutes.GUIDES_SUBMIT} component={GuidesSubmit} />
             <PrivateRoute exact path={TRoutes.PROFILE} component={Profile} />
+
+            <PrivateRoute exact path={TRoutes.ADMIN_PANEL} component={AdminPanel} />
 
             <Route exact path={TRoutes.GUIDE()} component={Guide} />
         </Switch>

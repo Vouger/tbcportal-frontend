@@ -5,7 +5,7 @@ import {Else, If, Then} from "react-if";
 import {Link} from "react-router-dom";
 
 import { cleanAuth } from "../../../../shared/helpers";
-import {TRoutes} from "../../../../shared/types";
+import {TRoles, TRoutes} from "../../../../shared/types";
 import styles from "./UserMenu.module.scss";
 
 export default function UserMenu(props) {
@@ -37,6 +37,12 @@ export default function UserMenu(props) {
                     open={Boolean(anchorEl)}
                     onClose={handleClose}
                 >
+                    <If condition={props.role === TRoles.ADMIN}>
+                        <Then>
+                            <MenuItem component={Link} to={TRoutes.ADMIN_PANEL}>Admin panel</MenuItem>
+                        </Then>
+                    </If>
+
                     <MenuItem component={Link} to={TRoutes.PROFILE}>Profile</MenuItem>
                     <MenuItem onClick={handleLogout}>Logout</MenuItem>
                 </Menu>

@@ -31,7 +31,7 @@ export default function Header(props) {
                 </Box>
 
                 <Box display={{ xs: 'none', sm: 'block' }}>
-                    <UserMenu isAuth={props.isAuth} />
+                    <UserMenu isAuth={props.isAuth} role={props.role} />
                 </Box>
             </Toolbar>
         </AppBar>

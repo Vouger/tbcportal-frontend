@@ -13,9 +13,9 @@ function Layout(props) {
     return (
         <div className={styles.root}>
 
-            <Header open={open} setOpen={setOpen} isAuth={props.isAuth} title={props.title}/>
+            <Header open={open} setOpen={setOpen} isAuth={props.isAuth} role={props.role} title={props.title}/>
 
-            <SideMenu open={open} setOpen={setOpen} isAuth={props.isAuth} />
+            <SideMenu open={open} setOpen={setOpen} isAuth={props.isAuth} role={props.role} />
 
             <Container component="main" maxWidth={props.maxWidth || "lg"} className={styles.content}>
                 <div className={styles.appBarSpacer} />
@@ -28,11 +28,13 @@ function Layout(props) {
 }
 
 Header.propTypes = {
-    isAuth: PropTypes.bool.isRequired
+    isAuth: PropTypes.bool.isRequired,
+    role: PropTypes.string.isRequired
 }
 
 const mapStateToProps = state => ({
-    isAuth: state.user.isAuth
+    isAuth: state.user.isAuth,
+    role: state.user.role
 })
 
 export default connect(mapStateToProps)(Layout)
