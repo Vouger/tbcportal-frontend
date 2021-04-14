@@ -1,7 +1,9 @@
 import React, {useState} from "react";
+import {Link} from "react-router-dom";
 import {IconButton, Menu, MenuItem} from "@material-ui/core";
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
+import {TRoutes} from "shared/types";
 
 export default function TableActions (props) {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -13,11 +15,6 @@ export default function TableActions (props) {
 
     const handleClose = () => {
         setAnchorEl(null);
-    };
-
-    const handleEdit = () => {
-        handleClose();
-        props.handleEdit(id);
     };
 
     const handleDelete = () => {
@@ -47,7 +44,7 @@ export default function TableActions (props) {
                     }
                 }}
             >
-                <MenuItem key="edit" onClick={handleEdit}>
+                <MenuItem key="edit" component={Link} to={TRoutes.EDIT_TWITCH_ADMIN(id)}>
                     Edit
                 </MenuItem>
 

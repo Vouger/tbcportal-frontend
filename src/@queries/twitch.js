@@ -34,4 +34,10 @@ export default class Twitch {
             }
         }
     `;
+
+    static REMOVE = gql`
+        mutation RemoveTwitchStream($id: String!) {
+            removeTwitchStream (id: $id)
+        }
+    `;
 }

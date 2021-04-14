@@ -1,5 +1,4 @@
 import React from "react";
-import {useQuery} from "@apollo/client";
 import {
     Table,
     TableBody,
@@ -9,19 +8,10 @@ import {
     TableRow,
 } from "@material-ui/core";
 
-import queries from "@queries";
 import TableActions from "modules/admin/components/TableActions/TableActions";
 
-export default function TwitchTable() {
-    const { loading, data } = useQuery(queries.twitch.GET_ADMIN);
-
-    const handleEdit = (id) => {
-        console.log('handleEdit', id)
-    };
-
-    const handleDelete = (id) => {
-        console.log('handleDelete', id)
-    };
+export default function TwitchTable(props) {
+    const {data, handleDelete} = props;
 
     return (
         <TableContainer color='secondary'>
@@ -34,12 +24,12 @@ export default function TwitchTable() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {!loading && data && data.adminTwitch.map((row) => (
+                    {data.adminTwitch.map((row) => (
                         <TableRow key={row.id}>
                             <TableCell>{row.name}</TableCell>
                             <TableCell align="right">{row.order}</TableCell>
                             <TableCell align="right">
-                                <TableActions id={row.id} handleEdit={handleEdit} handleDelete={handleDelete} />
+                                <TableActions id={row.id} handleDelete={handleDelete} />
                             </TableCell>
                         </TableRow>
                     ))}

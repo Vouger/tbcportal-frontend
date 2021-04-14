@@ -16,6 +16,7 @@ export class TRoutes {
 
     static ADMIN_PANEL = '/admin'
     static ADD_TWITCH_ADMIN = '/admin/twitch/add'
+    static EDIT_TWITCH_ADMIN = (id = ':id') => `/admin/twitch/${id}`
 }
 
 export class TRoles {
