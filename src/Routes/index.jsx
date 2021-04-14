@@ -17,9 +17,10 @@ import Guide from '../pages/Guide'
 import GuidesSubmit from '../pages/GuidesSubmit'
 import Profile from "../pages/Profile";
 import AdminPanel from "../pages/AdminPanel";
+import AdminTwitchAdd from "pages/AdminTwitchAdd";
 
 function Routes() {
-    return (
+        return (
         <Switch>
             <OnlyPublicRoute exact path={TRoutes.LOGIN} component={Login}/>
             <OnlyPublicRoute exact path={TRoutes.SIGNUP} component={Registration}/>
@@ -39,6 +40,7 @@ function Routes() {
             <PrivateRoute exact path={TRoutes.PROFILE} component={Profile} />
 
             <PrivateRoute exact path={TRoutes.ADMIN_PANEL} component={AdminPanel} />
+            <PrivateRoute exact path={TRoutes.ADD_TWITCH_ADMIN} component={AdminTwitchAdd} />
 
             <Route exact path={TRoutes.GUIDE()} component={Guide} />
         </Switch>

@@ -15,6 +15,7 @@ export class TRoutes {
     static PROFILE = '/profile'
 
     static ADMIN_PANEL = '/admin'
+    static ADD_TWITCH_ADMIN = '/admin/twitch/add'
 }
 
 export class TRoles {
