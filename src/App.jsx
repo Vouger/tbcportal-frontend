@@ -35,7 +35,7 @@ function App() {
                 default: '#201815',
                 paper: "#020405"
             },
-            action:{
+            action: {
                 active: '#f8b700',
                 selected: '#f8b700',
                 hover: '#f8b700',
