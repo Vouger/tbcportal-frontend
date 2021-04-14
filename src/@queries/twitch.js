@@ -21,4 +21,17 @@ export default class Twitch {
             }
         }
     `;
+
+    static ADD = gql`
+        mutation CreateTwitchStream($name: String!, $order: Float!) {
+            createTwitchStream (
+                data: {
+                    name: $name,
+                    order: $order
+                }
+            ){
+                name
+            }
+        }
+    `;
 }
