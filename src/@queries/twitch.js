@@ -11,4 +11,14 @@ export default class Twitch {
             }
         }
     `;
+
+    static GET_ADMIN = gql`
+        query adminTwitch {
+            adminTwitch {
+                id
+                name
+                order
+            }
+        }
+    `;
 }
