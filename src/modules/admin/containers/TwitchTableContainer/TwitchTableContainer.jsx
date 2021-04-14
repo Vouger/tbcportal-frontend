@@ -56,7 +56,7 @@ export default function TwitchTableContainer() {
                 </Tooltip>
             </Toolbar>
 
-            {loading && "Loading..,"}
+            {loading && "Loading..."}
 
             {!loading && data &&
                 <TwitchTable handleDelete={handleDelete} data={data}/>
