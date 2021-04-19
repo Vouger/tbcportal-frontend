@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {useQuery} from "@apollo/client";
-import {Paper, Typography} from "@material-ui/core";
+import {LinearProgress, Paper, Typography} from "@material-ui/core";
 
 import queries from "@queries";
 import Post from "modules/landing/components/Post/Post";
@@ -19,7 +19,7 @@ export default function PostsView() {
                 News
             </Typography>
 
-            {loading ? "Loading..." : ""}
+            {loading ? <LinearProgress /> : ""}
 
             {!loading && data && data.guides.length === 0 ? "Nothing found" : ""}
 

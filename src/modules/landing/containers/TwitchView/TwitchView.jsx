@@ -1,5 +1,5 @@
 import React from "react";
-import { Paper, Typography } from "@material-ui/core";
+import {LinearProgress, Paper, Typography} from "@material-ui/core";
 import {useQuery} from "@apollo/client";
 
 import queries from "@queries";
@@ -15,7 +15,7 @@ export default function TwitchView() {
                 Twitch streamers
             </Typography>
 
-            {loading ? "Loading..." : ""}
+            {loading ? <LinearProgress /> : ""}
 
             {!loading && data && data.twitch.length === 0 ? "No active stream" : <TwitchList data={data}/>}
         </Paper>
