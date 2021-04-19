@@ -1,27 +1,66 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {FormProvider, useForm} from "react-hook-form";
-import {toast} from "react-toastify";
-import {Button} from "@material-ui/core";
-import {useMutation} from "@apollo/client";
+import { useParams, useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
+import { Button } from "@material-ui/core";
+import {useMutation, useLazyQuery} from "@apollo/client";
 
 import queries from "@queries";
 
 import FormInput from "modules/UI/components/Field/FormInput";
 import styles from "./TwitchForm.module.scss";
+import {TRoutes} from "shared/types";
 
 export default function TwitchForm() {
+    const { id } = useParams()
     const methods = useForm();
-    const { handleSubmit } = methods;
+    const { handleSubmit, setValue } = methods;
+    const [ fetchQuery, { loading, data } ] = useLazyQuery(queries.twitch.GET);
     const [ CreateTwitchStream ] = useMutation(queries.twitch.ADD);
+    const [ UpdateTwitchStream ] = useMutation(queries.twitch.UPDATE);
+    const history = useHistory()
+
+    useEffect(() => {
+        if (id) {
+            fetchQuery({variables: { id }})
+        }
+    }, [id])
+
+    useEffect(() => {
+        if (!loading && data) {
+            setValue('name', data.getTwitchStream.name);
+            setValue('order', data.getTwitchStream.order);
+        }
+    }, [loading, data])
 
     const onSubmit = data => {
         data.order = parseInt(data.order);
 
+        if (id) {
+            handleUpdate({...data, id});
+        } else {
+            handleCreate(data);
+        }
+    }
+
+    const handleCreate = data => {
         CreateTwitchStream({variables: data}).then(response => {
             const name = response && response.data && response.data.createTwitchStream.name
 
             if (name) {
                 toast.success("Twitch stream added");
+                history.push(TRoutes.ADMIN_PANEL);
+            }
+        }).catch(e => {});
+    }
+
+    const handleUpdate = data => {
+        UpdateTwitchStream({variables: data}).then(response => {
+            const name = response && response.data && response.data.updateTwitchStream.name
+
+            if (name) {
+                toast.success("Twitch stream updated");
+                history.push(TRoutes.ADMIN_PANEL);
             }
         }).catch(e => {});
     }

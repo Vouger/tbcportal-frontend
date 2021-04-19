@@ -7,7 +7,7 @@ import TwitchList from "../../components/TwitchList/TwitchList";
 import styles from "./TwitchView.module.scss";
 
 export default function TwitchView() {
-    const { loading, data } = useQuery(queries.twitch.GET);
+    const { loading, data } = useQuery(queries.twitch.LIST);
 
     return (
         <Paper className={styles.root}>

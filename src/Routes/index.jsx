@@ -41,7 +41,7 @@ function Routes() {
 
             <PrivateRoute exact path={TRoutes.ADMIN_PANEL} component={AdminPanel} />
             <PrivateRoute exact path={TRoutes.ADD_TWITCH_ADMIN} component={AdminTwitchAdd} />
-            <PrivateRoute exact path={TRoutes.EDIT_TWITCH_ADMIN()} component={AdminPanel}/>
+            <PrivateRoute exact path={TRoutes.EDIT_TWITCH_ADMIN()} component={AdminTwitchAdd}/>
 
             <Route exact path={TRoutes.GUIDE()} component={Guide} />
         </Switch>

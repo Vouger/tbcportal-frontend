@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import {IconButton, Paper, Toolbar, Tooltip, Typography} from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
@@ -16,6 +16,12 @@ export default function TwitchTableContainer() {
     const [value, setValue] = useState();
     const { loading, data, refetch } = useQuery(queries.twitch.GET_ADMIN);
     const [ RemoveTwitchStream ] = useMutation(queries.twitch.REMOVE);
+
+    useEffect(() => {
+        if (!loading) {
+            refetch();
+        }
+    }, [])
 
     const cancelAction = () => {
         setOpen(false);
