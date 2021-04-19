@@ -1,0 +1,24 @@
+.mainFeaturedPost {
+  position: relative;
+  background-color: #424242;
+  color: #fff;
+  margin-bottom: 32px;
+  background-image: url(https://source.unsplash.com/random);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0,0,0,.3);
+}
+
+.mainFeaturedPostContent {
+  position: relative;
+  padding: 48px;
+}

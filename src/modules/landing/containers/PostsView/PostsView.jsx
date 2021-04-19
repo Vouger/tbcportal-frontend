@@ -1,8 +1,9 @@
 import React, {useState} from "react";
-
-import Post from "modules/landing/components/Post/Post";
 import {useQuery} from "@apollo/client";
+import {Paper, Typography} from "@material-ui/core";
+
 import queries from "@queries";
+import Post from "modules/landing/components/Post/Post";
 
 export default function PostsView() {
     const [filterClass, setFilterClass] = useState('all');
@@ -13,7 +14,11 @@ export default function PostsView() {
     });
 
     return (
-        <div>
+        <Paper spacing={6}>
+            <Typography component="h1" variant="h4" color="secondary" style={{padding:'15px 25px'}}>
+                News
+            </Typography>
+
             {loading ? "Loading..." : ""}
 
             {!loading && data && data.guides.length === 0 ? "Nothing found" : ""}
@@ -21,6 +26,6 @@ export default function PostsView() {
             {!loading && data && data.guides.map((item) => (
                 <Post data={item} />
             ))}
-        </div>
+        </Paper>
     )
 }
