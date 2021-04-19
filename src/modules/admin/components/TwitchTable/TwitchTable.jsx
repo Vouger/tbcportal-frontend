@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 
 import TableActions from "modules/admin/components/TableActions/TableActions";
+import styles from "./TwitchTable.module.scss"
 
 export default function TwitchTable(props) {
     const {data, handleDelete} = props;
@@ -16,7 +17,7 @@ export default function TwitchTable(props) {
     return (
         <TableContainer color='secondary'>
             <Table aria-label="simple table">
-                <TableHead>
+                <TableHead className={styles.header}>
                     <TableRow>
                         <TableCell>Name</TableCell>
                         <TableCell align="right">Order</TableCell>
