@@ -20,7 +20,7 @@ export default function PostCard(props) {
                             className={styles.cardMedia}
                             height="160"
                             image={thumbnailUrl || "/static/tpl.jpg"}
-                            title={"qwe"}
+                            title={title}
                         />
                     </Grid>
                     <Grid item xl={9} lg={8} xs={12}>
