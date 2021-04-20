@@ -1,12 +1,13 @@
 import React from "react";
-import {Card, CardActionArea, CardContent, CardMedia, Grid, Typography} from "@material-ui/core";
+import {Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography} from "@material-ui/core";
 
 import styles from './Post.module.scss';
 import {Link} from "react-router-dom";
 import {TRoutes} from "shared/types";
+import {Visibility} from "@material-ui/icons";
 
 export default function Post(props) {
-    const { id, title, views, user, className, thumbnailUrl } = props.data;
+    const { id, title, views, user, thumbnailUrl } = props.data;
     const { nickname } = user;
 
     return (
@@ -32,6 +33,9 @@ export default function Post(props) {
                                     Author: {nickname}
                                 </Typography>
                             </CardContent>
+                            <CardActions className={styles.viewsWrapper}>
+                                <Visibility className={styles.views}/> {views}
+                            </CardActions>
                         </div>
                     </Grid>
                 </Grid>
