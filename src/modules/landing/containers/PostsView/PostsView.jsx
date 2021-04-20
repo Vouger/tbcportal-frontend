@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {useQuery} from "@apollo/client";
 import {LinearProgress, Paper, Typography} from "@material-ui/core";
 
@@ -6,12 +6,7 @@ import queries from "@queries";
 import Post from "modules/landing/components/Post/Post";
 
 export default function PostsView() {
-    const [filterClass, setFilterClass] = useState('all');
-    const [filterContent, setFilterContent] = useState('all');
-
-    const { loading, data, refetch } = useQuery(queries.guides.GET_GUIDES, {
-        variables: { filterClass, filterContent }
-    });
+    const { loading, data, refetch } = useQuery(queries.posts.LIST);
 
     return (
         <Paper spacing={6}>
@@ -21,9 +16,9 @@ export default function PostsView() {
 
             {loading ? <LinearProgress /> : ""}
 
-            {!loading && data && data.guides.length === 0 ? "Nothing found" : ""}
+            {!loading && data && data.posts.length === 0 ? "Nothing found" : ""}
 
-            {!loading && data && data.guides.map((item) => (
+            {!loading && data && data.posts.map((item) => (
                 <Post data={item} />
             ))}
         </Paper>
