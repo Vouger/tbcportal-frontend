@@ -1,3 +1,4 @@
+import React from "react";
 import { Route, Switch } from 'react-router-dom'
 
 import { TRoutes } from 'shared/types'
@@ -18,6 +19,7 @@ import GuidesSubmit from '../pages/GuidesSubmit'
 import Profile from "../pages/Profile";
 import AdminPanel from "../pages/AdminPanel";
 import AdminTwitchAdd from "pages/AdminTwitchAdd";
+import Post from '../pages/Post'
 
 function Routes() {
         return (
@@ -44,6 +46,7 @@ function Routes() {
             <PrivateRoute exact path={TRoutes.EDIT_TWITCH_ADMIN()} component={AdminTwitchAdd}/>
 
             <Route exact path={TRoutes.GUIDE()} component={Guide} />
+            <Route exact path={TRoutes.POST()} component={Post} />
         </Switch>
     )
 }

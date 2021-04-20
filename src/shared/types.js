@@ -8,6 +8,7 @@ export class TRoutes {
     static PASSWORD_TOKEN = (token = ':token') => `/password/${token}`
     static NOTIFICATION = (template = ':template') => `/notification/${template}`
     static GUIDE = (id = ':id') => `/guide/${id}`
+    static POST = (id = ':id') => `/post/${id}`
 
     static GUIDES = '/guides'
     static COMMUNITY = '/community'

@@ -1,17 +1,17 @@
 import React from "react";
-import {Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography} from "@material-ui/core";
-
-import styles from './Post.module.scss';
 import {Link} from "react-router-dom";
-import {TRoutes} from "shared/types";
+import {Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography} from "@material-ui/core";
 import {Visibility} from "@material-ui/icons";
 
-export default function Post(props) {
+import {TRoutes} from "shared/types";
+import styles from './PostCard.module.scss';
+
+export default function PostCard(props) {
     const { id, title, views, user, thumbnailUrl } = props.data;
     const { nickname } = user;
 
     return (
-        <CardActionArea component={Link} to={TRoutes.GUIDE(id)}>
+        <CardActionArea component={Link} to={TRoutes.POST(id)}>
             <Card className={styles.card}>
                 <Grid container spacing={2}>
                     <Grid item xl={3} lg={4} xs={12}>

@@ -3,7 +3,7 @@ import {useQuery} from "@apollo/client";
 import {LinearProgress, Paper, Typography} from "@material-ui/core";
 
 import queries from "@queries";
-import Post from "modules/landing/components/Post/Post";
+import PostCard from "modules/landing/components/PostCard/PostCard";
 
 export default function PostsView() {
     const { loading, data, refetch } = useQuery(queries.posts.LIST);
@@ -19,7 +19,7 @@ export default function PostsView() {
             {!loading && data && data.posts.length === 0 ? "Nothing found" : ""}
 
             {!loading && data && data.posts.map((item) => (
-                <Post data={item} />
+                <PostCard data={item} />
             ))}
         </Paper>
     )
