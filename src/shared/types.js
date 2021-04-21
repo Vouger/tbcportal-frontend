@@ -12,8 +12,10 @@ export class TRoutes {
 
     static GUIDES = '/guides'
     static COMMUNITY = '/community'
-    static GUIDES_SUBMIT = '/guides/submit'
+    static ADD_GUIDE = '/guides/add'
     static PROFILE = '/profile'
+
+    static ADD_POST = '/posts/add'
 
     static ADMIN_PANEL = '/admin'
     static ADD_TWITCH_ADMIN = '/admin/twitch/add'

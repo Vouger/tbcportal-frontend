@@ -27,7 +27,7 @@ export default function GuidesView() {
     return (
         <Layout maxWidth="xl">
             <Paper>
-                <ListHeader title="Guides & Strategy" link={TRoutes.GUIDES_SUBMIT} showButton={true} />
+                <ListHeader title="Guides & Strategy" link={TRoutes.ADD_GUIDE} showButton={true} />
 
                 <FilterView
                     filterClass={filterClass}

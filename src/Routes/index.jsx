@@ -20,9 +20,10 @@ import Profile from "../pages/Profile";
 import AdminPanel from "../pages/AdminPanel";
 import AdminTwitchAdd from "pages/AdminTwitchAdd";
 import Post from '../pages/Post'
+import PostAdd from "pages/PostAdd";
 
 function Routes() {
-        return (
+    return (
         <Switch>
             <OnlyPublicRoute exact path={TRoutes.LOGIN} component={Login}/>
             <OnlyPublicRoute exact path={TRoutes.SIGNUP} component={Registration}/>
@@ -38,12 +39,14 @@ function Routes() {
             <Route exact path={TRoutes.GUIDES} component={Guides} />
             <Route exact path={TRoutes.COMMUNITY} component={Guides} />
 
-            <PrivateRoute exact path={TRoutes.GUIDES_SUBMIT} component={GuidesSubmit} />
+            <PrivateRoute exact path={TRoutes.ADD_GUIDE} component={GuidesSubmit} />
             <PrivateRoute exact path={TRoutes.PROFILE} component={Profile} />
 
             <PrivateRoute exact path={TRoutes.ADMIN_PANEL} component={AdminPanel} />
             <PrivateRoute exact path={TRoutes.ADD_TWITCH_ADMIN} component={AdminTwitchAdd} />
             <PrivateRoute exact path={TRoutes.EDIT_TWITCH_ADMIN()} component={AdminTwitchAdd}/>
+
+            <PrivateRoute exact path={TRoutes.ADD_POST} component={PostAdd} />
 
             <Route exact path={TRoutes.GUIDE()} component={Guide} />
             <Route exact path={TRoutes.POST()} component={Post} />

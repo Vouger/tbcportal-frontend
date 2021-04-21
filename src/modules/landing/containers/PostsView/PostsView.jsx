@@ -15,7 +15,7 @@ function PostsView({isAuth, role}) {
 
     return (
         <Paper spacing={6}>
-            <ListHeader title="News" link={TRoutes.GUIDES_SUBMIT} showButton={isAuth && role === "Admin"} />
+            <ListHeader title="News" link={TRoutes.ADD_POST} showButton={isAuth && role === "Admin"} />
 
             {loading ? <LinearProgress /> : ""}
 
