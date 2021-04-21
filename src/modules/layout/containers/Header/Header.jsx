@@ -6,8 +6,9 @@ import UserMenu from "../../components/UserMenu/UserMenu";
 import Navigation from "../../components/Navigation/Navigation";
 import Logo from "../../components/Logo/Logo";
 import styles from './Header.module.scss'
+import PropTypes from "prop-types";
 
-export default function Header(props) {
+function Header(props) {
     return (
         <AppBar position="absolute" color="default" className={styles.root}>
             <Toolbar className={styles.toolbar}>
@@ -37,3 +38,10 @@ export default function Header(props) {
         </AppBar>
     )
 }
+
+Header.propTypes = {
+    isAuth: PropTypes.bool.isRequired,
+    role: PropTypes.string.isRequired
+}
+
+export default Header;

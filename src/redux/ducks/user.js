@@ -7,7 +7,7 @@ const auth = getAuth();
 
 const initialState = () => ({
     isAuth: !!auth.token,
-    role: auth.role,
+    role: auth.role || "",
 })
 
 export default function reducer(state = initialState(), action = {}) {

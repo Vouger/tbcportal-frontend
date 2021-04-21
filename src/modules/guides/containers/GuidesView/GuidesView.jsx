@@ -5,10 +5,10 @@ import { Paper } from "@material-ui/core";
 import queries from "@queries";
 
 import Layout from "modules/layout/containers/Layout/Layout";
+import ListHeader from "modules/UI/components/ListHeader/ListHeader";
 import FilterView from "../FilterView/FilterView";
 import GuidesListView from "../GuidesListView/GuidesListView";
-import GuidesHeaderView from "../GuidesHeaderView/GuidesHeaderView";
-import styles from './GuidesView.module.scss'
+import {TRoutes} from "shared/types";
 
 export default function GuidesView() {
     const [filterClass, setFilterClass] = useState('all');
@@ -26,8 +26,8 @@ export default function GuidesView() {
 
     return (
         <Layout maxWidth="xl">
-            <Paper className={styles.root}>
-                <GuidesHeaderView title="Guides & Strategy" />
+            <Paper>
+                <ListHeader title="Guides & Strategy" link={TRoutes.GUIDES_SUBMIT} showButton={true} />
 
                 <FilterView
                     filterClass={filterClass}

@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import { connect } from "react-redux";
-import PropTypes from "prop-types";
 import {Container} from "@material-ui/core";
 
 import Header from "../Header/Header";
@@ -25,11 +24,6 @@ function Layout(props) {
 
         </div>
     )
-}
-
-Header.propTypes = {
-    isAuth: PropTypes.bool.isRequired,
-    role: PropTypes.string.isRequired
 }
 
 const mapStateToProps = state => ({
