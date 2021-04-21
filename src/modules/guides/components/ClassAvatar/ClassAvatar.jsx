@@ -8,6 +8,8 @@ export default function ClassAvatar(props) {
     const {title, folder, name} = props;
 
     return (
-        <Avatar alt={title} src={`/static/icons/${folder}/${name}.png`} className={clsx(styles.filter, styles[name] )}/>
+        <Avatar alt={title} src={folder && `/static/icons/${folder}/${name}.png`} className={clsx(styles.filter, styles[name] )}>
+            {title}
+        </Avatar>
     )
 }

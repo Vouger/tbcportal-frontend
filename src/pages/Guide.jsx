@@ -1,3 +1,4 @@
+import React from "react";
 import GuideView from "../modules/guides/containers/GuideView/GuideView";
 
 export default function Guide() {
