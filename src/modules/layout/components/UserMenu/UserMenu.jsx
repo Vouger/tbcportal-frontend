@@ -3,13 +3,14 @@ import {Button, IconButton, Menu, MenuItem} from "@material-ui/core";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import {Else, If, Then} from "react-if";
 import {Link} from "react-router-dom";
+import PropTypes from "prop-types";
 
 import { cleanAuth } from "shared/helpers";
 import {TRoles, TRoutes} from "shared/types";
 
 import styles from "./UserMenu.module.scss";
 
-export default function UserMenu(props) {
+function UserMenu({isAuth, role}) {
     const [anchorEl, setAnchorEl] = useState(null);
 
     const handleLogout = () => {
@@ -25,7 +26,7 @@ export default function UserMenu(props) {
     }
 
     return (
-        <If condition={props.isAuth}>
+        <If condition={isAuth}>
             <Then>
                 <IconButton onClick={handleOpen} color="secondary" variant="contained" className={styles.link}>
                     <AccountCircleIcon />
@@ -38,11 +39,9 @@ export default function UserMenu(props) {
                     open={Boolean(anchorEl)}
                     onClose={handleClose}
                 >
-                    <If condition={props.role === TRoles.ADMIN}>
-                        <Then>
-                            <MenuItem component={Link} to={TRoutes.ADMIN_PANEL}>Admin panel</MenuItem>
-                        </Then>
-                    </If>
+                    {role === TRoles.ADMIN ? (
+                        <MenuItem component={Link} to={TRoutes.ADMIN_PANEL}>Admin panel</MenuItem>
+                    ) : ""}
 
                     <MenuItem component={Link} to={TRoutes.PROFILE}>Profile</MenuItem>
                     <MenuItem onClick={handleLogout}>Logout</MenuItem>
@@ -56,3 +55,10 @@ export default function UserMenu(props) {
         </If>
     )
 }
+
+UserMenu.propTypes = {
+    isAuth: PropTypes.bool.isRequired,
+    role: PropTypes.string.isRequired
+}
+
+export default UserMenu;
