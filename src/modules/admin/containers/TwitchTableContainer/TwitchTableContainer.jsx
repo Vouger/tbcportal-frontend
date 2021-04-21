@@ -21,6 +21,7 @@ export default function TwitchTableContainer() {
         if (!loading) {
             refetch();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const cancelAction = () => {

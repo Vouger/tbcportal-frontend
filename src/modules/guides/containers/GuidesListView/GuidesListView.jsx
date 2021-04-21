@@ -13,8 +13,8 @@ export default function GuidesListView(props) {
 
             {!loading && data && data.guides.length === 0 ? "Nothing found" : ""}
 
-            {!loading && data && data.guides.map((item) => (
-                <Grid item xl={2} lg={3} sm={6} md={6} xs={12}>
+            {!loading && data && data.guides.map((item, i) => (
+                <Grid key={i} item xl={2} lg={3} sm={6} md={6} xs={12}>
                     <GuideCard guide={item} />
                 </Grid>
             ))}

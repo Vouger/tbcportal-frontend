@@ -33,7 +33,7 @@ export default function GuideCard(props) {
                     <Typography gutterBottom variant="h5" component="h2">
                         {title}
                     </Typography>
-                    <Typography gutterBottom variant="h7">
+                    <Typography gutterBottom variant="body1">
                         {nickname}
                     </Typography>
                 </CardContent>

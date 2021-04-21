@@ -18,12 +18,13 @@ export default function ProfileForm() {
         if (!loading) {
             refetch()
         }
-    }, [])
+    })
 
     useEffect(() => {
         if (!loading && data && data.profileInfo) {
             setValue('nickname', data.profileInfo.nickname);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [data])
 
     const onSubmit = data => {

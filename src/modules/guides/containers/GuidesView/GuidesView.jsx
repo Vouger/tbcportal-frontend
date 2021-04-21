@@ -22,6 +22,7 @@ export default function GuidesView() {
         if (!loading) {
             refetch();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (

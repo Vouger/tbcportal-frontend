@@ -10,7 +10,6 @@ import {TRoutes} from "shared/types";
 import FormInput from "../../../UI/components/Field/FormInput";
 import ContentEditor from "../../../UI/components/ContentEditor/ContentEditor";
 import styles from "./PostForm.module.scss";
-import PropTypes from "prop-types";
 
 
 export default function PostForm() {

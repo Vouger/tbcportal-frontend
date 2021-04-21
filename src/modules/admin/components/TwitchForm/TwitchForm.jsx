@@ -24,6 +24,7 @@ export default function TwitchForm() {
         if (id) {
             fetchQuery({variables: { id }})
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id])
 
     useEffect(() => {
@@ -31,6 +32,7 @@ export default function TwitchForm() {
             setValue('name', data.getTwitchStream.name);
             setValue('order', data.getTwitchStream.order);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [loading, data])
 
     const onSubmit = data => {

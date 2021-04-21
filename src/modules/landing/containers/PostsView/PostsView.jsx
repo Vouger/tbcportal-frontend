@@ -11,7 +11,7 @@ import ListHeader from "modules/UI/components/ListHeader/ListHeader";
 import {TRoutes} from "shared/types";
 
 function PostsView({isAuth, role}) {
-    const { loading, data, refetch } = useQuery(queries.posts.LIST);
+    const { loading, data } = useQuery(queries.posts.LIST);
 
     return (
         <Paper spacing={6}>
