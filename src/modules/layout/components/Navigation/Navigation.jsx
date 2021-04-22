@@ -24,6 +24,9 @@ function Navigation({isAuth, role}) {
                     <MenuLink to={TRoutes.STREAMERS}>
                         Streamers
                     </MenuLink>
+                    <MenuLink to={TRoutes.ADMIN_SETTINGS}>
+                        Settings
+                    </MenuLink>
                 </>
             )}
         </Grid>

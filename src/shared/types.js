@@ -20,6 +20,7 @@ export class TRoutes {
     static STREAMERS = '/admin/twitch'
     static ADD_STREAMER = '/admin/twitch/add'
     static EDIT_STREAMER = (id = ':id') => `/admin/twitch/${id}`
+    static ADMIN_SETTINGS = '/admin/settings'
 }
 
 export class TRoles {
