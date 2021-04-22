@@ -8,11 +8,11 @@ import TwitchView from "../TwitchView/TwitchView";
 
 const mainFeaturedPost = {
     title: 'Title of a longer featured blog post',
-    description:
-        "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
+    text: "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
     image: 'https://source.unsplash.com/random',
     imgText: 'main image description',
     linkText: 'Continue reading…',
+    link: 'https://source.unsplash.com/random',
 };
 
 export default function LandingView() {
