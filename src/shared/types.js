@@ -17,9 +17,9 @@ export class TRoutes {
 
     static ADD_POST = '/posts/add'
 
-    static ADMIN_PANEL = '/admin'
-    static ADD_TWITCH_ADMIN = '/admin/twitch/add'
-    static EDIT_TWITCH_ADMIN = (id = ':id') => `/admin/twitch/${id}`
+    static STREAMERS = '/admin/twitch'
+    static ADD_STREAMER = '/admin/twitch/add'
+    static EDIT_STREAMER = (id = ':id') => `/admin/twitch/${id}`
 }
 
 export class TRoles {

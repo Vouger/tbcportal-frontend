@@ -1,12 +1,14 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-import {TRoutes} from "shared/types";
+import {TRoles, TRoutes} from "shared/types";
 
 import MenuLink from "../MenuLink/MenuLink";
+import {Divider, Grid} from "@material-ui/core";
 
-export default function Navigation(props) {
+function Navigation({isAuth, role}) {
     return (
-        <>
+        <Grid container>
             <MenuLink to={TRoutes.MAIN}>
                 Home
             </MenuLink>
@@ -16,6 +18,21 @@ export default function Navigation(props) {
             <MenuLink to={TRoutes.COMMUNITY}>
                 Community
             </MenuLink>
-        </>
+            {isAuth && (role === TRoles.ADMIN) && (
+                <>
+                    <Divider orientation="vertical" flexItem />
+                    <MenuLink to={TRoutes.STREAMERS}>
+                        Streamers
+                    </MenuLink>
+                </>
+            )}
+        </Grid>
     )
 }
+
+Navigation.propTypes = {
+    isAuth: PropTypes.bool.isRequired,
+    role: PropTypes.string.isRequired
+}
+
+export default Navigation;

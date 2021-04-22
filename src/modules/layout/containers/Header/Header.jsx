@@ -28,11 +28,11 @@ function Header(props) {
                 <Logo title={props.title} />
 
                 <Box className={styles.menu} display={{ xs: 'none', sm: 'block' }}>
-                    <Navigation />
+                    <Navigation isAuth={props.isAuth} role={props.role} />
                 </Box>
 
                 <Box display={{ xs: 'none', sm: 'block' }}>
-                    <UserMenu isAuth={props.isAuth} role={props.role} />
+                    <UserMenu isAuth={props.isAuth} />
                 </Box>
             </Toolbar>
         </AppBar>

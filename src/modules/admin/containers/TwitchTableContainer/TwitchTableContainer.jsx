@@ -57,7 +57,7 @@ export default function TwitchTableContainer() {
                     </Typography>
                 </div>
                 <Tooltip title="Add">
-                    <IconButton aria-label="Add" component={Link} to={TRoutes.ADD_TWITCH_ADMIN}>
+                    <IconButton aria-label="Add" component={Link} to={TRoutes.ADD_STREAMER}>
                         <AddIcon />
                     </IconButton>
                 </Tooltip>

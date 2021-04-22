@@ -44,7 +44,7 @@ export default function TableActions (props) {
                     }
                 }}
             >
-                <MenuItem key="edit" component={Link} to={TRoutes.EDIT_TWITCH_ADMIN(id)}>
+                <MenuItem key="edit" component={Link} to={TRoutes.EDIT_STREAMER(id)}>
                     Edit
                 </MenuItem>
 

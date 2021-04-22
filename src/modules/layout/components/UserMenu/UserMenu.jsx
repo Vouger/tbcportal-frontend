@@ -6,11 +6,11 @@ import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 
 import { cleanAuth } from "shared/helpers";
-import {TRoles, TRoutes} from "shared/types";
+import {TRoutes} from "shared/types";
 
 import styles from "./UserMenu.module.scss";
 
-function UserMenu({isAuth, role}) {
+function UserMenu({isAuth}) {
     const [anchorEl, setAnchorEl] = useState(null);
 
     const handleLogout = () => {
@@ -39,10 +39,6 @@ function UserMenu({isAuth, role}) {
                     open={Boolean(anchorEl)}
                     onClose={handleClose}
                 >
-                    {role === TRoles.ADMIN ? (
-                        <MenuItem component={Link} to={TRoutes.ADMIN_PANEL}>Admin panel</MenuItem>
-                    ) : ""}
-
                     <MenuItem component={Link} to={TRoutes.PROFILE}>Profile</MenuItem>
                     <MenuItem onClick={handleLogout}>Logout</MenuItem>
                 </Menu>
@@ -57,8 +53,7 @@ function UserMenu({isAuth, role}) {
 }
 
 UserMenu.propTypes = {
-    isAuth: PropTypes.bool.isRequired,
-    role: PropTypes.string.isRequired
+    isAuth: PropTypes.bool.isRequired
 }
 
 export default UserMenu;

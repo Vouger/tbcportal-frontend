@@ -51,7 +51,7 @@ export default function TwitchForm() {
 
             if (name) {
                 toast.success("Twitch stream added");
-                history.push(TRoutes.ADMIN_PANEL);
+                history.push(TRoutes.STREAMERS);
             }
         }).catch(e => {});
     }
@@ -62,7 +62,7 @@ export default function TwitchForm() {
 
             if (name) {
                 toast.success("Twitch stream updated");
-                history.push(TRoutes.ADMIN_PANEL);
+                history.push(TRoutes.STREAMERS);
             }
         }).catch(e => {});
     }

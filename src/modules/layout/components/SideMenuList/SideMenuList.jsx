@@ -25,7 +25,7 @@ export default function SideMenuList (props) {
                 <Then>
                     <If condition={props.role === TRoles.ADMIN}>
                         <Then>
-                            <SideMenuItem component={Link} to={TRoutes.ADMIN_PANEL} label="Admin panel" icon={SupervisorAccount} />
+                            <SideMenuItem component={Link} to={TRoutes.STREAMERS} label="Streamers" icon={SupervisorAccount} />
                             <Divider />
                         </Then>
                     </If>

@@ -17,7 +17,7 @@ import Guides from '../pages/Guides'
 import Guide from '../pages/Guide'
 import GuidesSubmit from '../pages/GuidesSubmit'
 import Profile from "../pages/Profile";
-import AdminPanel from "../pages/AdminPanel";
+import AdminTwitch from "../pages/AdminTwitch";
 import AdminTwitchAdd from "pages/AdminTwitchAdd";
 import Post from '../pages/Post'
 import PostAdd from "pages/PostAdd";
@@ -42,9 +42,9 @@ function Routes() {
             <PrivateRoute exact path={TRoutes.ADD_GUIDE} component={GuidesSubmit} />
             <PrivateRoute exact path={TRoutes.PROFILE} component={Profile} />
 
-            <PrivateRoute exact path={TRoutes.ADMIN_PANEL} component={AdminPanel} />
-            <PrivateRoute exact path={TRoutes.ADD_TWITCH_ADMIN} component={AdminTwitchAdd} />
-            <PrivateRoute exact path={TRoutes.EDIT_TWITCH_ADMIN()} component={AdminTwitchAdd}/>
+            <PrivateRoute exact path={TRoutes.STREAMERS} component={AdminTwitch} />
+            <PrivateRoute exact path={TRoutes.ADD_STREAMER} component={AdminTwitchAdd} />
+            <PrivateRoute exact path={TRoutes.EDIT_STREAMER()} component={AdminTwitchAdd}/>
 
             <PrivateRoute exact path={TRoutes.ADD_POST} component={PostAdd} />
 

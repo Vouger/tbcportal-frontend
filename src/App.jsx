@@ -40,7 +40,7 @@ function App() {
                 selected: '#f8b700',
                 hover: '#f8b700',
             },
-            divider: "#0f0"
+            divider: "#f8b700"
         },
 
         typography: {
