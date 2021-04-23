@@ -21,7 +21,7 @@ export default function AdminSettingsView() {
         <Layout maxWidth="xl">
             <Grid container spacing={6}>
                 <Grid item lg={3} xs={12}>
-                    <SettingsForm setPost={setPost} data={data} />
+                    <SettingsForm setPost={setPost} data={data && data.settings} />
                 </Grid>
                 <Grid item lg={9} xs={12}>
                     <Banner post={post} />

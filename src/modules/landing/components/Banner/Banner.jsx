@@ -2,9 +2,9 @@ import React from 'react';
 import {Button, Grid, Paper, Typography} from "@material-ui/core";
 
 import styles from './Banner.module.scss';
+import PropTypes from "prop-types";
 
-export default function Banner(props) {
-    const { post } = props;
+function Banner({post}) {
     const { bannerImage, bannerTitle, bannerText, bannerLink, bannerLinkText } = post;
 
     return (
@@ -31,3 +31,9 @@ export default function Banner(props) {
         </Paper>
     )
 }
+
+Banner.propTypes = {
+    post: PropTypes.object
+}
+
+export default Banner;

@@ -3,12 +3,12 @@ import {FormProvider, useForm, useWatch } from "react-hook-form";
 import {Button} from "@material-ui/core";
 import {useMutation} from "@apollo/client";
 import {toast} from "react-toastify";
+import PropTypes from "prop-types";
 
 import queries from "@queries";
 
 import FormInput from "modules/UI/components/Field/FormInput";
 import styles from "./SettingsForm.module.scss";
-import PropTypes from "prop-types";
 
 function SettingsForm ({ data, setPost }) {
     const methods = useForm();
@@ -22,9 +22,9 @@ function SettingsForm ({ data, setPost }) {
     let bannerLinkText = useWatch({ control, name: "bannerLinkText" });
 
     useEffect(() => {
-        if (data && data.settings) {
-            data.settings.map((item) => {
-                return setValue(item.name, item.value);
+        if (data) {
+            data.forEach((item) => {
+                setValue(item.name, item.value);
             })
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
