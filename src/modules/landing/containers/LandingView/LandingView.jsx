@@ -7,12 +7,11 @@ import Banner from "modules/landing/components/Banner/Banner";
 import TwitchView from "../TwitchView/TwitchView";
 
 const mainFeaturedPost = {
-    title: 'Title of a longer featured blog post',
-    text: "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
-    image: 'https://source.unsplash.com/random',
-    imgText: 'main image description',
-    linkText: 'Continue reading…',
-    link: 'https://source.unsplash.com/random',
+    bannerTitle: 'Title of a longer featured blog post',
+    bannerText: "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
+    bannerImage: 'https://source.unsplash.com/random',
+    bannerLinkText: 'Continue reading…',
+    bannerLink: 'https://source.unsplash.com/random',
 };
 
 export default function LandingView() {

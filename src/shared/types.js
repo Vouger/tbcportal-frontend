@@ -27,3 +27,7 @@ export class TRoles {
     static USER = 'User'
     static ADMIN = 'Admin'
 }
+
+export class TBanner {
+    static FIELDS = ["bannerImage", "bannerTitle", "bannerText", "bannerLink", "bannerLinkText"]
+}
