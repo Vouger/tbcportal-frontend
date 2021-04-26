@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import { useQuery } from "@apollo/client";
 import { Paper } from "@material-ui/core";
 
@@ -14,16 +14,10 @@ export default function GuidesView() {
     const [filterClass, setFilterClass] = useState('all');
     const [filterContent, setFilterContent] = useState('all');
 
-    const { loading, data, refetch } = useQuery(queries.guides.GET_GUIDES, {
-        variables: { filterClass, filterContent }
+    const { loading, data } = useQuery(queries.guides.GET_GUIDES, {
+        variables: { filterClass, filterContent },
+        fetchPolicy: "no-cache"
     });
-
-    useEffect(() => {
-        if (!loading) {
-            refetch();
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
 
     return (
         <Layout maxWidth="xl">

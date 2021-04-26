@@ -1,28 +1,24 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import {IconButton, Paper, Toolbar, Tooltip, Typography} from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
+import {toast} from "react-toastify";
+import {useMutation, useQuery} from "@apollo/client";
+
+import queries from "@queries";
 
 import {TRoutes} from "shared/types";
 import TwitchTable from "modules/admin/components/TwitchTable/TwitchTable";
-import styles from "./TwitchTableContainer.module.scss";
 import ConfirmationDialog from "modules/UI/components/ConfirmationDialog/ConfirmationDialog";
-import {useMutation, useQuery} from "@apollo/client";
-import queries from "@queries";
-import {toast} from "react-toastify";
+import styles from "./TwitchTableContainer.module.scss";
 
 export default function TwitchTableContainer() {
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState();
-    const { loading, data, refetch } = useQuery(queries.twitch.GET_ADMIN);
+    const { loading, data, refetch } = useQuery(queries.twitch.GET_ADMIN, {
+        fetchPolicy: "no-cache"
+    });
     const [ RemoveTwitchStream ] = useMutation(queries.twitch.REMOVE);
-
-    useEffect(() => {
-        if (!loading) {
-            refetch();
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
 
     const cancelAction = () => {
         setOpen(false);
@@ -38,8 +34,8 @@ export default function TwitchTableContainer() {
         setOpen(false);
         setValue('');
 
-        RemoveTwitchStream({variables: {id}}).then(response => {
-            const message = response && response.data && response.data.removeTwitchStream;
+        RemoveTwitchStream({variables: {id}}).then(({data}) => {
+            const message = data && data.removeTwitchStream;
 
             if (message) {
                 refetch();
@@ -51,7 +47,7 @@ export default function TwitchTableContainer() {
     return (
         <Paper>
             <Toolbar>
-                <div class={styles.header}>
+                <div className={styles.header}>
                     <Typography variant="h4" component="div">
                         Twitch streamers
                     </Typography>

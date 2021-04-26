@@ -11,14 +11,10 @@ import styles from './ProfileForm.module.scss'
 export default function ProfileForm() {
     const methods = useForm();
     const {handleSubmit, setValue} = methods;
-    const { loading, data, refetch } = useQuery(queries.profile.PROFILE);
+    const { loading, data } = useQuery(queries.profile.PROFILE,{
+        fetchPolicy: "no-cache"
+    });
     const [ UpdateProfile ] = useMutation(queries.profile.UPDATE_PROFILE);
-
-    useEffect(() => {
-        if (!loading) {
-            refetch()
-        }
-    })
 
     useEffect(() => {
         if (!loading && data && data.profileInfo) {
