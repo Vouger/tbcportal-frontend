@@ -1,6 +1,8 @@
 .root {
   display: flex;
   background-color: #201815;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 .appBarSpacer {
@@ -9,7 +11,6 @@
 
 .content {
     flex-grow: 1;
-    min-height: 100vh;
     padding-top: 24px;;
     padding-bottom: 12px;
 }

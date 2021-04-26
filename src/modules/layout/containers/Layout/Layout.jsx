@@ -4,6 +4,7 @@ import {Container} from "@material-ui/core";
 
 import Header from "../Header/Header";
 import SideMenu from "../SideMenu/SideMenu";
+import Footer from "../Footer/Footer";
 import styles from './Layout.module.scss'
 
 function Layout(props) {
@@ -22,6 +23,7 @@ function Layout(props) {
                 {props.children}
             </Container>
 
+            <Footer />
         </div>
     )
 }

@@ -1,12 +1,12 @@
 import React from 'react'
 import { AppBar, Toolbar, IconButton, Box } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu';
+import PropTypes from "prop-types";
 
 import UserMenu from "../../components/UserMenu/UserMenu";
 import Navigation from "../../components/Navigation/Navigation";
 import Logo from "../../components/Logo/Logo";
 import styles from './Header.module.scss'
-import PropTypes from "prop-types";
 
 function Header(props) {
     return (
