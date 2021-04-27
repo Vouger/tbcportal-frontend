@@ -1,8 +1,8 @@
 import React from "react";
 import {Grid, Toolbar} from "@material-ui/core";
 
-import ContentFilter from "../../components/ContentFilter/ContentFilter";
-import ClassFilter from "../../components/ClassFilter/ClassFilter";
+import FilterList from "modules/guides/components/FilterList/FilterList";
+import {TGuidesFilter} from "shared/types";
 import styles from "./FilterView.module.scss";
 
 export default function FilterView(props) {
@@ -11,12 +11,28 @@ export default function FilterView(props) {
     return (
         <Toolbar component="nav" variant="dense" classes={{root: styles.root}}>
             <Grid container spacing={6}>
-                <Grid item lg={2} xs={12} className={styles.content}>
-                    <ContentFilter filterContent={filterContent} setFilterContent={setFilterContent} />
+                <Grid item xl={2} lg={3} xs={12} className={styles.list}>
+                    <FilterList
+                        selected={filterContent}
+                        setSelected={setFilterContent}
+                        list={TGuidesFilter.CONTENT}
+                        folder="content"
+                    />
                 </Grid>
 
-                <Grid item lg={4} xs={12} className={styles.class}>
-                    <ClassFilter filterClass={filterClass} setFilterClass={setFilterClass} />
+                <Grid item xl={4} lg={6} xs={12} className={styles.list}>
+                    <FilterList
+                        selected={filterClass}
+                        setSelected={setFilterClass}
+                        list={TGuidesFilter.CLASS_LINE1}
+                        folder="classes"
+                    />
+                    <FilterList
+                        selected={filterClass}
+                        setSelected={setFilterClass}
+                        list={TGuidesFilter.CLASS_LINE2}
+                        folder="classes"
+                    />
                 </Grid>
             </Grid>
         </Toolbar>

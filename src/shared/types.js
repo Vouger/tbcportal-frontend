@@ -31,8 +31,37 @@ export class TRoles {
 export class TBanner {
     static FIELDS = ["bannerImage", "bannerTitle", "bannerText", "bannerLink", "bannerLinkText"]
 }
+
 export class TPagination {
     static GUIDES_DEFAUT = 12;
     static GUIDES_LG = 8;
     static GUIDES_SM = 5;
+}
+
+export class TGuidesFilter {
+    static CONTENT = [
+        { name: 'all', title: 'ALL' },
+        { name: 'pve', title: 'PVE' },
+        { name: 'pvp', title: 'PVP' },
+        { name: 'leveling', title: 'Leveling' },
+        { name: 'lore', title: 'Lore' }
+    ];
+
+    static CLASS_LINE1 = [
+        { name: 'all', title: 'ALL' },
+        { name: 'druid', title: 'Druid' },
+        { name: 'hunter', title: 'Hunter' },
+        { name: 'mage', title: 'Mage' },
+        { name: 'paladin', title: 'Paladin' }
+    ];
+
+    static CLASS_LINE2 = [
+        { name: 'priest', title: 'Priest' },
+        { name: 'rogue', title: 'Rogue' },
+        { name: 'shaman', title: 'Shaman' },
+        { name: 'warlock', title: 'Warlock' },
+        { name: 'warrior', title: 'Warrior' }
+    ];
+
+
 }
