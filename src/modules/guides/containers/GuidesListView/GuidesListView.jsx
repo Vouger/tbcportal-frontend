@@ -3,8 +3,9 @@ import React from "react";
 import { Grid } from "@material-ui/core";
 import GuideCard from "../../components/GuideCard/GuideCard";
 import styles from "./GuidesListView.module.scss";
+import PropTypes from "prop-types";
 
-export default function GuidesListView(props) {
+function GuidesListView(props) {
     const {data} = props;
 
     return (
@@ -19,3 +20,9 @@ export default function GuidesListView(props) {
         </Grid>
     )
 }
+
+GuidesListView.propTypes = {
+    data: PropTypes.array.isRequired
+}
+
+export default GuidesListView;
