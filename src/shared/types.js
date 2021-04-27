@@ -31,3 +31,8 @@ export class TRoles {
 export class TBanner {
     static FIELDS = ["bannerImage", "bannerTitle", "bannerText", "bannerLink", "bannerLinkText"]
 }
+export class TPagination {
+    static GUIDES_DEFAUT = 12;
+    static GUIDES_LG = 8;
+    static GUIDES_SM = 5;
+}

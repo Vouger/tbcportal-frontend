@@ -2,21 +2,26 @@ import {gql} from "@apollo/client";
 
 export default class Guides {
     static GET_GUIDES = gql`
-        query guides ($filterClass: String!, $filterContent: String!) {
+        query guides ($filterClass: String!, $filterContent: String!, $take: Float, $skip: Float) {
             guides (
                 data: {
                     filterClass: $filterClass
                     filterContent: $filterContent
+                    take: $take
+                    skip: $skip
                 }
             ) {
+            list {
                 id
                 title
                 views
                 className
                 thumbnailUrl
-                user {
-                    nickname
+                    user {
+                        nickname
+                    }
                 }
+            total
             }
         }
     `;
