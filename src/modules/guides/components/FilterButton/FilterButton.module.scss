@@ -3,6 +3,10 @@
   padding: 4px;
   min-width: auto;
   width: 56px;
+
+  &:hover {
+    background-color: #5b1a10;
+  }
 }
 
 .selected {
