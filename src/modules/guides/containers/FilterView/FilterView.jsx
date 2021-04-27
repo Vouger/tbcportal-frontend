@@ -24,13 +24,7 @@ export default function FilterView(props) {
                     <FilterList
                         selected={filterClass}
                         setSelected={setFilterClass}
-                        list={TGuidesFilter.CLASS_LINE1}
-                        folder="classes"
-                    />
-                    <FilterList
-                        selected={filterClass}
-                        setSelected={setFilterClass}
-                        list={TGuidesFilter.CLASS_LINE2}
+                        list={TGuidesFilter.CLASS}
                         folder="classes"
                     />
                 </Grid>

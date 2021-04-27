@@ -47,15 +47,12 @@ export class TGuidesFilter {
         { name: 'lore', title: 'Lore' }
     ];
 
-    static CLASS_LINE1 = [
+    static CLASS = [
         { name: 'all', title: 'ALL' },
         { name: 'druid', title: 'Druid' },
         { name: 'hunter', title: 'Hunter' },
         { name: 'mage', title: 'Mage' },
-        { name: 'paladin', title: 'Paladin' }
-    ];
-
-    static CLASS_LINE2 = [
+        { name: 'paladin', title: 'Paladin' },
         { name: 'priest', title: 'Priest' },
         { name: 'rogue', title: 'Rogue' },
         { name: 'shaman', title: 'Shaman' },
