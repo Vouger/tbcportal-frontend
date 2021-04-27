@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from "react";
 import { useQuery } from "@apollo/client";
 import {LinearProgress, Paper, withWidth} from "@material-ui/core";
-import {Pagination} from "@material-ui/lab";
 
 import queries from "@queries";
 
 import Layout from "modules/layout/containers/Layout/Layout";
 import ListHeader from "modules/UI/components/ListHeader/ListHeader";
+import GuidesPagination from "modules/guides/components/GuidesPagination/GuidesPagination";
 import FilterView from "../FilterView/FilterView";
 import GuidesListView from "../GuidesListView/GuidesListView";
 import {TPagination, TRoutes} from "shared/types";
@@ -51,10 +51,6 @@ function GuidesView(props) {
         setPage(1);
     }, [filterClass, filterContent, limit])
 
-    const handleChangePage = (event, value) => {
-        setPage(value);
-    }
-
     return (
         <Layout maxWidth="xl">
             <Paper>
@@ -73,7 +69,11 @@ function GuidesView(props) {
                     : <GuidesListView data={data && data.guides.list}/>
                 }
 
-                <Pagination page={page} count={pagesCount} onChange={handleChangePage} />
+                {
+                    pagesCount > 1
+                        ? <GuidesPagination page={page} pagesCount={pagesCount} setPage={setPage} />
+                        : ""
+                }
             </Paper>
         </Layout>
     )
