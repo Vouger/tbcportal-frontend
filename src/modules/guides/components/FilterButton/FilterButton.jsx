@@ -1,11 +1,12 @@
 import React from "react";
 import clsx from "clsx";
 import { Button } from "@material-ui/core";
+import PropTypes from "prop-types";
 
 import styles from './FilterButton.module.scss'
 import ClassAvatar from "../ClassAvatar/ClassAvatar";
 
-export default function FilterButton(props) {
+function FilterButton(props) {
     const {title, folder, name, selected} = props;
 
     const handleClick = () => {
@@ -24,3 +25,12 @@ export default function FilterButton(props) {
         </Button>
     )
 }
+
+FilterButton.propTypes = {
+    title: PropTypes.string.isRequired,
+    folder: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    selected: PropTypes.bool.isRequired
+}
+
+export default FilterButton;

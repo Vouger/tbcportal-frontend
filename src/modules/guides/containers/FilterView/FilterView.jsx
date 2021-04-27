@@ -4,8 +4,9 @@ import {Grid, Toolbar} from "@material-ui/core";
 import FilterList from "modules/guides/components/FilterList/FilterList";
 import {TGuidesFilter} from "shared/types";
 import styles from "./FilterView.module.scss";
+import PropTypes from "prop-types";
 
-export default function FilterView(props) {
+function FilterView(props) {
     const {filterContent, setFilterContent, filterClass, setFilterClass} = props;
 
     return (
@@ -32,3 +33,12 @@ export default function FilterView(props) {
         </Toolbar>
     )
 }
+
+FilterView.propTypes = {
+    filterContent: PropTypes.string.isRequired,
+    setFilterContent: PropTypes.func.isRequired,
+    filterClass: PropTypes.string.isRequired,
+    setFilterClass: PropTypes.func.isRequired
+}
+
+export default FilterView;
