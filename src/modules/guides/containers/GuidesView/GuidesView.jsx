@@ -12,19 +12,20 @@ import GuidesListView from "../GuidesListView/GuidesListView";
 import {TPagination, TRoutes} from "shared/types";
 
 function GuidesView(props) {
-    const [filterClass, setFilterClass] = useState('all');
-    const [filterContent, setFilterContent] = useState('all');
+    const [ variables, setVariables ] = useState({
+        filterClass: 'all',
+        filterContent: 'all',
+        orderBy: '',
+        keyword: '',
+        take: TPagination.GUIDES_DEFAUT,
+        skip: 0
+    })
+
     const [page, setPage] = useState(1);
-    const [limit, setLimit] = useState(TPagination.GUIDES_DEFAUT);
     const [pagesCount, setPagesCount] = useState(1);
 
     const { loading, data } = useQuery(queries.guides.GET_GUIDES, {
-        variables: {
-            filterClass,
-            filterContent,
-            take: limit,
-            skip: (page - 1)  * limit
-        },
+        variables,
         fetchPolicy: "no-cache"
     });
 
@@ -32,24 +33,41 @@ function GuidesView(props) {
         switch (props.width) {
             case 'xs':
             case 'sm':
-                setLimit(TPagination.GUIDES_SM);
+                setVariables({...variables,
+                    take: TPagination.GUIDES_SM
+                });
                 break;
             case 'lg':
-                setLimit(TPagination.GUIDES_LG);
+                setVariables({...variables,
+                    take: TPagination.GUIDES_LG
+                });
                 break;
             default:
-                setLimit(TPagination.GUIDES_DEFAUT);
+                setVariables({...variables,
+                    take: TPagination.GUIDES_DEFAUT
+                });
                 break;
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props.width])
 
     useEffect(() => {
-        setPagesCount(data ? Math.ceil(data.guides.total / limit) : 1);
-    }, [limit, data])
+        setPagesCount(data ? Math.ceil(data.guides.total / variables.take) : 1);
+    }, [variables.take, data])
 
     useEffect(() => {
-        setPage(1);
-    }, [filterClass, filterContent, limit])
+        setVariables({...variables,
+            skip: 0
+        });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [variables.filterClass, variables.filterContent, variables.take])
+
+    useEffect(() => {
+        setVariables({...variables,
+            skip: (page - 1)  * variables.take
+        });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [page])
 
     return (
         <Layout maxWidth="xl">
@@ -57,10 +75,8 @@ function GuidesView(props) {
                 <ListHeader title="Guides & Strategy" link={TRoutes.ADD_GUIDE} showButton={true} />
 
                 <FilterView
-                    filterClass={filterClass}
-                    setFilterClass={setFilterClass}
-                    filterContent={filterContent}
-                    setFilterContent={setFilterContent}
+                    variables={variables}
+                    setVariables={setVariables}
                 />
 
                 {
