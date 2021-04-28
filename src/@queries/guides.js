@@ -26,9 +26,9 @@ export default class Guides {
                     views
                     className
                     thumbnailUrl
-                        user {
-                            nickname
-                        }
+                    user {
+                        nickname
+                    }
                 }
                 total
             }
