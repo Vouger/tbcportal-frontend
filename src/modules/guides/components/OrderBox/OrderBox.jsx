@@ -9,7 +9,7 @@ function OrderBox({ orderBy, setOrderBy }) {
     }
 
     return (
-        <FormControl margin="normal" variant="outlined" fullWidth>
+        <FormControl margin="dense" variant="outlined" fullWidth>
             <InputLabel htmlFor="orderBy">Sort by</InputLabel>
             <Select
                 value={orderBy}

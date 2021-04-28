@@ -1,13 +1,20 @@
 .root {
   border-bottom: 1px solid #2f3135;
-  padding: 20px 30px;
+}
+
+.grid {
+  padding: 6px 0 !important;
 }
 
 .list {
-  margin-left: 16px;
-  padding: 12px 0 !important;
+  padding: 6px 0 !important;
+  display: flex;
 }
 
 .order {
-  padding: 0px 6px 6px 6px !important;
+  margin-top: 10px;
+}
+
+.search {
+  margin-top: 10px;
 }

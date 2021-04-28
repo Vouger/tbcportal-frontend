@@ -1,6 +1,7 @@
 import React from "react";
 
 import FilterButton from "../FilterButton/FilterButton";
+import style from "./FilterList.module.scss"
 
 export default function FilterList(props) {
     const {folder, list, selected, setSelected} = props;
@@ -10,7 +11,7 @@ export default function FilterList(props) {
     }
 
     return (
-        <>
+        <div className={props.margin && style.margin}>
             {list.map((item) => {
                 return (
                     <FilterButton
@@ -23,6 +24,6 @@ export default function FilterList(props) {
                     />
                 )
             })}
-        </>
+        </div>
     )
 }
