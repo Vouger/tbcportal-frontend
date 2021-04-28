@@ -28,6 +28,12 @@ function FilterView({variables, setVariables}) {
         });
     }
 
+    const setKeyword = (value) => {
+        setVariables({...variables,
+            keyword: value
+        });
+    }
+
     return (
         <Toolbar component="nav" variant="dense" classes={{root: styles.root}}>
             <Grid container spacing={1} className={styles.grid}>
@@ -73,7 +79,7 @@ function FilterView({variables, setVariables}) {
                 </Grid>
 
                 <Grid item xl={3} lg={5} md={7} xs={12} className={styles.search}>
-                    <SearchBox />
+                    <SearchBox setKeyword={setKeyword} />
                 </Grid>
             </Grid>
         </Toolbar>
@@ -81,7 +87,7 @@ function FilterView({variables, setVariables}) {
 }
 
 FilterView.propTypes = {
-    variables: PropTypes.string.isRequired,
+    variables: PropTypes.object.isRequired,
     setVariables: PropTypes.func.isRequired
 }
 

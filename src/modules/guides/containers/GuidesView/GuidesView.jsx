@@ -60,7 +60,7 @@ function GuidesView(props) {
             skip: 0
         });
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [variables.filterClass, variables.filterContent, variables.take])
+    }, [variables.filterClass, variables.filterContent, variables.keyword, variables.take])
 
     useEffect(() => {
         setVariables({...variables,
