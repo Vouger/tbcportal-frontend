@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Typography } from "@material-ui/core";
 
 import ClassAvatar from "../../components/ClassAvatar/ClassAvatar";
-import styles from "../GuideView/GuideView.module.scss";
+import styles from "./DetailsHeader.module.scss";
 
 export default function DetailsHeader(props) {
     const { title, className } = props.guide;
