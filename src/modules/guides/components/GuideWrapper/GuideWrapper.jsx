@@ -13,7 +13,7 @@ function GuideWrapper({guide}) {
                 <Grid item xs={12}>
                     <DetailsHeader guide={guide} />
                 </Grid>
-                <Grid item lg={8} xs={12}>
+                <Grid item xs={12}>
                     <Box className={styles.content}>
                         <RawHtml>{guide.text}</RawHtml>
                     </Box>

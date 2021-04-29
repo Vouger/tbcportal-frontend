@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Paper, Typography} from "@material-ui/core";
 
 import Layout from "modules/layout/containers/Layout/Layout";
@@ -8,6 +8,10 @@ import styles from "./GuidesSubmitView.module.scss";
 
 export default function GuidesSubmitView() {
     const [guide, setGuide] = useState({});
+
+    useEffect(() => {
+        window.$WowheadPower.refreshLinks();
+    }, [guide])
 
     return (
         <Layout maxWidth="xl">
