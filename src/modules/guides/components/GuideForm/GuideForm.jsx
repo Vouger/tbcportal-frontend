@@ -1,8 +1,9 @@
-import React from "react";
-import {FormProvider, Controller, useForm} from "react-hook-form";
+import React, {useEffect} from "react";
+import {FormProvider, Controller, useForm, useWatch} from "react-hook-form";
 import {Button, Grid, MenuItem} from "@material-ui/core";
 import {useMutation} from "@apollo/client";
 import {useHistory} from "react-router-dom";
+import PropTypes from "prop-types";
 
 import queries from "@queries";
 import {TRoutes} from "shared/types";
@@ -12,13 +13,27 @@ import ContentEditor from "../../../UI/components/ContentEditor/ContentEditor";
 import SelectInput from "../../../UI/components/Field/SelectInput";
 import styles from "./GuideForm.module.scss";
 
-
-export default function GuideForm(props) {
+function GuideForm({setGuide}) {
     const history = useHistory()
     const methods = useForm();
     const { handleSubmit, control } = methods;
 
     const [ createGuide ] = useMutation(queries.guides.CREATE_GUIDE);
+
+    let title = useWatch({ control, name: "title" });
+    let className = useWatch({ control, name: "className" });
+    let contentType = useWatch({ control, name: "contentType" });
+    let text = useWatch({ control, name: "text" });
+
+    useEffect(() => {
+        setGuide({
+            title,
+            className,
+            contentType,
+            text
+        });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [title, className, contentType, text])
 
     const onSubmit = data => {
         createGuide({ variables: data }).then(response => {
@@ -116,3 +131,9 @@ export default function GuideForm(props) {
         </FormProvider>
     )
 }
+
+GuideForm.propTypes = {
+    setGuide: PropTypes.func.isRequired
+}
+
+export default GuideForm;
