@@ -15,6 +15,12 @@ function SearchBox ({setKeyword}) {
         }
     }
 
+    const handleKeyDown = (event) => {
+        if (event.keyCode === 13) {
+            setKeyword(value);
+        }
+    }
+
     const handleClick = () => {
         setKeyword(value);
     }
@@ -29,6 +35,7 @@ function SearchBox ({setKeyword}) {
                     fullWidth
                     value={value}
                     onChange={handleChange}
+                    onKeyDown={handleKeyDown}
                     inputProps={{
                         name: 'keyword',
                         id: 'keyword',
