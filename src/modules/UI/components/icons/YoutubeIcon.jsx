@@ -2,7 +2,7 @@ import React from "react";
 
 export default function YoutubeIcon() {
     return (
-        <div style={{ marginRight: 10, height: 25 }}>
+        <div style={{ height: 25 }}>
             <svg width="25" height="25" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                 <g>
                     <path fill="#E02F2F"
