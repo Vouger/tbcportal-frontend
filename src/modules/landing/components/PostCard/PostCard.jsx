@@ -5,13 +5,18 @@ import {Visibility} from "@material-ui/icons";
 
 import {TRoutes} from "shared/types";
 import styles from './PostCard.module.scss';
+import slugify from "slugify";
 
 export default function PostCard(props) {
     const { id, title, views, user, thumbnailUrl } = props.data;
     const { nickname } = user;
 
+    const titleUrl = slugify(title, {
+        locale: 'ru'
+    });
+
     return (
-        <CardActionArea component={Link} to={TRoutes.POST(id)}>
+        <CardActionArea component={Link} to={TRoutes.POST(id, titleUrl)}>
             <Card className={styles.card}>
                 <Grid container spacing={2}>
                     <Grid item xl={3} lg={4} xs={12}>
