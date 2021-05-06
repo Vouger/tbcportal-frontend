@@ -21,6 +21,7 @@ export class TRoutes {
     static ADD_STREAMER = '/admin/twitch/add'
     static EDIT_STREAMER = (id = ':id') => `/admin/twitch/${id}`
     static ADMIN_SETTINGS = '/admin/settings'
+    static ADMIN_APPROVE = '/admin/approve'
 }
 
 export class TRoles {

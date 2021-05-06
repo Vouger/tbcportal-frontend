@@ -10,22 +10,25 @@ function Navigation({isAuth, role}) {
     return (
         <Grid container>
             <MenuLink to={TRoutes.MAIN}>
-                Home
+                Главная
             </MenuLink>
             <MenuLink to={TRoutes.GUIDES}>
-                Guides
+                Гайды
             </MenuLink>
             <MenuLink to={TRoutes.COMMUNITY}>
-                Community
+                Коммьюнити
             </MenuLink>
             {isAuth && (role === TRoles.ADMIN) && (
                 <>
                     <Divider orientation="vertical" flexItem />
                     <MenuLink to={TRoutes.STREAMERS}>
-                        Streamers
+                        Стримеры
                     </MenuLink>
                     <MenuLink to={TRoutes.ADMIN_SETTINGS}>
-                        Settings
+                        Найтройки
+                    </MenuLink>
+                    <MenuLink to={TRoutes.ADMIN_APPROVE}>
+                        Подтверждение
                     </MenuLink>
                 </>
             )}

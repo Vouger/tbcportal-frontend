@@ -20,6 +20,7 @@ import Profile from "pages/Profile";
 import AdminTwitch from "pages/AdminTwitch";
 import AdminTwitchAdd from "pages/AdminTwitchAdd";
 import AdminSettings from "pages/AdminSettings";
+import AdminApprove from "pages/AdminApprove";
 import Post from 'pages/Post'
 import PostAdd from "pages/PostAdd";
 
@@ -40,6 +41,7 @@ function Routes() {
                     <PrivateRoute exact path={TRoutes.ADD_STREAMER} component={AdminTwitchAdd} />
                     <PrivateRoute exact path={TRoutes.EDIT_STREAMER()} component={AdminTwitchAdd}/>
                     <PrivateRoute exact path={TRoutes.ADMIN_SETTINGS} component={AdminSettings} />
+                    <PrivateRoute exact path={TRoutes.ADMIN_APPROVE} component={AdminApprove} />
                     <PrivateRoute exact path={TRoutes.ADD_POST} component={PostAdd} />
 
                     <Route exact path={TRoutes.MAIN} component={Landing} />
