@@ -31,7 +31,7 @@ function SearchBox ({setKeyword}) {
                 <TextField
                     variant="outlined"
                     margin="dense"
-                    label="Search"
+                    label="Поиск"
                     fullWidth
                     value={value}
                     onChange={handleChange}
@@ -50,7 +50,7 @@ function SearchBox ({setKeyword}) {
                     onClick={handleClick}
                     fullWidth
                 >
-                    Search
+                    Найти
                 </Button>
             </Grid>
         </Grid>

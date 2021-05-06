@@ -15,11 +15,11 @@ function PostsView({isAuth, role}) {
 
     return (
         <Paper spacing={6}>
-            <ListHeader title="News" link={TRoutes.ADD_POST} showButton={isAuth && role === "Admin"} />
+            <ListHeader title="Новости" link={TRoutes.ADD_POST} showButton={isAuth && role === "Admin"} />
 
             {loading ? <LinearProgress /> : ""}
 
-            {!loading && data && data.posts.length === 0 ? "Nothing found" : ""}
+            {!loading && data && data.posts.length === 0 ? "Ничего не найдено" : ""}
 
             {!loading && data && data.posts.map((item, i) => (
                 <PostCard key={i} data={item} />

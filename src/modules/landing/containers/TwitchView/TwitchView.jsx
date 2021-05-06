@@ -12,12 +12,12 @@ export default function TwitchView() {
     return (
         <Paper className={styles.root}>
             <Typography component="h1" variant="h6" color="secondary" className={styles.title}>
-                Twitch streamers
+                Стримы
             </Typography>
 
             {loading ? <LinearProgress /> : ""}
 
-            {!loading && data && data.twitch.length === 0 ? "No active stream" : <TwitchList data={data}/>}
+            {!loading && data && data.twitch.length === 0 ? "Нет активных стримов" : <TwitchList data={data}/>}
         </Paper>
     )
 }

@@ -39,13 +39,13 @@ function UserMenu({isAuth}) {
                     open={Boolean(anchorEl)}
                     onClose={handleClose}
                 >
-                    <MenuItem component={Link} to={TRoutes.PROFILE}>Profile</MenuItem>
-                    <MenuItem onClick={handleLogout}>Logout</MenuItem>
+                    <MenuItem component={Link} to={TRoutes.PROFILE}>Профиль</MenuItem>
+                    <MenuItem onClick={handleLogout}>Выйти</MenuItem>
                 </Menu>
             </Then>
             <Else>
                 <Button component={Link} to={TRoutes.LOGIN} color="secondary" variant="contained" className={styles.link}>
-                    Log in
+                    Вход
                 </Button>
             </Else>
         </If>

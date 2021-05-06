@@ -18,7 +18,7 @@ function ListHeader({title, link, showButton}) {
             <Grid item lg={1} xs={12} className={styles.button}>
                 {showButton && (
                     <Button component={Link} to={link} fullWidth variant="contained" color="primary">
-                        Submit
+                        Создать
                     </Button>
                 )}
             </Grid>

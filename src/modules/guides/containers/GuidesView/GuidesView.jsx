@@ -72,7 +72,7 @@ function GuidesView(props) {
     return (
         <Layout maxWidth="xl">
             <Paper>
-                <ListHeader title="Guides & Strategy" link={TRoutes.ADD_GUIDE} showButton={true} />
+                <ListHeader title="Гайды" link={TRoutes.ADD_GUIDE} showButton={true} />
 
                 <FilterView
                     variables={variables}

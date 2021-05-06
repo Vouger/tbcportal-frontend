@@ -35,7 +35,7 @@ export default function PostCard(props) {
                                     {title}
                                 </Typography>
                                 <Typography variant="subtitle1">
-                                    Author: {nickname}
+                                    Автор: {nickname}
                                 </Typography>
                             </CardContent>
                             <CardActions className={styles.viewsWrapper}>

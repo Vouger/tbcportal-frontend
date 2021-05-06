@@ -41,24 +41,24 @@ export class TPagination {
 
 export class TGuidesFilter {
     static CONTENT = [
-        { name: 'all', title: 'ALL' },
-        { name: 'pve', title: 'PVE' },
-        { name: 'pvp', title: 'PVP' },
-        { name: 'leveling', title: 'Leveling' },
-        { name: 'lore', title: 'Lore' }
+        { name: 'all', title: 'Все' },
+        { name: 'pve', title: 'ПВП' },
+        { name: 'pvp', title: 'ПВЕ' },
+        { name: 'leveling', title: 'Прокачка' },
+        { name: 'lore', title: 'Лор' }
     ];
 
     static CLASS = [
-        { name: 'all', title: 'ALL' },
-        { name: 'druid', title: 'Druid' },
-        { name: 'hunter', title: 'Hunter' },
-        { name: 'mage', title: 'Mage' },
-        { name: 'paladin', title: 'Paladin' },
-        { name: 'priest', title: 'Priest' },
-        { name: 'rogue', title: 'Rogue' },
-        { name: 'shaman', title: 'Shaman' },
-        { name: 'warlock', title: 'Warlock' },
-        { name: 'warrior', title: 'Warrior' }
+        { name: 'all', title: 'Все' },
+        { name: 'druid', title: 'Друид' },
+        { name: 'hunter', title: 'Охотник' },
+        { name: 'mage', title: 'Маг' },
+        { name: 'paladin', title: 'Паладин' },
+        { name: 'priest', title: 'Жрец' },
+        { name: 'rogue', title: 'Рога' },
+        { name: 'shaman', title: 'Шаман' },
+        { name: 'warlock', title: 'Лок' },
+        { name: 'warrior', title: 'Воин' }
     ];
 
 

@@ -10,19 +10,19 @@ function OrderBox({ orderBy, setOrderBy }) {
 
     return (
         <FormControl margin="dense" variant="outlined" fullWidth>
-            <InputLabel htmlFor="orderBy">Sort by</InputLabel>
+            <InputLabel htmlFor="orderBy">Отсортировать</InputLabel>
             <Select
                 value={orderBy}
                 onChange={handleChange}
-                label="Sort by"
+                label="Отсортировать"
                 inputProps={{
                     name: 'age',
                     id: 'orderBy',
                 }}
             >
-                <MenuItem value="">Sort by</MenuItem>
-                <MenuItem value="views">Views</MenuItem>
-                <MenuItem value="created">Most recent</MenuItem>
+                <MenuItem value="">Отсортировать</MenuItem>
+                <MenuItem value="views">По просмотрам</MenuItem>
+                <MenuItem value="created">Сначала новые</MenuItem>
             </Select>
         </FormControl>
     )
