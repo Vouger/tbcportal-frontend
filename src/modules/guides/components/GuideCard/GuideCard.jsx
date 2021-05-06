@@ -10,6 +10,7 @@ import {
 import {Visibility} from "@material-ui/icons";
 import {Link} from "react-router-dom";
 import clsx from "clsx";
+import slugify from 'slugify';
 
 import {TRoutes} from "shared/types";
 
@@ -19,9 +20,13 @@ export default function GuideCard(props) {
     const { id, title, views, user, className, thumbnailUrl } = props.guide;
     const { nickname } = user;
 
+    const titleUrl = slugify(title, {
+        locale: 'ru'
+    });
+
     return (
         <Card className={clsx(styles.root, styles[className])}>
-            <CardActionArea component={Link} to={TRoutes.GUIDE(id)}>
+            <CardActionArea component={Link} to={TRoutes.GUIDE(id, titleUrl)}>
                 <CardMedia
                     component="img"
                     alt={title}
