@@ -55,7 +55,7 @@ function PopupOption(props) {
 PopupOption.propTypes = {
     modalHandler: PropTypes.object.isRequired,
     icon: PropTypes.object.isRequired,
-    handleClick: PropTypes.func.isRequired,
+    submitAction: PropTypes.func.isRequired,
     buttonDisabled: PropTypes.bool.isRequired
 }
 
