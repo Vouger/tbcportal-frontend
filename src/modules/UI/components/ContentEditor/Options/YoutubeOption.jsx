@@ -64,7 +64,7 @@ function YoutubeOption(props) {
 
         const entityKey = editorState
             .getCurrentContent()
-            .createEntity('EMBEDDED_LINK', 'MUTABLE', { src: embedUrl, height:'auto', width:'auto' })
+            .createEntity('EMBEDDED_LINK_YOUTUBE', 'MUTABLE', { src: embedUrl, height:'auto', width:'auto' })
             .getLastCreatedEntityKey();
 
         const newEditorState = AtomicBlockUtils.insertAtomicBlock(

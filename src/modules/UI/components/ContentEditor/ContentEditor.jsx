@@ -4,8 +4,10 @@ import draftToHtml from 'draftjs-to-html'
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
-import YoutubeOption from "modules/UI/components/ContentEditor/Options/YoutubeOption";
-import WowheadOption from "modules/UI/components/ContentEditor/Options/WowheadOption";
+import YoutubeOption from "./Options/YoutubeOption";
+import WowheadOption from "./Options/WowheadOption";
+import {customEntityTransform, myBlockRenderer} from "./Utils/helpers";
+
 import styles from "./ContentEditor.module.scss";
 
 export default function ContentEditor(props) {
@@ -15,7 +17,7 @@ export default function ContentEditor(props) {
         setEditorState(editorState);
 
         props.onChange(
-            draftToHtml(convertToRaw(editorState.getCurrentContent()))
+            draftToHtml(convertToRaw(editorState.getCurrentContent()), null, null, customEntityTransform)
         )
     };
 
@@ -27,6 +29,7 @@ export default function ContentEditor(props) {
                 editorState={editorState}
                 onEditorStateChange={handleChange}
                 toolbarCustomButtons={[<YoutubeOption />, <WowheadOption />]}
+                customBlockRenderFunc={myBlockRenderer}
                 toolbar={
                     {
                         inline: {
