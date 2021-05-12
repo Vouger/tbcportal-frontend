@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Paper, Typography} from "@material-ui/core";
+import {Grid, Paper, Typography} from "@material-ui/core";
 
 import Layout from "modules/layout/containers/Layout/Layout";
 import GuideForm from "../../components/GuideForm/GuideForm";
@@ -23,11 +23,15 @@ export default function GuidesSubmitView() {
                 <GuideForm setGuide={setGuide} />
             </Paper>
 
-            <Typography component="h1" variant="h5" color="secondary" className={styles.preview}>
-                Preview
-            </Typography>
 
-            <GuideWrapper guide={guide} />
+            <Grid container spacing={6}>
+                <Grid item lg={9} xs={12}>
+                    <Typography component="h1" variant="h5" color="secondary" className={styles.preview}>
+                        Preview
+                    </Typography>
+                    <GuideWrapper guide={guide} />
+                </Grid>
+            </Grid>
         </Layout>
     )
 }

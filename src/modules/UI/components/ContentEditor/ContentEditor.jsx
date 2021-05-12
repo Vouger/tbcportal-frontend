@@ -32,8 +32,16 @@ export default function ContentEditor(props) {
                 customBlockRenderFunc={myBlockRenderer}
                 toolbar={
                     {
+                        options: ['inline', 'blockType', 'fontSize', 'fontFamily', 'list', 'textAlign', 'colorPicker', 'link', 'embedded', 'image', 'remove', 'history'],
                         inline: {
+                            options: ['bold', 'italic', 'underline', 'strikethrough'],
                             className: styles.inline
+                        },
+                        list: {
+                            options: ['unordered', 'ordered'],
+                        },
+                        link: {
+                            options: ['link'],
                         }
                     }
                 }

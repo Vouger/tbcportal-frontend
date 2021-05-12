@@ -11,6 +11,7 @@ import {TRoutes} from "shared/types";
 import FormInput from "../../../UI/components/Field/FormInput";
 import ContentEditor from "../../../UI/components/ContentEditor/ContentEditor";
 import SelectInput from "../../../UI/components/Field/SelectInput";
+
 import styles from "./GuideForm.module.scss";
 
 function GuideForm({setGuide}) {
@@ -45,7 +46,7 @@ function GuideForm({setGuide}) {
         <FormProvider {...methods}>
             <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
                 <Grid container spacing={2}>
-                    <Grid item lg={4} xs={12}>
+                    <Grid item lg={3} xs={12}>
                         <FormInput
                             variant="outlined"
                             color="primary"
@@ -55,10 +56,9 @@ function GuideForm({setGuide}) {
                             fullWidth
                             id="title"
                             name="title"
+                            className={styles.control}
                         />
-                    </Grid>
 
-                    <Grid item lg={4} xs={12}>
                         <SelectInput
                             name="className"
                             label="Class"
@@ -78,9 +78,7 @@ function GuideForm({setGuide}) {
                             <MenuItem value="warlock">Warlock</MenuItem>
                             <MenuItem value="warrior">Warrior</MenuItem>
                         </SelectInput>
-                    </Grid>
 
-                    <Grid item lg={4} xs={12}>
                         <SelectInput
                             name="contentType"
                             label="Content Type"
@@ -95,9 +93,7 @@ function GuideForm({setGuide}) {
                             <MenuItem value="leveling">Leveling</MenuItem>
                             <MenuItem value="lore">Lore</MenuItem>
                         </SelectInput>
-                    </Grid>
 
-                    <Grid item lg={8} xs={12}>
                         <FormInput
                             variant="outlined"
                             color="primary"
@@ -108,8 +104,7 @@ function GuideForm({setGuide}) {
                             name="thumbnailUrl"
                         />
                     </Grid>
-
-                    <Grid item xs={12}>
+                    <Grid item lg={9} xs={12}>
                         <Controller
                             as={<ContentEditor />}
                             name="text"
@@ -117,7 +112,6 @@ function GuideForm({setGuide}) {
                         />
                     </Grid>
                 </Grid>
-
 
                 <Button
                     type="submit"
