@@ -1,5 +1,5 @@
 import React from "react";
-import GuideView from "../modules/guides/containers/GuideView/GuideView";
+import GuideView from "../modules/guide/containers/GuideView/GuideView";
 
 export default function Guide() {
     return <GuideView />

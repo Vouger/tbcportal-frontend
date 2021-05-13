@@ -34,8 +34,7 @@ export default function ContentEditor(props) {
                     {
                         options: ['inline', 'blockType', 'fontSize', 'fontFamily', 'list', 'textAlign', 'colorPicker', 'link', 'embedded', 'image', 'remove', 'history'],
                         inline: {
-                            options: ['bold', 'italic', 'underline', 'strikethrough'],
-                            className: styles.inline
+                            options: ['bold', 'italic', 'underline', 'strikethrough']
                         },
                         list: {
                             options: ['unordered', 'ordered'],

@@ -6,7 +6,7 @@ export default class Guides {
             $filterClass: String!, 
             $filterContent: String!, 
             $take: Float, 
-            $skip: Float, 
+            $page: Float, 
             $orderBy: String,
             $keyword: String
         ) {
@@ -15,7 +15,7 @@ export default class Guides {
                     filterClass: $filterClass
                     filterContent: $filterContent
                     take: $take
-                    skip: $skip
+                    page: $page
                     orderBy: $orderBy
                     keyword: $keyword
                 }
@@ -43,6 +43,7 @@ export default class Guides {
                 text
                 className
                 contentType
+                isApproved
             }
         }
     `;
@@ -71,13 +72,21 @@ export default class Guides {
 
     static ADMIN = gql`
         query adminGuides (
+            $filterClass: String!, 
+            $filterContent: String!, 
             $take: Float, 
-            $skip: Float
+            $page: Float, 
+            $orderBy: String,
+            $keyword: String
         ) {
             adminGuides (
                 data: {
+                    filterClass: $filterClass
+                    filterContent: $filterContent
                     take: $take
-                    skip: $skip
+                    page: $page
+                    orderBy: $orderBy
+                    keyword: $keyword
                 }
             ) {
                 list {
@@ -92,6 +101,18 @@ export default class Guides {
                 }
                 total
             }
+        }
+    `;
+
+    static APPROVE = gql`
+        mutation ApproveGuide($id: String!) {
+            approveGuide (id: $id)
+        }
+    `;
+
+    static HIDE = gql`
+        mutation HideGuide($id: String!) {
+            hideGuide (id: $id)
         }
     `;
 }

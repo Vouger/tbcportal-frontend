@@ -3,7 +3,8 @@ import {Grid, Paper, Typography} from "@material-ui/core";
 
 import Layout from "modules/layout/containers/Layout/Layout";
 import GuideForm from "../../components/GuideForm/GuideForm";
-import GuideWrapper from "modules/guides/components/GuideWrapper/GuideWrapper";
+import GuideWrapper from "modules/guide/components/GuideWrapper/GuideWrapper";
+
 import styles from "./GuidesSubmitView.module.scss";
 
 export default function GuidesSubmitView() {

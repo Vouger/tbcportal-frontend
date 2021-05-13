@@ -1,10 +1,10 @@
 import React from "react";
 import {Box, Paper} from "@material-ui/core";
-import DetailsHeader from "modules/guides/containers/DetailsHeader/DetailsHeader";
-import RawHtml from "modules/UI/components/RawHtml/RawHtml";
 import PropTypes from "prop-types";
 
-import styles from "./GuideWrapper.module.scss";
+import RawHtml from "modules/UI/components/RawHtml/RawHtml";
+import DetailsHeader from "modules/guide/components/DetailsHeader/DetailsHeader";
+import styles from "modules/guide/components/GuideWrapper/GuideWrapper.module.scss";
 
 function GuideWrapper({guide}) {
     return (

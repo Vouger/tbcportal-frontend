@@ -1,30 +1,21 @@
-import React, {useState} from "react";
+import React from "react";
 
 import Layout from "../../../layout/containers/Layout/Layout";
-import {useQuery} from "@apollo/client";
+import {useLazyQuery} from "@apollo/client";
 import queries from "../../../../@queries";
-import {TPagination} from "../../../../shared/types";
-import {LinearProgress, Paper} from "@material-ui/core";
-import GuidesListView from "../../../guides/containers/GuidesListView/GuidesListView";
+import GuidesWrapper from "modules/guides/components/GuidesWrapper/GuidesWrapper";
 
 export default function AdminApproveView() {
-    const [ variables, setVariables ] = useState({
-        take: TPagination.GUIDES_DEFAUT,
-        skip: 0
-    })
-
-    const { loading, data } = useQuery(queries.guides.ADMIN, {
-        variables,
-        fetchPolicy: "no-cache"
-    })
+    const [ fetchQuery, { loading, data } ] = useLazyQuery(queries.guides.ADMIN);
 
     return (
         <Layout maxWidth="xl">
-            {
-                loading
-                    ? <LinearProgress />
-                    : <GuidesListView data={data && data.adminGuides.list}/>
-            }
+            <GuidesWrapper
+                fetchQuery={fetchQuery}
+                loading={loading}
+                total={data && data.adminGuides.total}
+                list={data && data.adminGuides.list}
+            />
         </Layout>
     )
 }
