@@ -73,7 +73,7 @@ function GuidesWrapper(props) {
             {
                 loading
                     ? <LinearProgress />
-                    : <GuidesList data={list}/>
+                    : <GuidesList data={list || []}/>
             }
 
             {

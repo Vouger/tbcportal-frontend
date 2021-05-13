@@ -8,7 +8,7 @@ import queries from "@queries";
 import Layout from "modules/layout/containers/Layout/Layout";
 import GuideWrapper from "modules/guide/components/GuideWrapper/GuideWrapper";
 import TwitchView from "modules/landing/containers/TwitchView/TwitchView";
-import GuideButtons from "modules/guide/containers/GuideButtons/GuideButtons";
+import GuideButtons from "../GuideButtons/GuideButtons";
 
 export default function GuideView() {
     const { id } = useParams()

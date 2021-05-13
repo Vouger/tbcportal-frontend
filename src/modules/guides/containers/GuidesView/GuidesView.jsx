@@ -7,7 +7,9 @@ import Layout from "modules/layout/containers/Layout/Layout";
 import GuidesWrapper from "modules/guides/components/GuidesWrapper/GuidesWrapper";
 
 function GuidesView() {
-    const [ fetchQuery, { loading, data } ] = useLazyQuery(queries.guides.GET_GUIDES);
+    const [ fetchQuery, { loading, data } ] = useLazyQuery(queries.guides.GET_GUIDES, {
+        fetchPolicy: "no-cache"
+    });
 
     return (
         <Layout maxWidth="xl">

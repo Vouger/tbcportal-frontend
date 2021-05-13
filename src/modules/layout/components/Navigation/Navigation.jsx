@@ -25,7 +25,7 @@ function Navigation({isAuth, role}) {
                         Стримеры
                     </MenuLink>
                     <MenuLink to={TRoutes.ADMIN_SETTINGS}>
-                        Найтройки
+                        Настройки
                     </MenuLink>
                     <MenuLink to={TRoutes.ADMIN_APPROVE}>
                         Подтверждение

@@ -6,7 +6,9 @@ import queries from "../../../../@queries";
 import GuidesWrapper from "modules/guides/components/GuidesWrapper/GuidesWrapper";
 
 export default function AdminApproveView() {
-    const [ fetchQuery, { loading, data } ] = useLazyQuery(queries.guides.ADMIN);
+    const [ fetchQuery, { loading, data } ] = useLazyQuery(queries.guides.ADMIN, {
+        fetchPolicy: "no-cache"
+    });
 
     return (
         <Layout maxWidth="xl">
