@@ -68,4 +68,30 @@ export default class Guides {
             }
         }
     `;
+
+    static ADMIN = gql`
+        query adminGuides (
+            $take: Float, 
+            $skip: Float
+        ) {
+            adminGuides (
+                data: {
+                    take: $take
+                    skip: $skip
+                }
+            ) {
+                list {
+                    id
+                    title
+                    views
+                    className
+                    thumbnailUrl
+                    user {
+                        nickname
+                    }
+                }
+                total
+            }
+        }
+    `;
 }
