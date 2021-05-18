@@ -28,6 +28,7 @@ function GuidesWrapper(props) {
 
     useEffect(() => {
         fetchQuery({variables})
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [variables])
 
     useEffect(() => {

@@ -1,8 +1,35 @@
 .content {
   padding: 30px;
 
+  :global {
+    .youtube-wrapper {
+      padding-bottom: 59%;
+      position: relative;
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        position:absolute;
+      }
+    }
+  }
+
   img {
     max-width: 100%;
+  }
+}
+
+@media (min-width:960px) {
+  .content {
+    :global {
+      .youtube-wrapper {
+        padding-bottom: 29%;
+
+        iframe {
+          width: 50%;
+        }
+      }
+    }
   }
 }
 

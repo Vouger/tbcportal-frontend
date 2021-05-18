@@ -8,3 +8,13 @@
     position:absolute;
   }
 }
+
+@media (min-width:960px) {
+  .root {
+    padding-bottom: 29%;
+
+    iframe {
+      width: 50%;
+    }
+  }
+}
