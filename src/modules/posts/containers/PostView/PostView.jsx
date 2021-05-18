@@ -1,13 +1,13 @@
 import React, {useEffect} from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-import {Box, Grid, LinearProgress, Paper, Typography} from "@material-ui/core";
+import { Grid, LinearProgress } from "@material-ui/core";
 
 import queries from "@queries";
 
 import Layout from "modules/layout/containers/Layout/Layout";
-import RawHtml from "../../../UI/components/RawHtml/RawHtml";
-import styles from './PostView.module.scss'
+import PostWrapper from "modules/posts/components/PostWrapper/PostWrapper";
+import TwitchView from "modules/landing/containers/TwitchView/TwitchView";
 
 export default function PostView() {
     const { id } = useParams()
@@ -21,24 +21,19 @@ export default function PostView() {
 
     return (
         <Layout maxWidth="xl">
-            <Paper>
-                {loading ? <LinearProgress /> : ""}
+            <Grid container spacing={6}>
+                <Grid item lg={9} xs={12}>
+                    {loading ? <LinearProgress /> : ""}
 
-                {!loading && data ? (
-                    <Grid container spacing={3}>
-                        <Grid item xs={12}>
-                            <Typography component="h1" variant="h4" color="secondary" className={styles.title}>
-                                {data.post.title}
-                            </Typography>
-                        </Grid>
-                        <Grid item lg={8} xs={12}>
-                            <Box className={styles.content}>
-                                <RawHtml>{data.post.text}</RawHtml>
-                            </Box>
-                        </Grid>
-                    </Grid>
-                ) : ""}
-            </Paper>
+                    {!loading && data ? (
+                        <PostWrapper post={data.post} />
+                    ) : ""}
+                </Grid>
+
+                <Grid item lg={3} xs={12}>
+                    <TwitchView />
+                </Grid>
+            </Grid>
         </Layout>
     )
 }

@@ -1,0 +1,39 @@
+.title {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content {
+  padding: 30px;
+
+  img {
+    max-width: 100%;
+  }
+
+  :global {
+    .youtube-wrapper {
+      padding-bottom: 59%;
+      position: relative;
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        position:absolute;
+      }
+    }
+  }
+}
+
+@media (min-width:960px) {
+  .content {
+    :global {
+      .youtube-wrapper {
+        padding-bottom: 29%;
+
+        iframe {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
