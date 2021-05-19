@@ -36,7 +36,7 @@ function GoogleButton(props) {
                     variant="contained"
                 >
                     <GoogleIcon />
-                    Log in with Google
+                    Войти через Google
                 </Button>
             )}
             clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}

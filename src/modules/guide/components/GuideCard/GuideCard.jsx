@@ -14,7 +14,7 @@ import slugify from 'slugify';
 
 import {TRoutes} from "shared/types";
 
-import styles from 'modules/guide/components/GuideCard/GuideCard.module.scss'
+import styles from './GuideCard.module.scss'
 
 export default function GuideCard(props) {
     const { id, title, views, user, className, thumbnailUrl } = props.guide;

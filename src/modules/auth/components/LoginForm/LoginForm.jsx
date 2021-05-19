@@ -49,7 +49,7 @@ function LoginForm (props) {
                     variant="outlined"
                     color="primary"
                     margin="normal"
-                    label="Email Address"
+                    label="Email"
                     required
                     fullWidth
                     id="email"
@@ -60,7 +60,7 @@ function LoginForm (props) {
                 <PasswordInput
                     variant="outlined"
                     margin="normal"
-                    label="Password"
+                    label="Пароль"
                     required
                     fullWidth
                     id="password"
@@ -69,7 +69,7 @@ function LoginForm (props) {
 
                 <FormControlLabel
                     control={<Checkbox value="remember" color="primary" />}
-                    label="Remember me"
+                    label="Запомнить меня"
                     name="remember"
                     inputRef={register}
                 />
@@ -81,7 +81,7 @@ function LoginForm (props) {
                     color="primary"
                     className={styles.submit}
                 >
-                    Sign In
+                    Войти
                 </Button>
 
                 <GoogleButton

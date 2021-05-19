@@ -2,7 +2,6 @@ import React from 'react';
 import { Link as RouterLink  } from "react-router-dom";
 import {
     Avatar,
-    CssBaseline,
     Typography,
     Grid,
     Link
@@ -18,13 +17,12 @@ import styles from './LoginView.module.scss'
 export default function LoginView(props) {
     return (
         <Layout maxWidth="xs">
-            <CssBaseline />
             <div className={styles.paper}>
                 <Avatar className={styles.avatar}>
                     <LockOutlinedIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5">
-                    Sign in
+                    Вход
                 </Typography>
 
                 <LoginForm {...props} />
@@ -32,12 +30,12 @@ export default function LoginView(props) {
                 <Grid container>
                     <Grid item xs>
                         <Link component={RouterLink} to={TRoutes.PASSWORD} color="secondary" variant="body2">
-                            Forgot password?
+                            Забыли пароль ?
                         </Link>
                     </Grid>
                     <Grid item>
                         <Link component={RouterLink} to={TRoutes.SIGNUP} color="secondary" variant="body2">
-                            {"Don't have an account? Sign Up"}
+                            {"Нет аккаунта ? Зарегестрироваться"}
                         </Link>
                     </Grid>
                 </Grid>
