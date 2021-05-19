@@ -18,7 +18,7 @@ export default function GuidesSubmitView() {
         <Layout maxWidth="xl">
             <Paper className={styles.paper}>
                 <Typography component="h1" variant="h5" color="secondary">
-                    Submit guide
+                    Создать гайд
                 </Typography>
 
                 <GuideForm setGuide={setGuide} />
@@ -28,7 +28,7 @@ export default function GuidesSubmitView() {
             <Grid container spacing={6}>
                 <Grid item lg={9} xs={12}>
                     <Typography component="h1" variant="h5" color="secondary" className={styles.preview}>
-                        Preview
+                        Превью
                     </Typography>
                     <GuideWrapper guide={guide} />
                 </Grid>

@@ -6,7 +6,7 @@ import {useHistory} from "react-router-dom";
 import PropTypes from "prop-types";
 
 import queries from "@queries";
-import {TRoutes} from "shared/types";
+import {TGuidesFilter, TRoutes} from "shared/types";
 
 import FormInput from "../../../UI/components/Field/FormInput";
 import ContentEditor from "../../../UI/components/ContentEditor/ContentEditor";
@@ -51,7 +51,7 @@ function GuideForm({setGuide}) {
                             variant="outlined"
                             color="primary"
                             margin="normal"
-                            label="Title"
+                            label="Название"
                             required
                             fullWidth
                             id="title"
@@ -61,44 +61,35 @@ function GuideForm({setGuide}) {
 
                         <SelectInput
                             name="className"
-                            label="Class"
+                            label="Класс"
                             control={control}
                             variant="outlined"
                             defaultValue="all"
                             fullWidth
                         >
-                            <MenuItem value="all">All</MenuItem>
-                            <MenuItem value="druid">Druid</MenuItem>
-                            <MenuItem value="hunter">Hunter</MenuItem>
-                            <MenuItem value="mage">Mage</MenuItem>
-                            <MenuItem value="paladin">Paladin</MenuItem>
-                            <MenuItem value="priest">Priest</MenuItem>
-                            <MenuItem value="rogue">Rogue</MenuItem>
-                            <MenuItem value="shaman">Shaman</MenuItem>
-                            <MenuItem value="warlock">Warlock</MenuItem>
-                            <MenuItem value="warrior">Warrior</MenuItem>
+                            {TGuidesFilter.CLASS.map((item) => {
+                                return (<MenuItem value={item.name}>{item.title}</MenuItem>)
+                            })}
                         </SelectInput>
 
                         <SelectInput
                             name="contentType"
-                            label="Content Type"
+                            label="Тип контента"
                             control={control}
                             variant="outlined"
                             defaultValue="all"
                             fullWidth
                         >
-                            <MenuItem value="all">All</MenuItem>
-                            <MenuItem value="pve">PVE</MenuItem>
-                            <MenuItem value="pvp">PVP</MenuItem>
-                            <MenuItem value="leveling">Leveling</MenuItem>
-                            <MenuItem value="lore">Lore</MenuItem>
+                            {TGuidesFilter.CONTENT.map((item) => {
+                                return (<MenuItem value={item.name}>{item.title}</MenuItem>)
+                            })}
                         </SelectInput>
 
                         <FormInput
                             variant="outlined"
                             color="primary"
                             margin="normal"
-                            label="Thumbnail Url"
+                            label="Ссылка на обложку"
                             fullWidth
                             id="thumbnailUrl"
                             name="thumbnailUrl"
@@ -119,7 +110,7 @@ function GuideForm({setGuide}) {
                     color="primary"
                     className={styles.submit}
                 >
-                    Submit
+                    Создать
                 </Button>
             </form>
         </FormProvider>
