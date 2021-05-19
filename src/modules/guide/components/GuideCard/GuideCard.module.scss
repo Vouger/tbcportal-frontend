@@ -1,3 +1,5 @@
+@import "variables.scss";
+
 .text {
   max-height: 64px;
   text-overflow: 'ellipsis';
@@ -18,37 +20,37 @@
 }
 
 .druid:hover {
-  box-shadow: 0 0 15px #ff7d0a;
+  box-shadow: 0 0 15px $druidColor;
 }
 
 .hunter:hover {
-  box-shadow: 0 0 15px #abd473;
+  box-shadow: 0 0 15px $hunterColor;
 }
 
 .mage:hover {
-  box-shadow: 0 0 15px #40c7eb;
+  box-shadow: 0 0 15px $mageColor;
 }
 
 .paladin:hover {
-  box-shadow: 0 0 15px #f58cba;
+  box-shadow: 0 0 15px $paladinColor;
 }
 
 .priest:hover {
-  box-shadow: 0 0 15px #fff;
+  box-shadow: 0 0 15px $priestColor;
 }
 
 .rogue:hover {
-  box-shadow: 0 0 15px #fff569;
+  box-shadow: 0 0 15px $rogueColor;
 }
 
 .shaman:hover {
-  box-shadow: 0 0 15px #0070de;
+  box-shadow: 0 0 15px $shamanColor;
 }
 
 .warlock:hover {
-  box-shadow: 0 0 15px #8787ed;
+  box-shadow: 0 0 15px $warlockColor;
 }
 
 .warrior:hover {
-  box-shadow: 0 0 15px #c79c6e;
+  box-shadow: 0 0 15px $warriorColor;
 }

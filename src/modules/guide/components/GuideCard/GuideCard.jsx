@@ -11,13 +11,14 @@ import {Visibility} from "@material-ui/icons";
 import {Link} from "react-router-dom";
 import clsx from "clsx";
 import slugify from 'slugify';
+import PropTypes from "prop-types";
 
 import {TRoutes} from "shared/types";
 
-import styles from './GuideCard.module.scss'
+import styles from './GuideCard.module.scss';
 
-export default function GuideCard(props) {
-    const { id, title, views, user, className, thumbnailUrl } = props.guide;
+function GuideCard({guide}) {
+    const { id, title, className, views, thumbnailUrl, user } = guide;
     const { nickname } = user;
 
     const titleUrl = slugify(title, {
@@ -49,3 +50,18 @@ export default function GuideCard(props) {
         </Card>
     )
 }
+
+GuideCard.propTypes = {
+    guide: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        title: PropTypes.string.isRequired,
+        className: PropTypes.string.isRequired,
+        views: PropTypes.number.isRequired,
+        thumbnailUrl: PropTypes.string.isRequired,
+        user: PropTypes.shape({
+            nickname: PropTypes.string.isRequired
+        })
+    })
+}
+
+export default GuideCard;

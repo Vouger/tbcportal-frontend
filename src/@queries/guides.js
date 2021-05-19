@@ -44,6 +44,10 @@ export default class Guides {
                 className
                 contentType
                 isApproved
+                views
+                user {
+                    nickname
+                }
             }
         }
     `;
