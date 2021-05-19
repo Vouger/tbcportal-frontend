@@ -35,7 +35,7 @@ export default function PasswordForm() {
                 <FormInput
                     variant="outlined"
                     margin="normal"
-                    label="Email Address"
+                    label="Email"
                     required
                     fullWidth
                     id="email"
@@ -50,7 +50,7 @@ export default function PasswordForm() {
                     color="primary"
                     className={styles.submit}
                 >
-                    Send recovery email
+                    Отправить имейл с инструкциями
                 </Button>
             </form>
         </FormProvider>

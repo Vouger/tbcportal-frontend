@@ -49,7 +49,7 @@ export default function RegistrationForm(props) {
                 <FormInput
                     variant="outlined"
                     margin="normal"
-                    label="Email Address"
+                    label="Email"
                     required
                     fullWidth
                     id="email"
@@ -61,7 +61,7 @@ export default function RegistrationForm(props) {
                 <FormInput
                     variant="outlined"
                     margin="normal"
-                    label="Nickname"
+                    label="Ник"
                     required
                     fullWidth
                     id="nickname"
@@ -72,7 +72,7 @@ export default function RegistrationForm(props) {
                 <PasswordInput
                     variant="outlined"
                     margin="normal"
-                    label="Password"
+                    label="Пароль"
                     required
                     fullWidth
                     id="password"
@@ -86,7 +86,7 @@ export default function RegistrationForm(props) {
                 <PasswordInput
                     variant="outlined"
                     margin="normal"
-                    label="Verify password"
+                    label="Повторите пароль"
                     required
                     fullWidth
                     id="verify"
@@ -104,7 +104,7 @@ export default function RegistrationForm(props) {
                     color="primary"
                     className={styles.submit}
                 >
-                    Sign Up
+                    Зарегистрироваться
                 </Button>
             </form>
         </FormProvider>

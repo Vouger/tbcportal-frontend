@@ -15,7 +15,7 @@ export default function PasswordView() {
                     <LockOutlinedIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5">
-                    Password recovery
+                    Восстановление пароля
                 </Typography>
 
                 <PasswordForm />

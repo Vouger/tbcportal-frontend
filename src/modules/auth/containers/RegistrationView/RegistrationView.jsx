@@ -19,7 +19,7 @@ export default function RegistrationView() {
                     <LockOutlinedIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5">
-                    Sign up
+                    Создать аккаунт
                 </Typography>
 
                 <RegistrationForm />
