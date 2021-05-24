@@ -1,6 +1,12 @@
-import React from "react";
-import GuidesView from "../modules/guides/containers/GuidesView/GuidesView";
+import React, {lazy} from "react";
+import Page from "pages/Page";
+
+const GuidesView = lazy(() => import('modules/guides/containers/GuidesView/GuidesView'));
 
 export default function Guides() {
-    return <GuidesView />
+    return (
+        <Page maxWidth='xl'>
+            <GuidesView />
+        </Page>
+    )
 }

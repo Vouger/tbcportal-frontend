@@ -5,7 +5,6 @@ import { Else, If, Then } from 'react-if'
 import { Paper, Grid, Typography, LinearProgress } from '@material-ui/core'
 import { connect } from "react-redux";
 
-import Layout from "modules/layout/containers/Layout/Layout";
 import queries from "@queries";
 import { setAuth } from "shared/helpers";
 import * as userActions from "redux/ducks/user";
@@ -37,25 +36,23 @@ function ConfirmationView(props) {
     })
 
     return (
-        <Layout>
-            <Grid item xs={12}>
-                <Paper>
-                    <If condition={error}>
-                        <Then>
-                            <Typography variant="h5" gutterBottom>
-                                {error}
-                            </Typography>
-                        </Then>
-                        <Else>
-                            <Typography variant="h5" gutterBottom>
-                                {isConfirmed ? "Thank you. You email was successfully verified." : "Loading..."}
-                                <LinearProgress />
-                            </Typography>
-                        </Else>
-                    </If>
-                </Paper>
-            </Grid>
-        </Layout>
+        <Grid item xs={12}>
+            <Paper>
+                <If condition={error}>
+                    <Then>
+                        <Typography variant="h5" gutterBottom>
+                            {error}
+                        </Typography>
+                    </Then>
+                    <Else>
+                        <Typography variant="h5" gutterBottom>
+                            {isConfirmed ? "Thank you. You email was successfully verified." : "Loading..."}
+                            <LinearProgress />
+                        </Typography>
+                    </Else>
+                </If>
+            </Paper>
+        </Grid>
     )
 }
 const mapDispatchToProps = dispatch => ({

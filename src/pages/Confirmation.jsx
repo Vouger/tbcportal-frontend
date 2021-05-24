@@ -1,5 +1,13 @@
-import ConfirmationView from '../modules/auth/containers/ConfirmationView/ConfirmationView'
+import React, {lazy} from "react";
+
+import Page from "pages/Page";
+
+const ConfirmationView = lazy(() => import('modules/auth/containers/ConfirmationView/ConfirmationView'));
 
 export default function Confirmation() {
-    return <ConfirmationView />
+    return (
+        <Page maxWidth='xs'>
+            <ConfirmationView />
+        </Page>
+    )
 }

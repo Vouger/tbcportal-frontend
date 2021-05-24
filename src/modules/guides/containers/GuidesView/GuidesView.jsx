@@ -3,7 +3,6 @@ import {useLazyQuery} from "@apollo/client";
 
 import queries from "@queries";
 
-import Layout from "modules/layout/containers/Layout/Layout";
 import GuidesWrapper from "modules/guides/components/GuidesWrapper/GuidesWrapper";
 
 function GuidesView() {
@@ -12,14 +11,12 @@ function GuidesView() {
     });
 
     return (
-        <Layout maxWidth="xl">
-            <GuidesWrapper
-                fetchQuery={fetchQuery}
-                loading={loading}
-                total={data && data.guides.total}
-                list={data && data.guides.list}
-            />
-        </Layout>
+        <GuidesWrapper
+            fetchQuery={fetchQuery}
+            loading={loading}
+            total={data && data.guides.total}
+            list={data && data.guides.list}
+        />
     )
 }
 
