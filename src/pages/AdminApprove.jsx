@@ -1,6 +1,13 @@
-import React from "react";
-import AdminApproveView from "../modules/admin/containers/AdminApproveView/AdminApproveView";
+import React, {lazy} from "react";
+
+import Page from "pages/Page";
+
+const AdminApproveView = lazy(() => import('modules/admin/containers/AdminApproveView/AdminApproveView'));
 
 export default function AdminApprove() {
-    return <AdminApproveView />
+    return (
+        <Page maxWidth='xl'>
+            <AdminApproveView />
+        </Page>
+    )
 }

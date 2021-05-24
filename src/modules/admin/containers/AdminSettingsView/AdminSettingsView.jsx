@@ -6,7 +6,6 @@ import queries from "@queries";
 
 import Banner from "modules/landing/components/Banner/Banner";
 import SettingsForm from "modules/admin/components/SettingsForm/SettingsForm";
-import Layout from "modules/layout/containers/Layout/Layout";
 import {TBanner} from "shared/types";
 
 export default function AdminSettingsView() {
@@ -18,15 +17,13 @@ export default function AdminSettingsView() {
     });
 
     return (
-        <Layout maxWidth="xl">
-            <Grid container spacing={6}>
-                <Grid item lg={3} xs={12}>
-                    <SettingsForm setPost={setPost} data={data && data.settings} />
-                </Grid>
-                <Grid item lg={9} xs={12}>
-                    <Banner post={post} />
-                </Grid>
+        <Grid container spacing={6}>
+            <Grid item lg={3} xs={12}>
+                <SettingsForm setPost={setPost} data={data && data.settings} />
             </Grid>
-        </Layout>
+            <Grid item lg={9} xs={12}>
+                <Banner post={post} />
+            </Grid>
+        </Grid>
     )
 }

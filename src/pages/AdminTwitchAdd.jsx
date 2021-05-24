@@ -1,5 +1,14 @@
-import AdminTwitchAddView from "modules/admin/containers/AdminTwitchAddView/AdminTwitchAddView";
+import React, {lazy} from "react";
+
+import Page from "pages/Page";
+
+const AdminTwitchAddView = lazy(() => import('modules/admin/containers/AdminTwitchAddView/AdminTwitchAddView'));
 
 export default function AdminTwitchAdd() {
-    return <AdminTwitchAddView />
+    return (
+        <Page maxWidth='xl'>
+            <AdminTwitchAddView />
+        </Page>
+    )
+
 }
