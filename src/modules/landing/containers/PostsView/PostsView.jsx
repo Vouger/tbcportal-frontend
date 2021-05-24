@@ -14,7 +14,7 @@ function PostsView({isAuth, role}) {
     const { loading, data } = useQuery(queries.posts.LIST);
 
     return (
-        <Paper spacing={6}>
+        <Paper>
             <ListHeader title="Новости" link={TRoutes.ADD_POST} showButton={isAuth && role === "Admin"} />
 
             {loading ? <LinearProgress /> : ""}

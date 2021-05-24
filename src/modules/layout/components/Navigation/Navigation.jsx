@@ -12,11 +12,11 @@ function Navigation({isAuth, role}) {
             <MenuLink to={TRoutes.MAIN}>
                 Главная
             </MenuLink>
+            <MenuLink to={TRoutes.NEWS}>
+                Новости
+            </MenuLink>
             <MenuLink to={TRoutes.GUIDES}>
                 Гайды
-            </MenuLink>
-            <MenuLink to={TRoutes.COMMUNITY}>
-                Коммьюнити
             </MenuLink>
             {isAuth && (role === TRoles.ADMIN) && (
                 <>

@@ -10,8 +10,8 @@ export class TRoutes {
     static GUIDE = (id = ':id', url = ':url') => `/guide/${id}/${url}`
     static POST = (id = ':id', url = ':url') => `/post/${id}/${url}`
 
+    static NEWS = '/news'
     static GUIDES = '/guides'
-    static COMMUNITY = '/community'
     static ADD_GUIDE = '/guides/add'
     static PROFILE = '/profile'
 
