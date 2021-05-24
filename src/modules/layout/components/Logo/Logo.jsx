@@ -7,9 +7,9 @@ import styles from "./Logo.module.scss";
 export default function Logo(props) {
     return (
         <Link to="/" className={styles.root}>
-            <Avatar alt="TBC portal" src="/logo.png" />
+            <Avatar alt="TBC portal" variant="square" src="/logo.png"/>
             <Typography variant="h6" noWrap className={styles.title}>
-                {props.title || "TBC portal" }
+                {props.title || "Vanilla LFG" }
             </Typography>
         </Link>
     )

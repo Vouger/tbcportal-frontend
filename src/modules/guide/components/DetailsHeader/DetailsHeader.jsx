@@ -18,10 +18,21 @@ function DetailsHeader({guide}) {
                 {title}
             </Typography>
 
-            <div>
-                Автор: {user.nickname}
-            </div>
-            <Visibility className={styles.views}/> {views}
+            {user
+                ? (
+                    <>
+                        <div className={styles.author}>
+                            Автор: <span>{user.nickname}</span>
+                        </div>
+                        <div className={styles.views}>
+                            <Visibility/> <span>{views}</span>
+                        </div>
+                    </>
+                )
+                : ''
+            }
+
+
         </Box>
     )
 }

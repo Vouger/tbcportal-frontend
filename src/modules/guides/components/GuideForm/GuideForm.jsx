@@ -68,7 +68,7 @@ function GuideForm({setGuide}) {
                             fullWidth
                         >
                             {TGuidesFilter.CLASS.map((item) => {
-                                return (<MenuItem value={item.name}>{item.title}</MenuItem>)
+                                return (<MenuItem className={styles[item.name]} value={item.name}>{item.title}</MenuItem>)
                             })}
                         </SelectInput>
 

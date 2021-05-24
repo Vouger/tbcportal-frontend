@@ -8,7 +8,7 @@ import GuideWrapper from "modules/guide/components/GuideWrapper/GuideWrapper";
 import styles from "./GuidesSubmitView.module.scss";
 
 export default function GuidesSubmitView() {
-    const [guide, setGuide] = useState({});
+    const [guide, setGuide] = useState({user: {}});
 
     useEffect(() => {
         window.$WowheadPower.refreshLinks();

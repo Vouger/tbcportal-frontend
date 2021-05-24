@@ -1,3 +1,5 @@
+@import "variables.scss";
+
 .paper {
   margin-top: 64px;
   display: flex;
@@ -21,4 +23,49 @@
 
 .control {
   margin-top: 0px;
+}
+
+.druid:hover{
+  background-color: $druidColor;
+  color: #000;
+}
+
+.hunter:hover {
+  background-color: $hunterColor;
+  color: #000;
+}
+
+.mage:hover {
+  background-color: $mageColor;
+  color: #000;
+}
+
+.paladin:hover {
+  background-color: $paladinColor;
+  color: #000;
+}
+
+.priest:hover {
+  background-color: $priestColor;
+  color: #000;
+}
+
+.rogue:hover {
+  background-color: $rogueColor;
+  color: #000;
+}
+
+.shaman:hover {
+  background-color: $shamanColor;
+  color: #000;
+}
+
+.warlock:hover {
+  background-color: $warlockColor;
+  color: #000;
+}
+
+.warrior:hover {
+  background-color: $warriorColor;
+  color: #000;
 }
