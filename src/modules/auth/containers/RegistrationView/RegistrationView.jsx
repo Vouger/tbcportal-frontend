@@ -6,13 +6,12 @@ import {
 } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
-import Layout from "modules/layout/containers/Layout/Layout";
 import RegistrationForm from '../../components/RegistrationForm/RegistrationForm'
 import styles from './RegistrationView.module.scss'
 
 export default function RegistrationView() {
     return (
-        <Layout maxWidth="xs">
+        <>
             <CssBaseline />
             <div className={styles.paper}>
                 <Avatar className={styles.avatar}>
@@ -25,6 +24,6 @@ export default function RegistrationView() {
                 <RegistrationForm />
 
             </div>
-        </Layout>
+        </>
     );
 }

@@ -1,5 +1,13 @@
-import RegistrationView from '../modules/auth/containers/RegistrationView/RegistrationView'
+import React, {lazy} from "react";
+
+import Page from "pages/Page";
+
+const RegistrationView = lazy(() => import('modules/auth/containers/RegistrationView/RegistrationView'));
 
 export default function Registration() {
-    return <RegistrationView />
+    return (
+        <Page maxWidth='xs'>
+            <RegistrationView />
+        </Page>
+    )
 }
