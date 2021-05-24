@@ -1,5 +1,14 @@
-import GuidesSubmitView from "../modules/guides/containers/GuidesSubmitView/GuidesSubmitView";
+
+import React, {lazy} from "react";
+
+import Page from "pages/Page";
+
+const GuidesSubmitView = lazy(() => import('modules/guides/containers/GuidesSubmitView/GuidesSubmitView'));
 
 export default function GuidesSubmit() {
-    return <GuidesSubmitView />
+    return (
+        <Page maxWidth='xl'>
+            <GuidesSubmitView />
+        </Page>
+    )
 }

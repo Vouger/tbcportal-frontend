@@ -4,7 +4,6 @@ import {useQuery} from "@apollo/client";
 
 import queries from "@queries";
 
-import Layout from "modules/layout/containers/Layout/Layout";
 import PostsView from "modules/landing/containers/PostsView/PostsView";
 import Banner from "modules/landing/components/Banner/Banner";
 import TwitchView from "../TwitchView/TwitchView";
@@ -30,7 +29,7 @@ export default function LandingView() {
     }, [data])
 
     return (
-        <Layout maxWidth="xl">
+        <>
             <Grid container spacing={6}>
                 <Grid item lg={9} xs={12}>
                     <Banner post={post}/>
@@ -40,6 +39,6 @@ export default function LandingView() {
                     <TwitchView />
                 </Grid>
             </Grid>
-        </Layout>
+        </>
     )
 }

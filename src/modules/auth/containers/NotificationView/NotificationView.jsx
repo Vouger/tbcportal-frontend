@@ -2,8 +2,6 @@ import React from 'react'
 import { Paper, Grid, Typography } from '@material-ui/core'
 import { useParams } from "react-router-dom";
 
-import Layout from "modules/layout/containers/Layout/Layout";
-
 export default function NotificationView() {
     const { template } = useParams()
 
@@ -21,14 +19,12 @@ export default function NotificationView() {
     }
 
     return (
-        <Layout>
-            <Grid item xs={12}>
-                <Paper>
-                    <Typography variant="h5" gutterBottom>
-                        {getNotification(template)}
-                    </Typography>
-                </Paper>
-            </Grid>
-        </Layout>
+        <Grid item xs={12}>
+            <Paper>
+                <Typography variant="h5" gutterBottom>
+                    {getNotification(template)}
+                </Typography>
+            </Paper>
+        </Grid>
     )
 }
