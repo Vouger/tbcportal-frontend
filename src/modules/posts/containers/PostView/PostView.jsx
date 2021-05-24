@@ -5,7 +5,6 @@ import { Grid, LinearProgress } from "@material-ui/core";
 
 import queries from "@queries";
 
-import Layout from "modules/layout/containers/Layout/Layout";
 import PostWrapper from "modules/posts/components/PostWrapper/PostWrapper";
 import TwitchView from "modules/landing/containers/TwitchView/TwitchView";
 
@@ -20,20 +19,18 @@ export default function PostView() {
     })
 
     return (
-        <Layout maxWidth="xl">
-            <Grid container spacing={6}>
-                <Grid item lg={9} xs={12}>
-                    {loading ? <LinearProgress /> : ""}
+        <Grid container spacing={6}>
+            <Grid item lg={9} xs={12}>
+                {loading ? <LinearProgress /> : ""}
 
-                    {!loading && data ? (
-                        <PostWrapper post={data.post} />
-                    ) : ""}
-                </Grid>
-
-                <Grid item lg={3} xs={12}>
-                    <TwitchView />
-                </Grid>
+                {!loading && data ? (
+                    <PostWrapper post={data.post} />
+                ) : ""}
             </Grid>
-        </Layout>
+
+            <Grid item lg={3} xs={12}>
+                <TwitchView />
+            </Grid>
+        </Grid>
     )
 }
