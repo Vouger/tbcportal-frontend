@@ -2,8 +2,13 @@ import {gql} from "@apollo/client";
 
 export default class Posts {
     static LIST = gql`
-        query posts {
-            posts {
+        query posts($take: Float, $page: Float) {
+            posts (
+                data: {
+                    take: $take
+                    page: $page
+                }
+            ) {
                 list {
                     id
                     title

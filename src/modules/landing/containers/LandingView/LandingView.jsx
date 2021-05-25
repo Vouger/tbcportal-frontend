@@ -4,7 +4,7 @@ import {useQuery} from "@apollo/client";
 
 import queries from "@queries";
 
-import PostsView from "modules/landing/containers/PostsView/PostsView";
+import PostsView from "modules/landing/containers/LandingPostsView/LandingPostsView";
 import Banner from "modules/landing/components/Banner/Banner";
 import TwitchView from "../TwitchView/TwitchView";
 import {TBanner} from "shared/types";

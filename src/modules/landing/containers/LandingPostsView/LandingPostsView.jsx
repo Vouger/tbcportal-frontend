@@ -6,11 +6,11 @@ import {LinearProgress, Paper} from "@material-ui/core";
 
 import queries from "@queries";
 
-import PostCard from "modules/landing/components/PostCard/PostCard";
 import ListHeader from "modules/UI/components/ListHeader/ListHeader";
 import {TRoutes} from "shared/types";
+import PostsList from "modules/posts/components/PostsList/PostsList";
 
-function PostsView({isAuth, role}) {
+function LandingPostsView({isAuth, role}) {
     const { loading, data } = useQuery(queries.posts.LIST);
 
     return (
@@ -21,9 +21,10 @@ function PostsView({isAuth, role}) {
 
             {!loading && data && data.posts.list.length === 0 ? "Ничего не найдено" : ""}
 
-            {!loading && data && data.posts.list.map((item, i) => (
-                <PostCard key={i} data={item} />
-            ))}
+            {!loading && data && data.posts
+                ? <PostsList list={data.posts.list} />
+                : ''
+            }
         </Paper>
     )
 }
@@ -33,9 +34,9 @@ const mapStateToProps = state => ({
     role: state.user.role
 })
 
-PostsView.propTypes = {
+LandingPostsView.propTypes = {
     isAuth: PropTypes.bool.isRequired,
     role: PropTypes.string.isRequired
 }
 
-export default connect(mapStateToProps)(PostsView)
+export default connect(mapStateToProps)(LandingPostsView)
