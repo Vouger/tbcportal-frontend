@@ -1,6 +1,6 @@
 import React from "react";
 
-import PostForm from "modules/posts/components/PostForm/PostForm";
+import PostForm from "modules/post/components/PostForm/PostForm";
 
 export default function PostAddView() {
     return (

@@ -19,9 +19,9 @@ function PostsView({isAuth, role}) {
 
             {loading ? <LinearProgress /> : ""}
 
-            {!loading && data && data.posts.length === 0 ? "Ничего не найдено" : ""}
+            {!loading && data && data.posts.list.length === 0 ? "Ничего не найдено" : ""}
 
-            {!loading && data && data.posts.map((item, i) => (
+            {!loading && data && data.posts.list.map((item, i) => (
                 <PostCard key={i} data={item} />
             ))}
         </Paper>

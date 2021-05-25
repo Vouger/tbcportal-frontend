@@ -5,7 +5,7 @@ import { Grid, LinearProgress } from "@material-ui/core";
 
 import queries from "@queries";
 
-import PostWrapper from "modules/posts/components/PostWrapper/PostWrapper";
+import PostWrapper from "modules/post/components/PostWrapper/PostWrapper";
 import TwitchView from "modules/landing/containers/TwitchView/TwitchView";
 
 export default function PostView() {

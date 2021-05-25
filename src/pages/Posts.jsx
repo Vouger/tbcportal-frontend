@@ -2,9 +2,9 @@ import React, {lazy} from "react";
 
 import Page from "pages/Page";
 
-const NewsView = lazy(() => import('modules/news/containers/NewsView/NewsView'));
+const NewsView = lazy(() => import('modules/posts/containers/PostsView/PostsView'));
 
-export default function News() {
+export default function Posts() {
     return (
         <Page maxWidth='xl'>
             <NewsView />

@@ -10,7 +10,7 @@ import ListHeader from "modules/UI/components/ListHeader/ListHeader";
 import {TRoutes} from "shared/types";
 import {connect} from "react-redux";
 
-function NewsView({isAuth, role}) {
+function PostsView({isAuth, role}) {
     const { loading, data } = useQuery(queries.posts.LIST);
 
     return (
@@ -19,7 +19,7 @@ function NewsView({isAuth, role}) {
                 <Paper>
                     <ListHeader title="Новости" link={TRoutes.ADD_POST} showButton={isAuth && role === "Admin"} />
 
-                    {!loading && data && data.posts.map((item, i) => (
+                    {!loading && data && data.posts.list.map((item, i) => (
                         <PostCard key={i} data={item} />
                     ))}
                 </Paper>
@@ -36,4 +36,4 @@ const mapStateToProps = state => ({
     role: state.user.role
 })
 
-export default connect(mapStateToProps)(NewsView)
+export default connect(mapStateToProps)(PostsView)

@@ -7,9 +7,9 @@ import {useHistory} from "react-router-dom";
 import queries from "@queries";
 import {TRoutes} from "shared/types";
 
-import FormInput from "../../../UI/components/Field/FormInput";
-import ContentEditor from "../../../UI/components/ContentEditor/ContentEditor";
-import styles from "./PostForm.module.scss";
+import FormInput from "modules/UI/components/Field/FormInput";
+import ContentEditor from "modules/UI/components/ContentEditor/ContentEditor";
+import styles from "modules/post/components/PostForm/PostForm.module.scss";
 
 
 export default function PostForm() {

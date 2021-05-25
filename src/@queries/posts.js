@@ -4,13 +4,16 @@ export default class Posts {
     static LIST = gql`
         query posts {
             posts {
-                id
-                title
-                views
-                thumbnailUrl
-                user {
-                    nickname
+                list {
+                    id
+                    title
+                    views
+                    thumbnailUrl
+                    user {
+                        nickname
+                    }
                 }
+                total
             }
         }
     `;

@@ -2,7 +2,7 @@ import React from "react";
 import {Box, Paper, Typography} from "@material-ui/core";
 import RawHtml from "modules/UI/components/RawHtml/RawHtml";
 
-import styles from "./PostWrapper.module.scss";
+import styles from "modules/post/components/PostWrapper/PostWrapper.module.scss";
 
 function PostWrapper({post}) {
     return (

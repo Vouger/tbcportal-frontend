@@ -23,7 +23,7 @@ import AdminSettings from "pages/AdminSettings";
 import AdminApprove from "pages/AdminApprove";
 import Post from 'pages/Post'
 import PostAdd from "pages/PostAdd";
-import News from "pages/News";
+import Posts from "pages/Posts";
 
 function Routes() {
     return (
@@ -47,7 +47,7 @@ function Routes() {
 
             <Route exact path={TRoutes.MAIN} component={Landing} />
             <Route exact path={TRoutes.GUIDES} component={Guides} />
-            <Route exact path={TRoutes.NEWS} component={News} />
+            <Route exact path={TRoutes.NEWS} component={Posts} />
             <Route exact path={TRoutes.GUIDE()} component={Guide} />
             <Route exact path={TRoutes.POST()} component={Post} />
         </Switch>
