@@ -1,6 +1,13 @@
-import React from "react"
-import LoginView from '../modules/auth/containers/LoginView/LoginView'
+import React, {lazy} from "react"
+
+import Page from "pages/Page";
+
+const LoginView = lazy(() => import('modules/auth/containers/LoginView/LoginView'));
 
 export default function Login(props) {
-    return <LoginView {...props} />
+    return (
+        <Page maxWidth='xs'>
+            <LoginView {...props} />
+        </Page>
+    )
 }
