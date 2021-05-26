@@ -7,7 +7,7 @@ import styles from "./ListHeader.module.scss";
 
 function ListHeader({title, link, showButton}) {
     return (
-        <Grid container spacing={3} className={styles.root}>
+        <Grid container className={styles.root}>
             <Grid item lg={2} xs={12}>
                 <Typography component="h1" variant="h4" color="secondary">
                     {title}

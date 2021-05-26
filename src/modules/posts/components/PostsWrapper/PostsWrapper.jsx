@@ -13,7 +13,7 @@ function PostsWrapper(props) {
 
     const [pagesCount, setPagesCount] = useState(1);
     const [ variables, setVariables ] = useState({
-        take: 2,
+        take: TPagination.POSTS_DEFAULT,
         page: 1
     })
 

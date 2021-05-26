@@ -34,9 +34,11 @@ export class TBanner {
 }
 
 export class TPagination {
-    static GUIDES_DEFAUT = 12;
+    static GUIDES_DEFAULT = 12;
     static GUIDES_LG = 8;
     static GUIDES_SM = 5;
+    static POSTS_DEFAULT = 12;
+    static POSTS_LANDING = 4;
 }
 
 export class TGuidesFilter {

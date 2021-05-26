@@ -14,7 +14,7 @@ function GuidesWrapper(props) {
         filterContent: 'all',
         orderBy: '',
         keyword: '',
-        take: TPagination.GUIDES_DEFAUT,
+        take: TPagination.GUIDES_DEFAULT,
         page: 1
     })
     const [pagesCount, setPagesCount] = useState(1);
@@ -46,7 +46,7 @@ function GuidesWrapper(props) {
                 break;
             default:
                 setVariables({...variables,
-                    take: TPagination.GUIDES_DEFAUT
+                    take: TPagination.GUIDES_DEFAULT
                 });
                 break;
         }
