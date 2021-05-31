@@ -14,7 +14,7 @@ function Footer() {
         <footer className={styles.root}>
             <Container maxWidth="xl">
                 <Typography variant="body1">
-                    Join us:
+                    Наши социальные сети:
                 </Typography>
 
                 <SocialButton href="https://vk.com">

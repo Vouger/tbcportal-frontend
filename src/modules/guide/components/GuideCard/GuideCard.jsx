@@ -53,7 +53,7 @@ function GuideCard({guide}) {
 
 GuideCard.propTypes = {
     guide: PropTypes.shape({
-        id: PropTypes.number.isRequired,
+        id: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         className: PropTypes.string.isRequired,
         views: PropTypes.number.isRequired,

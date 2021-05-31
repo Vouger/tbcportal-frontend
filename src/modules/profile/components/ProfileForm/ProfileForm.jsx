@@ -28,7 +28,7 @@ export default function ProfileForm() {
             const nickname = response && response.data && response.data.updateProfile.nickname
 
             if (nickname) {
-                toast.success("Profile updated");
+                toast.success("Профиль обновлен");
             }
         }).catch(e => {});
     }
@@ -53,7 +53,7 @@ export default function ProfileForm() {
                     variant="contained"
                     color="primary"
                 >
-                    Save
+                    Сохранить
                 </Button>
             </form>
         </FormProvider>
