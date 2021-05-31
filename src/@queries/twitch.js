@@ -2,8 +2,12 @@ import {gql} from "@apollo/client";
 
 export default class Twitch {
     static LIST = gql`
-        query twitch {
-            twitch {
+        query twitch($limit: Float) {
+            twitch (
+                data: {
+                    limit: $limit
+                }
+            ) {
                 name
                 views
                 gameName
