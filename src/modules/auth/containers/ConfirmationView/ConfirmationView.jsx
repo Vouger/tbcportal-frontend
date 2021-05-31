@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { useMutation } from "@apollo/client";
 import { useParams } from 'react-router-dom'
 import { Else, If, Then } from 'react-if'
-import { Paper, Grid, Typography, LinearProgress } from '@material-ui/core'
+import { LinearProgress } from '@material-ui/core'
 import { connect } from "react-redux";
 
 import queries from "@queries";
 import { setAuth } from "shared/helpers";
 import * as userActions from "redux/ducks/user";
+import NotificationMessage from "modules/auth/components/NotificationMessage/NotificationMessage";
 
 function ConfirmationView(props) {
     const { token: confToken } = useParams()
@@ -33,26 +34,20 @@ function ConfirmationView(props) {
                 }, 3000)
             }
         });
-    })
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return (
-        <Grid item xs={12}>
-            <Paper>
-                <If condition={error}>
-                    <Then>
-                        <Typography variant="h5" gutterBottom>
-                            {error}
-                        </Typography>
-                    </Then>
-                    <Else>
-                        <Typography variant="h5" gutterBottom>
-                            {isConfirmed ? "Thank you. You email was successfully verified." : "Loading..."}
-                            <LinearProgress />
-                        </Typography>
-                    </Else>
-                </If>
-            </Paper>
-        </Grid>
+        <If condition={error}>
+            <Then>
+                <NotificationMessage message={error} />
+            </Then>
+            <Else>
+                <NotificationMessage message={isConfirmed ? "Спасибо. Ваш имейл подтвержден. Авторизация..." : "Загрузка..."} />
+                <LinearProgress />
+            </Else>
+        </If>
     )
 }
 const mapDispatchToProps = dispatch => ({

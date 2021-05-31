@@ -6,7 +6,7 @@ const ConfirmationView = lazy(() => import('modules/auth/containers/Confirmation
 
 export default function Confirmation() {
     return (
-        <Page maxWidth='xs'>
+        <Page maxWidth='md'>
             <ConfirmationView />
         </Page>
     )

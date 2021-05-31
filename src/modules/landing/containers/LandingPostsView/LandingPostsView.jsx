@@ -24,8 +24,8 @@ function LandingPostsView() {
 }
 
 LandingPostsView.propTypes = {
-    isAuth: PropTypes.bool.isRequired,
-    role: PropTypes.string.isRequired
+    isAuth: PropTypes.bool,
+    role: PropTypes.string
 }
 
 export default LandingPostsView;

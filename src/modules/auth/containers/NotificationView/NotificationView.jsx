@@ -1,8 +1,7 @@
 import React from 'react'
-import { Paper, Typography } from '@material-ui/core'
 import { useParams } from "react-router-dom";
 
-import styles from './NotificationView.module.scss'
+import NotificationMessage from "modules/auth/components/NotificationMessage/NotificationMessage";
 
 export default function NotificationView() {
     const { template } = useParams()
@@ -21,10 +20,6 @@ export default function NotificationView() {
     }
 
     return (
-        <Paper className={styles.root}>
-            <Typography variant="h5" gutterBottom>
-                {getNotification(template)}
-            </Typography>
-        </Paper>
+        <NotificationMessage message={getNotification(template)} />
     )
 }
