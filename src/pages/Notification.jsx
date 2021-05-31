@@ -6,7 +6,7 @@ const NotificationView = lazy(() => import('modules/auth/containers/Notification
 
 export default function Notification() {
     return (
-        <Page maxWidth='xl'>
+        <Page maxWidth='md'>
             <NotificationView />
         </Page>
     )

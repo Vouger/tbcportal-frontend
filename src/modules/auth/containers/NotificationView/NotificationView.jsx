@@ -1,6 +1,8 @@
 import React from 'react'
-import { Paper, Grid, Typography } from '@material-ui/core'
+import { Paper, Typography } from '@material-ui/core'
 import { useParams } from "react-router-dom";
+
+import styles from './NotificationView.module.scss'
 
 export default function NotificationView() {
     const { template } = useParams()
@@ -8,23 +10,21 @@ export default function NotificationView() {
     const getNotification = param => {
         switch (param) {
             case 'confirmation':
-                return "To complete registration you need to confirm your email. Email was sent to your email with confirmation link."
+                return "Для завершения регистрации нужно подтвердить имейл. Письмо с ссылкой на подверждение отправлено на ваш имейл"
 
             case 'password_request':
-                return "Email was sent with link to change password"
+                return "Письмо с инструкциями по смене пароля отправлено на ваш имейл"
 
             default:
-                return "Error"
+                return "Ошибка"
         }
     }
 
     return (
-        <Grid item xs={12}>
-            <Paper>
-                <Typography variant="h5" gutterBottom>
-                    {getNotification(template)}
-                </Typography>
-            </Paper>
-        </Grid>
+        <Paper className={styles.root}>
+            <Typography variant="h5" gutterBottom>
+                {getNotification(template)}
+            </Typography>
+        </Paper>
     )
 }

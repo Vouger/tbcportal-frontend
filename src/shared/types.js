@@ -37,7 +37,7 @@ export class TPagination {
     static GUIDES_DEFAULT = 12;
     static GUIDES_LG = 8;
     static GUIDES_SM = 5;
-    static POSTS_DEFAULT = 12;
+    static POSTS_DEFAULT = 8;
     static POSTS_LANDING = 4;
 }
 
@@ -62,6 +62,4 @@ export class TGuidesFilter {
         { name: 'warlock', title: 'Лок' },
         { name: 'warrior', title: 'Воин' }
     ];
-
-
 }

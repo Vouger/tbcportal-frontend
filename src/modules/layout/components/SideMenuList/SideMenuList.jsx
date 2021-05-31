@@ -16,8 +16,8 @@ export default function SideMenuList (props) {
 
     return (
         <List>
-            <SideMenuItem component={Link} to={TRoutes.MAIN} label="Home" icon={Home} />
-            <SideMenuItem component={Link} to={TRoutes.GUIDES} label="Guides" icon={Dashboard} />
+            <SideMenuItem component={Link} to={TRoutes.MAIN} label="Главная" icon={Home} />
+            <SideMenuItem component={Link} to={TRoutes.GUIDES} label="Гайды" icon={Dashboard} />
 
             <Divider />
 
@@ -25,17 +25,18 @@ export default function SideMenuList (props) {
                 <Then>
                     <If condition={props.role === TRoles.ADMIN}>
                         <Then>
-                            <SideMenuItem component={Link} to={TRoutes.STREAMERS} label="Streamers" icon={SupervisorAccount} />
-                            <SideMenuItem component={Link} to={TRoutes.ADMIN_SETTINGS} label="Settings" icon={SupervisorAccount} />
+                            <SideMenuItem component={Link} to={TRoutes.STREAMERS} label="Стримеры" icon={SupervisorAccount} />
+                            <SideMenuItem component={Link} to={TRoutes.ADMIN_SETTINGS} label="Настройки" icon={SupervisorAccount} />
+                            <SideMenuItem component={Link} to={TRoutes.ADMIN_APPROVE} label="Подтверждение" icon={SupervisorAccount} />
                             <Divider />
                         </Then>
                     </If>
 
-                    <SideMenuItem component={Link} to={TRoutes.PROFILE} label="Profile" icon={AccountCircle} />
-                    <SideMenuItem onClick={handleLogout} label="Logout" icon={ExitToApp} />
+                    <SideMenuItem component={Link} to={TRoutes.PROFILE} label="Профиль" icon={AccountCircle} />
+                    <SideMenuItem onClick={handleLogout} label="Выйти" icon={ExitToApp} />
                 </Then>
                 <Else>
-                    <SideMenuItem component={Link} to={TRoutes.LOGIN} label="Login" icon={AccountCircle} />
+                    <SideMenuItem component={Link} to={TRoutes.LOGIN} label="Войти" icon={AccountCircle} />
                 </Else>
             </If>
         </List>

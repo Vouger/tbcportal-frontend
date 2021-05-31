@@ -11,7 +11,6 @@ import FormInput from "modules/UI/components/Field/FormInput";
 import ContentEditor from "modules/UI/components/ContentEditor/ContentEditor";
 import styles from "modules/post/components/PostForm/PostForm.module.scss";
 
-
 export default function PostForm() {
     const history = useHistory()
     const methods = useForm();
@@ -34,7 +33,7 @@ export default function PostForm() {
                             variant="outlined"
                             color="primary"
                             margin="normal"
-                            label="Title"
+                            label="Название"
                             required
                             fullWidth
                             id="title"
@@ -47,7 +46,7 @@ export default function PostForm() {
                             variant="outlined"
                             color="primary"
                             margin="normal"
-                            label="Thumbnail Url"
+                            label="Ссылка на обложку"
                             fullWidth
                             id="thumbnailUrl"
                             name="thumbnailUrl"
@@ -70,7 +69,7 @@ export default function PostForm() {
                     color="primary"
                     className={styles.submit}
                 >
-                    Submit
+                    Создать
                 </Button>
             </form>
         </FormProvider>
