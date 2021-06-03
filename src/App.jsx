@@ -1,5 +1,5 @@
 import React from "react";
-import { Router } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import {createMuiTheme, StylesProvider, ThemeProvider} from "@material-ui/core";
 import { ApolloProvider } from '@apollo/client';
@@ -63,12 +63,12 @@ function App() {
         <ApolloProvider client={client}>
             <StylesProvider injectFirst>
                 <ThemeProvider theme={theme}>
-                <Router history={history}>
+                <BrowserRouter history={history}>
                     <div className={styles.app}>
                         <Routes/>
                         <ToastContainer/>
                     </div>
-                </Router>
+                </BrowserRouter>
                 </ThemeProvider>
             </StylesProvider>
         </ApolloProvider>
