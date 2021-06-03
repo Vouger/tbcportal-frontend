@@ -63,3 +63,7 @@ export class TGuidesFilter {
         { name: 'warrior', title: 'Воин' }
     ];
 }
+
+export class TLabels {
+    static SITE_NAME = "Vanilla LFG"
+}

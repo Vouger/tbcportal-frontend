@@ -5,7 +5,7 @@ const GuidesView = lazy(() => import('modules/guides/containers/GuidesView/Guide
 
 export default function Guides() {
     return (
-        <Page maxWidth='xl'>
+        <Page maxWidth='xl' title='Гайды'>
             <GuidesView />
         </Page>
     )
