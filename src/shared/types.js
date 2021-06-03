@@ -66,4 +66,5 @@ export class TGuidesFilter {
 
 export class TLabels {
     static SITE_NAME = "Vanilla LFG"
+    static SITE_DESCRIPTION = "Vanillalfg.com - это новости и гайды по классическим версиям World Of Warcraft"
 }

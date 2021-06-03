@@ -6,7 +6,7 @@ const GuideView = lazy(() => import('modules/guide/containers/GuideView/GuideVie
 
 export default function Guide() {
     return (
-        <Page maxWidth='xl'>
+        <Page maxWidth='xl' meta={{wowhead : true}}>
             <GuideView />
         </Page>
     )

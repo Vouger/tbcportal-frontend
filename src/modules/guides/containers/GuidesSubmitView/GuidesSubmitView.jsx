@@ -10,7 +10,9 @@ export default function GuidesSubmitView() {
     const [guide, setGuide] = useState({user: {}});
 
     useEffect(() => {
-        window.$WowheadPower.refreshLinks();
+        if (window.$WowheadPower) {
+            window.$WowheadPower.refreshLinks();
+        }
     }, [guide])
 
     return (

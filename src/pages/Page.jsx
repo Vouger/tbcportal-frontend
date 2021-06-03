@@ -9,7 +9,7 @@ export default function Page(props) {
 
     return (
         <Layout maxWidth={props.maxWidth}>
-            <MetaTags title={props.title} />
+            <MetaTags {...props.meta}/>
             <Suspense fallback={renderLoader()}>
                 {props.children}
             </Suspense>

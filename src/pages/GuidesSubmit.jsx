@@ -7,7 +7,7 @@ const GuidesSubmitView = lazy(() => import('modules/guides/containers/GuidesSubm
 
 export default function GuidesSubmit() {
     return (
-        <Page maxWidth='xl'>
+        <Page maxWidth='xl' meta={{wowhead : true}}>
             <GuidesSubmitView />
         </Page>
     )

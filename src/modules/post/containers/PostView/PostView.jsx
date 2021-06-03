@@ -15,7 +15,9 @@ export default function PostView() {
     });
 
     useEffect(() => {
-        window.$WowheadPower.refreshLinks();
+        if (window.$WowheadPower) {
+            window.$WowheadPower.refreshLinks();
+        }
     })
 
     return (

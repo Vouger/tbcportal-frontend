@@ -16,7 +16,9 @@ export default function GuideView() {
     });
 
     useEffect(() => {
-        window.$WowheadPower.refreshLinks();
+        if (window.$WowheadPower) {
+            window.$WowheadPower.refreshLinks();
+        }
     })
 
     return (

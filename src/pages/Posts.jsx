@@ -6,7 +6,7 @@ const NewsView = lazy(() => import('modules/posts/containers/PostsView/PostsView
 
 export default function Posts() {
     return (
-        <Page maxWidth='xl' title='Новости'>
+        <Page maxWidth='xl' meta={{title :'Новости'}}>
             <NewsView />
         </Page>
     )

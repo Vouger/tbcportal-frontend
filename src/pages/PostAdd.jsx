@@ -6,7 +6,7 @@ const PostAddView = lazy(() => import('modules/post/containers/PostAddView/PostA
 
 export default function PostAdd() {
     return (
-        <Page maxWidth='xl'>
+        <Page maxWidth='xl' meta={{wowhead : true}}>
             <PostAddView />
         </Page>
     )
