@@ -13,7 +13,7 @@ export default function TwitchItem(props) {
     const { name, logo, gameName, views } = props.item;
 
     return (
-        <ListItem className={styles.root} component="a" target='_blank' href={'https://www.twitch.tv/' + name}>
+        <ListItem className={styles.root} component="a" target='_blank' rel='noreferrer' href={'https://www.twitch.tv/' + name}>
             <ListItemIcon>
                 <Avatar alt={name} src={logo}/>
             </ListItemIcon>

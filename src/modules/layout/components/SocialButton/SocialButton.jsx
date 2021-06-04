@@ -6,7 +6,7 @@ import styles from './SocialButton.module.scss'
 
 function SocialButton(props) {
     return (
-        <IconButton component="a" target="_blank" href={props.href} className={styles.root}>
+        <IconButton component="a" target="_blank" rel='noreferrer' href={props.href} className={styles.root}>
             {props.children}
         </IconButton>
     );

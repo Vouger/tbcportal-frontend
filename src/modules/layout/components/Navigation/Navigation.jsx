@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {BrowserRouter} from "react-router-dom";
-import {Divider} from "@material-ui/core";
+import {Divider, Grid} from "@material-ui/core";
 
 import {TRoles, TRoutes} from "shared/types";
 
@@ -9,7 +8,7 @@ import MenuLink from "../MenuLink/MenuLink";
 
 function Navigation({isAuth, role}) {
     return (
-        <BrowserRouter>
+        <Grid container>
             <MenuLink to={TRoutes.MAIN}>
                 Главная
             </MenuLink>
@@ -33,7 +32,7 @@ function Navigation({isAuth, role}) {
                     </MenuLink>
                 </>
             )}
-        </BrowserRouter>
+        </Grid>
     )
 }
 
