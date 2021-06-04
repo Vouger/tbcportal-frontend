@@ -3,7 +3,7 @@ import {Helmet} from "react-helmet";
 import {TLabels} from "shared/types";
 
 function MetaTags(props) {
-    const {title, description, wowhead} = props;
+    const {title, description, keywords, keywordsClass, wowhead} = props;
 
     const printTitle = () => {
         let titleText = TLabels.SITE_NAME;
@@ -15,10 +15,24 @@ function MetaTags(props) {
         return titleText;
     }
 
+    const printKeywords = () => {
+        let keywordsArray = TLabels.SITE_KEYWORDS;
+
+        if (keywords) {
+            keywordsArray = keywordsArray.concat(keywords)
+        }
+
+        if (keywordsClass && TLabels.CLASS_KEYWORDS[keywordsClass]) {
+            keywordsArray = keywordsArray.concat(TLabels.CLASS_KEYWORDS[keywordsClass])
+        }
+
+        return keywordsArray.join(', ');
+    }
+
     return (
         <Helmet>
             <title>{ printTitle() }</title>
-            <meta name="keywords" content="world of warcraft, wow, vanilla wow, classic wow, warcraft, стримы, гайды, гайд разбойник, гайд воин, гайд шаман" />
+            <meta name="keywords" content={ printKeywords() } />
             <meta name="description" content={description || TLabels.SITE_DESCRIPTION} />
 
             {
@@ -30,5 +44,9 @@ function MetaTags(props) {
         </Helmet>
     )
 }
+
+MetaTags.defaultProps = {
+    keywords: []
+};
 
 export default MetaTags;

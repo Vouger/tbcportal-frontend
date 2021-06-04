@@ -24,7 +24,7 @@ export default function GuideView() {
 
     return (
         <Grid container spacing={6}>
-            <MetaTags title={data?.guide?.title} wowhead={true} />
+            <MetaTags title={data?.guide?.title} keywordsClass={data?.guide?.className} wowhead={true} />
 
             <Grid item lg={9} xs={12}>
                 {!loading && data ? <GuideWrapper guide={data.guide} /> : ""}

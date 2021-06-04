@@ -67,4 +67,30 @@ export class TGuidesFilter {
 export class TLabels {
     static SITE_NAME = "Vanilla LFG"
     static SITE_DESCRIPTION = "Vanillalfg.com - это новости и гайды по классическим версиям World Of Warcraft"
+    static SITE_KEYWORDS = [
+        "world of warcraft",
+        "wow",
+        "vanilla wow",
+        "classic wow",
+        "tbc wow",
+        "tbc classic",
+        "the burning crusade",
+        "the burning crusade classic",
+        "warcraft",
+        "стримы",
+        "гайды",
+        "новости wow"
+    ]
+
+    static CLASS_KEYWORDS = {
+        'druid':   ['druid', 'друид', 'гайд друид'],
+        'hunter':  ['hunter', 'охотник', 'гайд охотник'],
+        'mage':    ['mage', 'маг', 'гайд маг'],
+        'paladin': ['paladin', 'паладин', 'гайд паладин'],
+        'priest':  ['priest', 'жрец', 'прист', 'гайд жрец', 'гайд прист'],
+        'rogue':   ['rogue', 'разбойник', 'гайд разбойник'],
+        'shaman':  ['shaman', 'шаман', 'гайд шаман'],
+        'warlock': ['warlock', 'чернокнижник', 'варлок', 'лок', 'гайд чернокнижник', 'гайд варлок', 'гайд лок'],
+        'warrior': ['warrior', 'воин', 'гайд воин'],
+    }
 }
