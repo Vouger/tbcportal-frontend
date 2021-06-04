@@ -8,6 +8,7 @@ import queries from "@queries";
 import GuideWrapper from "modules/guide/components/GuideWrapper/GuideWrapper";
 import TwitchView from "modules/landing/containers/TwitchView/TwitchView";
 import GuideButtons from "../GuideButtons/GuideButtons";
+import MetaTags from "modules/seo/components/MetaTags/MetaTags";
 
 export default function GuideView() {
     const { id } = useParams()
@@ -23,6 +24,8 @@ export default function GuideView() {
 
     return (
         <Grid container spacing={6}>
+            <MetaTags title={data?.guide?.title} wowhead={true} />
+
             <Grid item lg={9} xs={12}>
                 {!loading && data ? <GuideWrapper guide={data.guide} /> : ""}
             </Grid>
