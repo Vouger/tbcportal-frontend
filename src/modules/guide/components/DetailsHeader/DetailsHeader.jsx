@@ -11,28 +11,30 @@ function DetailsHeader({guide}) {
     const { title, className, views, user } = guide;
 
     return (
-        <Box className={styles.header}>
-            <ClassAvatar title={className} folder="classes" name={className} />
+        <Box className={styles.root} style={{
+            backgroundImage: "url('/static/banner.jpg')"
+        }}>
+            <div className={styles.wrapper}>
+                <ClassAvatar title={className} folder="classes" name={className} />
 
-            <Typography component="h1" variant="h4" color="secondary" className={styles.title}>
-                {title}
-            </Typography>
+                <Typography component="h1" variant="h3" color="secondary" className={styles.title}>
+                    {title}
+                </Typography>
 
-            {user
-                ? (
-                    <>
-                        <div className={styles.author}>
-                            Автор: <span>{user.nickname}</span>
-                        </div>
-                        <div className={styles.views}>
-                            <Visibility/> <span>{views}</span>
-                        </div>
-                    </>
-                )
-                : ''
-            }
-
-
+                {user
+                    ? (
+                        <>
+                            <div className={styles.author}>
+                                Автор: <span>{user.nickname}</span>
+                            </div>
+                            <div className={styles.views}>
+                                <Visibility/> <span>{views}</span>
+                            </div>
+                        </>
+                    )
+                    : ''
+                }
+            </div>
         </Box>
     )
 }

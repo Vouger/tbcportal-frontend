@@ -1,7 +1,13 @@
-.header {
-  height: 200px;
+.root {
   border-bottom: 1px solid #2f3135;
+}
+
+.wrapper {
+  height: 193px;
   padding: 30px;
+  background: -webkit-gradient(linear,left top,right top,from(#000),color-stop(85%,transparent));
+  background: -webkit-linear-gradient(left,#000,transparent 85%);
+  background: linear-gradient(90deg,#000 0,transparent 85%);
 }
 
 .title {
