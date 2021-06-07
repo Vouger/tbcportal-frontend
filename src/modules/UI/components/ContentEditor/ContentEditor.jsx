@@ -50,7 +50,7 @@ export default function ContentEditor(props) {
                 />
             </div>
             <p className="MuiFormHelperText-root MuiFormHelperText-contained Mui-error">
-                {props.helperText}
+                {helperText}
             </p>
         </>
     );

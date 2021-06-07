@@ -10,11 +10,21 @@ import {TRoutes} from "shared/types";
 import FormInput from "modules/UI/components/Field/FormInput";
 import ContentEditor from "modules/UI/components/ContentEditor/ContentEditor";
 import styles from "modules/post/components/PostForm/PostForm.module.scss";
+import {zodResolver} from "@hookform/resolvers/zod";
+import * as z from "zod";
 
 export default function PostForm() {
     const history = useHistory()
-    const methods = useForm();
-    const { handleSubmit, control } = methods;
+    const methods = useForm({
+        resolver: zodResolver(
+            z.object({
+                title: z.string().nonempty('Обязательное поле'),
+                text: z.string().min(9, 'Обязательное поле'),
+                thumbnailUrl: z.string().max(0).or(z.string().url())
+            })
+        ),
+    });
+    const { handleSubmit, control, errors } = methods;
 
     const [ createPost ] = useMutation(queries.posts.CREATE);
 
@@ -34,10 +44,11 @@ export default function PostForm() {
                             color="primary"
                             margin="normal"
                             label="Название"
-                            required
                             fullWidth
                             id="title"
                             name="title"
+                            error={!!errors.title?.message}
+                            helperText={errors.title?.message}
                         />
                     </Grid>
 
@@ -50,6 +61,8 @@ export default function PostForm() {
                             fullWidth
                             id="thumbnailUrl"
                             name="thumbnailUrl"
+                            error={!!errors.thumbnailUrl?.message}
+                            helperText={errors.thumbnailUrl?.message ? 'Не верный формат URL' : ''}
                         />
                     </Grid>
 
@@ -58,6 +71,9 @@ export default function PostForm() {
                             as={<ContentEditor />}
                             name="text"
                             control={control}
+                            defaultValue=''
+                            error={!!errors.text?.message}
+                            helperText={errors.text?.message}
                         />
                     </Grid>
                 </Grid>
