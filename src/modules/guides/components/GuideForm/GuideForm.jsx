@@ -4,6 +4,8 @@ import {Button, Grid, MenuItem} from "@material-ui/core";
 import {useMutation} from "@apollo/client";
 import {useHistory} from "react-router-dom";
 import PropTypes from "prop-types";
+import * as z from 'zod'
+import {zodResolver} from "@hookform/resolvers/zod";
 
 import queries from "@queries";
 import {TGuidesFilter, TRoutes} from "shared/types";
@@ -16,8 +18,18 @@ import styles from "./GuideForm.module.scss";
 
 function GuideForm({setGuide}) {
     const history = useHistory()
-    const methods = useForm();
-    const { handleSubmit, control } = methods;
+    const methods = useForm({
+        resolver: zodResolver(
+            z.object({
+                title: z.string().nonempty('Обязательное поле'),
+                className: z.string(),
+                contentType: z.string(),
+                text: z.string().min(9, 'Обязательное поле'),
+                thumbnailUrl: z.string().max(0).or(z.string().url())
+            })
+        ),
+    });
+    const { handleSubmit, control, errors } = methods;
 
     const [ createGuide ] = useMutation(queries.guides.CREATE_GUIDE);
 
@@ -37,6 +49,7 @@ function GuideForm({setGuide}) {
     }, [title, className, contentType, text])
 
     const onSubmit = data => {
+        console.log(errors);
         createGuide({ variables: data }).then(response => {
             history.push(TRoutes.GUIDES)
         }).catch(e => {});
@@ -52,11 +65,12 @@ function GuideForm({setGuide}) {
                             color="primary"
                             margin="normal"
                             label="Название"
-                            required
                             fullWidth
                             id="title"
                             name="title"
                             className={styles.control}
+                            error={!!errors.title?.message}
+                            helperText={errors.title?.message}
                         />
 
                         <SelectInput
@@ -93,13 +107,19 @@ function GuideForm({setGuide}) {
                             fullWidth
                             id="thumbnailUrl"
                             name="thumbnailUrl"
+                            error={!!errors.thumbnailUrl?.message}
+                            helperText={errors.thumbnailUrl?.message ? 'Не верный формат URL' : ''}
                         />
                     </Grid>
                     <Grid item lg={9} xs={12}>
                         <Controller
                             as={<ContentEditor />}
+                            rules={{ required: true }}
                             name="text"
                             control={control}
+                            defaultValue=''
+                            error={!!errors.text?.message}
+                            helperText={errors.text?.message}
                         />
                     </Grid>
                 </Grid>
