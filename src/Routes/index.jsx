@@ -24,34 +24,37 @@ import AdminApprove from "pages/AdminApprove";
 import Post from 'pages/Post'
 import PostAdd from "pages/PostAdd";
 import Posts from "pages/Posts";
+import AuthCallback from "pages/AuthCallback";
 
 function Routes() {
-    return (
-        <Switch>
-            <OnlyPublicRoute exact path={TRoutes.LOGIN} component={Login}/>
-            <OnlyPublicRoute exact path={TRoutes.SIGNUP} component={Registration}/>
-            <OnlyPublicRoute exact path={TRoutes.CONFIRMATION()} component={Confirmation}/>
-            <OnlyPublicRoute exact path={TRoutes.PASSWORD} component={Password}/>
-            <OnlyPublicRoute exact path={TRoutes.PASSWORD_TOKEN()} component={ChangePassword}/>
-            <OnlyPublicRoute exact path={TRoutes.NOTIFICATION()} component={Notification}/>
+        return (
+            <Switch>
+                    <OnlyPublicRoute exact path={TRoutes.LOGIN} component={Login}/>
+                    <OnlyPublicRoute exact path={TRoutes.SIGNUP} component={Registration}/>
+                    <OnlyPublicRoute exact path={TRoutes.CONFIRMATION()} component={Confirmation}/>
+                    <OnlyPublicRoute exact path={TRoutes.PASSWORD} component={Password}/>
+                    <OnlyPublicRoute exact path={TRoutes.PASSWORD_TOKEN()} component={ChangePassword}/>
+                    <OnlyPublicRoute exact path={TRoutes.NOTIFICATION()} component={Notification}/>
 
-            <PrivateRoute exact path={TRoutes.ADD_GUIDE} component={GuidesSubmit} />
-            <PrivateRoute exact path={TRoutes.PROFILE} component={Profile} />
+                    <PrivateRoute exact path={TRoutes.ADD_GUIDE} component={GuidesSubmit} />
+                    <PrivateRoute exact path={TRoutes.PROFILE} component={Profile} />
 
-            <PrivateRoute exact path={TRoutes.STREAMERS} component={AdminTwitch} />
-            <PrivateRoute exact path={TRoutes.ADD_STREAMER} component={AdminTwitchAdd} />
-            <PrivateRoute exact path={TRoutes.EDIT_STREAMER()} component={AdminTwitchAdd}/>
-            <PrivateRoute exact path={TRoutes.ADMIN_SETTINGS} component={AdminSettings} />
-            <PrivateRoute exact path={TRoutes.ADMIN_APPROVE} component={AdminApprove} />
-            <PrivateRoute exact path={TRoutes.ADD_POST} component={PostAdd} />
+                    <PrivateRoute exact path={TRoutes.STREAMERS} component={AdminTwitch} />
+                    <PrivateRoute exact path={TRoutes.ADD_STREAMER} component={AdminTwitchAdd} />
+                    <PrivateRoute exact path={TRoutes.EDIT_STREAMER()} component={AdminTwitchAdd}/>
+                    <PrivateRoute exact path={TRoutes.ADMIN_SETTINGS} component={AdminSettings} />
+                    <PrivateRoute exact path={TRoutes.ADMIN_APPROVE} component={AdminApprove} />
+                    <PrivateRoute exact path={TRoutes.ADD_POST} component={PostAdd} />
 
-            <Route exact path={TRoutes.MAIN} component={Landing} />
-            <Route exact path={TRoutes.GUIDES} component={Guides} />
-            <Route exact path={TRoutes.NEWS} component={Posts} />
-            <Route exact path={TRoutes.GUIDE()} component={Guide} />
-            <Route exact path={TRoutes.POST()} component={Post} />
-        </Switch>
-    )
+                    <Route exact path={TRoutes.MAIN} component={Landing} />
+                    <Route exact path={TRoutes.GUIDES} component={Guides} />
+                    <Route exact path={TRoutes.NEWS} component={Posts} />
+                    <Route exact path={TRoutes.GUIDE()} component={Guide} />
+                    <Route exact path={TRoutes.POST()} component={Post} />
+
+                    <Route exact path={TRoutes.AUTH_CALLBACK()} component={AuthCallback} />
+            </Switch>
+        )
 }
 
 export default Routes

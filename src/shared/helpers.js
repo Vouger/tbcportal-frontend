@@ -14,3 +14,9 @@ export function cleanAuth() {
 
     store.dispatch(userStoreClean())
 }
+
+export function buildUrl(url, params) {
+    const searchParams = new URLSearchParams(params);
+
+    return url + '?' + searchParams;
+}

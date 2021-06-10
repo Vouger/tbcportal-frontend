@@ -22,6 +22,8 @@ export class TRoutes {
     static EDIT_STREAMER = (id = ':id') => `/admin/twitch/${id}`
     static ADMIN_SETTINGS = '/admin/settings'
     static ADMIN_APPROVE = '/admin/approve'
+
+    static AUTH_CALLBACK = (source = ':source') => `/auth/${source}/callback`
 }
 
 export class TRoles {

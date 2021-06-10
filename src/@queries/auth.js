@@ -45,6 +45,16 @@ export default class Auth {
         }
     `;
 
+    static SOCIAL = gql`
+        mutation SocialAuth($source: String!, $code: String!) {
+            socialAuth (data: { source: $source, code: $code }) {
+                email
+                role
+                token
+            }
+        }
+    `;
+
     static PASSWORD_REQUEST = gql`
         mutation PasswordRequest($email: String!) {
             passwordRequest (data: { email: $email }) {

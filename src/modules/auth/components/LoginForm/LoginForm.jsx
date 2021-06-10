@@ -13,6 +13,7 @@ import FormInput from "../../../UI/components/Field/FormInput"
 import PasswordInput from "../../../UI/components/Field/PasswordInput"
 import GoogleButton from "../SocialAuth/GoogleButton/GoogleButton";
 import styles from './LoginForm.module.scss'
+import DiscordButton from "modules/auth/components/SocialAuth/DiscordButton/DiscordButton";
 
 function LoginForm (props) {
     const { state } = props.location;
@@ -85,6 +86,9 @@ function LoginForm (props) {
                 </Button>
 
                 <GoogleButton
+                    handleLogin={handleLogin}
+                />
+                <DiscordButton
                     handleLogin={handleLogin}
                 />
             </form>
