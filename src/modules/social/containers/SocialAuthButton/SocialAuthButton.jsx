@@ -28,6 +28,10 @@ function SocialAuthButton(props) {
         const params = new URLSearchParams(event.data);
         const code = params.get('code');
 
+        if (! code) {
+            return ;
+        }
+
         SocialAuth({ variables: {source, code} }).then(response => {
             const {token, role} = response && response.data && response.data.socialAuth;
 
@@ -38,9 +42,16 @@ function SocialAuthButton(props) {
     }
 
     const handleClick = () => {
-        openPopup();
+        const popupWindow = openPopup();
 
-        window.addEventListener('message', event => handleCallback(event), false);
+        let timer = setInterval(function() {
+            if(!popupWindow || popupWindow.closed || popupWindow.closed === undefined) {
+                clearInterval(timer);
+                window.removeEventListener('message', handleCallback);
+            }
+        }, 1000);
+
+        window.addEventListener('message', handleCallback, false);
     }
 
     return (
