@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'Andika';
+  src: local('Andika'), url(fonts/Andika/Andika-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: "Philosopher";
+  src: local('Philosopher'), url(fonts/Philosopher/Philosopher-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: "Philosopher";
+  src: local('Philosopher'), url(fonts/Philosopher/Philosopher-Bold.ttf) format('truetype');
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Philosopher";
+  src: local('Philosopher'), url(fonts/Philosopher/Philosopher-Italic.ttf) format('truetype');
+  font-style: italic;
+}
+@font-face {
+  font-family: "Philosopher";
+  src: local('Philosopher'), url(fonts/Philosopher/Philosopher-BoldItalic.ttf) format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Jura';
+  src: local('Jura'), url(fonts/Jura/Jura-VariableFont_wght.ttf) format('truetype');
+}
