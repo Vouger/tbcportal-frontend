@@ -18,7 +18,8 @@ export default function MenuLink(props) {
             className={clsx(styles.link, isCurrent && styles.current)}
             {...props}
         >
-            {props.children}
+            <span>{props.children}</span>
+            <div className={styles.glow}></div>
         </Link>
     );
 }
