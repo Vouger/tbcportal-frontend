@@ -9,7 +9,6 @@ import history from 'shared/history'
 import Routes from './Routes'
 
 import 'react-toastify/dist/ReactToastify.css'
-import 'variables.scss'
 
 import styles from './App.module.scss'
 
