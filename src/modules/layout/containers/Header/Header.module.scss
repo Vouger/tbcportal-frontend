@@ -1,7 +1,9 @@
 .root {
-  border-bottom: 1px solid #2f3135;
   background-color: #1e2225;
+  background-image: url('../../../../assets/top-header.png');
   display: flex;
+  padding: 10px;
+  overflow: hidden;
 }
 
 .menu {
@@ -11,8 +13,15 @@
 
 .toolbar {
   flex-wrap: wrap;
+  margin: 0 60px;
 }
 
 .menuButton {
   margin-right: 36px;
+}
+
+@media only screen and (max-width: 768px) {
+  .toolbar {
+      margin: 0;
+  }
 }
