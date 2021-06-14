@@ -44,7 +44,7 @@ function UserMenu({isAuth}) {
                 </Menu>
             </Then>
             <Else>
-                <Button component={Link} to={TRoutes.LOGIN} color="secondary" variant="contained" className={styles.link}>
+                <Button component={Link} to={TRoutes.LOGIN} className={styles.link}>
                     Вход
                 </Button>
             </Else>
