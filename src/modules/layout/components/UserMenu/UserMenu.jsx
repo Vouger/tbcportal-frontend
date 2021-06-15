@@ -28,7 +28,7 @@ function UserMenu({isAuth}) {
     return (
         <If condition={isAuth}>
             <Then>
-                <IconButton onClick={handleOpen} color="secondary" variant="contained" className={styles.link}>
+                <IconButton onClick={handleOpen} color="secondary" variant="contained" className={styles.user}>
                     <AccountCircleIcon />
                 </IconButton>
 

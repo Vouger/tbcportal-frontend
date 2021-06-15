@@ -11,7 +11,7 @@ import styles from './Header.module.scss'
 function Header(props) {
     return (
         <AppBar position="absolute" color="default" className={styles.root}>
-            <Container maxWidth="xl">
+            <Container maxWidth="xl" className={styles.container}>
                 <Toolbar className={styles.toolbar}>
 
                     <Box display={{ xs: 'block', sm: 'none' }}>

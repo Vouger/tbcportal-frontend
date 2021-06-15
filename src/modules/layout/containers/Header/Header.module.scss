@@ -1,9 +1,19 @@
 .root {
-  background-color: #1e2225;
-  background-image: url('../../../../assets/top-header.png');
+  background-color: #1f2935;
   display: flex;
-  padding: 10px;
   overflow: hidden;
+  margin-top: 14px;
+}
+
+.container {
+  background-image: url('../../../../assets/top-header.jpg');
+  background-repeat: no-repeat;
+  padding: 0 150px;
+}
+
+.toolbar {
+  flex-wrap: wrap;
+  padding: 10px;
 }
 
 .menu {
@@ -11,16 +21,22 @@
   margin: 0 15px;
 }
 
-.toolbar {
-  flex-wrap: wrap;
-  margin: 0 60px;
-}
-
 .menuButton {
   margin-right: 36px;
 }
 
+@media (min-width: 1921px) and (max-width: 2560px)  {
+  .container {
+    border-left: 1px solid #262626;
+    border-right: 1px solid #262626;
+  }
+}
+
 @media only screen and (max-width: 768px) {
+  .container {
+      padding: 0;
+  }
+
   .toolbar {
       margin: 0;
   }
