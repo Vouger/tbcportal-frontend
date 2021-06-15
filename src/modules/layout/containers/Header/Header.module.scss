@@ -1,5 +1,5 @@
 .root {
-  background-color: #1f2935;
+  background-color: #0f0f0f;
   display: flex;
   overflow: hidden;
   margin-top: 14px;
@@ -9,6 +9,7 @@
   background-image: url('../../../../assets/top-header.jpg');
   background-repeat: no-repeat;
   padding: 0 150px;
+  position: relative;
 }
 
 .toolbar {
@@ -27,8 +28,20 @@
 
 @media (min-width: 1921px) and (max-width: 2560px)  {
   .container {
-    border-left: 1px solid #262626;
-    border-right: 1px solid #262626;
+    &:before, &:after {
+      content: " ";
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 0;
+      box-shadow: 0 0 15px 15px #0f0f0f;
+    }
+    &:before {
+      left: 0px;
+    }
+    &:after {
+      right: 0px;
+    }
   }
 }
 

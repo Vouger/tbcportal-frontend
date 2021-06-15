@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Button, IconButton, Menu, MenuItem} from "@material-ui/core";
+import {Button, ClickAwayListener, IconButton, List, ListItem, Paper, Popper} from "@material-ui/core";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import {Else, If, Then} from "react-if";
 import {Link} from "react-router-dom";
@@ -17,31 +17,32 @@ function UserMenu({isAuth}) {
         cleanAuth();
     }
 
-    const handleClose = () => {
-        setAnchorEl(null);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
     }
 
-    const handleOpen = (event) => {
-        setAnchorEl(event.currentTarget);
+    const handleClose = () => {
+        setAnchorEl(null);
     }
 
     return (
         <If condition={isAuth}>
             <Then>
-                <IconButton onClick={handleOpen} color="secondary" variant="contained" className={styles.user}>
+                <IconButton onClick={handleClick} color="secondary" variant="contained" className={styles.user}>
                     <AccountCircleIcon />
                 </IconButton>
-
-                <Menu
-                    id="simple-menu"
-                    anchorEl={anchorEl}
-                    keepMounted
-                    open={Boolean(anchorEl)}
-                    onClose={handleClose}
-                >
-                    <MenuItem component={Link} to={TRoutes.PROFILE}>Профиль</MenuItem>
-                    <MenuItem onClick={handleLogout}>Выйти</MenuItem>
-                </Menu>
+                <Popper id='profile-popper' open={Boolean(anchorEl)} anchorEl={anchorEl} transition className={styles.popper}>
+                    <ClickAwayListener onClickAway={handleClose}>
+                        <List component={Paper}>
+                            <ListItem button component={Link} to={TRoutes.PROFILE}>
+                                Профиль
+                            </ListItem>
+                            <ListItem button onClick={handleLogout}>
+                                Выйти
+                            </ListItem>
+                        </List>
+                    </ClickAwayListener>
+                </Popper>
             </Then>
             <Else>
                 <Button component={Link} to={TRoutes.LOGIN} className={styles.link}>
