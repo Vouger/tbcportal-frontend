@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Button, ClickAwayListener, IconButton, List, ListItem, Paper, Popper} from "@material-ui/core";
+import {ClickAwayListener, IconButton, List, ListItem, Paper, Popper} from "@material-ui/core";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import {Else, If, Then} from "react-if";
 import {Link} from "react-router-dom";
@@ -7,6 +7,8 @@ import PropTypes from "prop-types";
 
 import { cleanAuth } from "shared/helpers";
 import {TRoutes} from "shared/types";
+
+import StyledButton from "modules/UI/components/StyledButton/StyledButton";
 
 import styles from "./UserMenu.module.scss";
 
@@ -45,9 +47,9 @@ function UserMenu({isAuth}) {
                 </Popper>
             </Then>
             <Else>
-                <Button component={Link} to={TRoutes.LOGIN} className={styles.link}>
+                <StyledButton to={TRoutes.LOGIN}>
                     Вход
-                </Button>
+                </StyledButton>
             </Else>
         </If>
     )

@@ -1,24 +1,71 @@
 .mainFeaturedPost {
   position: relative;
-  background-color: #424242;
   color: #fff;
   margin-bottom: 32px;
-  background-image: url(https://source.unsplash.com/random);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background-color: rgba(0,0,0,.3);
+.image {
+  width: 100%;
+  box-shadow: 0 0 25px #000000;
+  border-radius: 5px;
 }
 
 .mainFeaturedPostContent {
-  position: relative;
+  top: 0;
+  left: 0;
+  position: absolute;
   padding: 48px;
+  max-width: 620px;
+  font-family: Philosopher;
+}
+
+.badge {
+  background-image: url('../../../../assets/action_title.png');
+  padding: 18px 77px;
+  font-size: 47pt;
+  font-weight: bold;
+  font-style: italic;
+  max-width: 322px;
+}
+
+.header {
+  font-weight: bold;
+  font-size: 34pt;
+}
+
+.description {
+  font-size: 27pt;
+  padding: 40px 0;
+}
+
+@media (min-width: 768px) and (max-width: 1650px)  {
+  .mainFeaturedPostContent {
+    max-width: 520px;
+  }
+  .header {
+    font-size: 21pt;
+  }
+  .description {
+    padding: 20px 0;
+    font-size: 19pt;
+  }
+  .mainFeaturedPostContent {
+    padding: 28px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .badge {
+    display: none;
+  }
+  .header {
+    font-size: 7pt;
+  }
+  .description {
+    font-size: 7pt;
+  }
+
+  .mainFeaturedPostContent {
+    padding: 8px;
+  }
 }
