@@ -8,7 +8,7 @@
 .container {
   background-image: url('../../../../assets/top-header.jpg');
   background-repeat: no-repeat;
-  padding: 0 150px;
+  padding: 0 120px;
   position: relative;
 }
 
@@ -28,6 +28,8 @@
 
 @media (min-width: 1921px) and (max-width: 2560px)  {
   .container {
+    padding: 0 150px;
+
     &:before, &:after {
       content: " ";
       height: 100%;
