@@ -1,9 +1,12 @@
 import React from "react";
-import {LinearProgress, Paper, Typography} from "@material-ui/core";
+import { LinearProgress, Paper } from "@material-ui/core";
 import {useQuery} from "@apollo/client";
 
 import queries from "@queries";
 import TwitchList from "../../components/TwitchList/TwitchList";
+
+import StreamsIcon from 'assets/streams.png';
+
 import styles from "./TwitchView.module.scss";
 
 export default function TwitchView() {
@@ -11,9 +14,10 @@ export default function TwitchView() {
 
     return (
         <Paper className={styles.root}>
-            <Typography component="h1" variant="h6" color="secondary" className={styles.title}>
-                Стримы
-            </Typography>
+            <div className={styles.header}>
+                <img src={StreamsIcon} alt='Стримы' />
+                <div className={styles.title}>Стримы</div>
+            </div>
 
             {loading ? <LinearProgress /> : ""}
 

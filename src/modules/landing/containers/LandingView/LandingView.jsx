@@ -31,11 +31,11 @@ export default function LandingView() {
     return (
         <>
             <Grid container spacing={6}>
-                <Grid item lg={9} xs={12}>
+                <Grid item xl={9} lg={8} xs={12}>
                     <Banner post={post}/>
                     <PostsView />
                 </Grid>
-                <Grid item lg={3} xs={12}>
+                <Grid item xl={3} lg={4} xs={12}>
                     <TwitchView />
                 </Grid>
             </Grid>

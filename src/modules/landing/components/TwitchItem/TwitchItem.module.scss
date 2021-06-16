@@ -1,5 +1,29 @@
 .root {
-  border-top: 1px solid #2f3135;
+
+ &:hover {
+   background: #1e2140;
+ }
+}
+
+.avatarWrapper {
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 0 12px 10px #2f5a24;
+}
+
+.name {
+  font-size: 17pt;
+  font-family: Philosopher;
+}
+
+.game {
+  font-size: 12pt;
+  font-family: Andika;
 }
 
 .online {
@@ -11,5 +35,21 @@
     border-radius:50%;
     background: #f00;
     display:inline-block;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .root {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .avatarWrapper {
+    margin-right: 5px;
+  }
+  .name {
+    font-size: 15pt;
+  }
+  .game {
+    font-size: 10pt;
   }
 }

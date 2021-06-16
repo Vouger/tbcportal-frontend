@@ -14,10 +14,17 @@ export default function TwitchItem(props) {
 
     return (
         <ListItem className={styles.root} component="a" target='_blank' rel='noreferrer' href={'https://www.twitch.tv/' + name}>
-            <ListItemIcon>
-                <Avatar alt={name} src={logo}/>
+            <ListItemIcon className={styles.avatarWrapper}>
+                <Avatar alt={name} src={logo} className={styles.avatar} />
             </ListItemIcon>
-            <ListItemText secondary={gameName} primary={name} />
+            <ListItemText
+                classes={{
+                    primary: styles.name,
+                    secondary: styles.game,
+                }}
+                secondary={gameName}
+                primary={name}
+            />
             <ListSubheader className={styles.online}>
                 {views}
             </ListSubheader>

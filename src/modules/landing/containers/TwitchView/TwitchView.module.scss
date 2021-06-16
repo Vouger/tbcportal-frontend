@@ -1,8 +1,27 @@
 .root {
-  background-color: black;
+  border: 7px solid #3c5077;
+}
+
+.header {
+  position: relative;
+  padding: 16px 10px 20px 16px;
+
+  img {
+    position: absolute;
+  }
 }
 
 .title {
   text-align: center;
-  padding-top: 5px;
+  margin-left: 20px;
+  padding: 20px 20px 25px 55px;
+  font: italic bold 30pt "Philosopher";
+  color: #ebdec3;
+  border-bottom: 1px solid #ebdec3;
+}
+
+@media only screen and (max-width: 768px) {
+  .title {
+    font-size: 25pt;
+  }
 }
