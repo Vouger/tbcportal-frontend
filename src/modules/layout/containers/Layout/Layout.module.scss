@@ -1,16 +1,32 @@
 .root {
   display: flex;
-  background-color: #201815;
+  background-color: #131850;
   min-height: 100vh;
   flex-direction: column;
 }
 
 .appBarSpacer {
-  min-height: 86px;
+  min-height: 100px;
+}
+
+.video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 .content {
-    flex-grow: 1;
-    padding-top: 24px;;
-    padding-bottom: 12px;
+  flex-grow: 1;
+  //background: center / 1915px 2593px url("../../../../assets/body.jpg") no-repeat #131850 fixed ;
+  position: relative;
+  padding: 24px 48px 12px 48px;
+  min-height: 85vh;
+}
+
+@media only screen and (max-width: 768px) {
+  .content {
+    padding: 24px 24px 12px 24px;
+  }
 }
