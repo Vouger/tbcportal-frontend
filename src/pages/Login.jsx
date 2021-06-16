@@ -6,7 +6,7 @@ const LoginView = lazy(() => import('modules/auth/containers/LoginView/LoginView
 
 export default function Login(props) {
     return (
-        <Page maxWidth='xs'>
+        <Page maxWidth='xl'>
             <LoginView {...props} />
         </Page>
     )
