@@ -1,28 +1,29 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import {Button, Grid, Typography} from "@material-ui/core";
+
+import NewsIcon from 'assets/news.png';
 
 import styles from "./ListHeader.module.scss";
+import StyledButton from "modules/UI/components/StyledButton/StyledButton";
 
 function ListHeader({title, link, showButton}) {
     return (
-        <Grid container className={styles.root}>
-            <Grid item lg={2} xs={12}>
-                <Typography component="h1" variant="h4" color="secondary">
+        <div className={styles.root}>
+            <img src={NewsIcon} alt={title} />
+            <div className={styles.titleWrap}>
+                <div className={styles.title}>
                     {title}
-                </Typography>
-            </Grid>
-            <Grid item lg={9} xs={12}>
-            </Grid>
-            <Grid item lg={1} xs={12} className={styles.button}>
-                {showButton && (
-                    <Button component={Link} to={link} fullWidth variant="contained" color="primary">
-                        Создать
-                    </Button>
-                )}
-            </Grid>
-        </Grid>
+                </div>
+                <div className={styles.button}>
+                    {showButton && (
+                        <StyledButton to={link} size='medium'>
+                            Создать
+                        </StyledButton>
+                    )}
+                </div>
+            </div>
+
+        </div>
     )
 }
 

@@ -1,17 +1,29 @@
 .root {
-  margin: 8px 12px;
-  padding: 9px 82px;
 
   border-radius: 8px;
   background-image: linear-gradient(to bottom, #fbe296, #fad378, #fac35b, #fbb23e, #fda01d);
   box-shadow: 0px 4px #b98d2e;
 
   color: #282828;
-  font-size: 19px;
   font-weight: bold;
   font-family: Philosopher;
 
   &:hover {
     background-image: linear-gradient(to bottom, #e0c982, #ddb864, #daa647, #d99329, #d87e00);
   }
+}
+
+.large {
+  padding: 9px 82px;
+  font-size: 19px;
+}
+
+.medium {
+  padding: 8px 40px;
+  font-size: 17px;
+}
+
+.small {
+  padding: 6px 15px;
+  font-size: 15px;
 }

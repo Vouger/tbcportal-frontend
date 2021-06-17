@@ -1,7 +1,60 @@
 .root {
-  padding: 20px 25px;
+  position: relative;
+  padding: 16px 25px 55px 16px;
+
+  img {
+    position: absolute;
+  }
+}
+
+.titleWrap {
+  display: flex;
+
+  div {
+    padding: 23px 0px 22px 55px;
+    border-bottom: 2px solid #ebdec3;
+  }
+}
+
+.title {
+  font: italic bold 37pt "Philosopher";
+  color: #ebdec3;
+  flex-grow: 3;
+  margin-left: 120px;
 }
 
 .button {
-  padding: 14px;
+  flex-grow: 1;
+  text-align: right;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .root {
+    padding-bottom: 10px;
+
+    img {
+      max-width: 80px;
+    }
+  }
+
+  .titleWrap {
+    flex-wrap: wrap;
+
+    div {
+      padding: 10px 0px 10px 25px;
+    }
+  }
+
+  .title {
+    font-size: 25pt;
+    margin-left: 70px;
+  }
+
+
+  .button {
+    width: 100%;
+    border-bottom: none !important;
+    text-align: center;
+  }
 }
