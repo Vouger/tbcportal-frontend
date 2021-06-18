@@ -4,6 +4,21 @@
 }
 
 .button {
+  background: #1a222f;
   width: 100%;
-  padding: 15px;
+  padding: 10px;
+  box-shadow: 0 0 12px 10px #2f5a24;
+  color: #36ef50;
+  font: 20px Andika;
+  margin-left: 35px;
+
+  &:hover {
+    background: #0f0f0f;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .button {
+    margin-left: 0px;
+  }
 }

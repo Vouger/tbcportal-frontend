@@ -12,6 +12,7 @@ export default class Posts {
                 list {
                     id
                     title
+                    previewText
                     views
                     thumbnailUrl
                     user {
