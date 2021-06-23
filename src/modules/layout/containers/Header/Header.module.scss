@@ -1,15 +1,15 @@
 .root {
-  background-color: #0f0f0f;
   display: flex;
   overflow: hidden;
-  margin-top: 14px;
+  background: url('../../../../assets/top-header.jpg') #0f0f0f;
+  opacity: 0.5;
 }
 
 .container {
-  background-image: url('../../../../assets/top-header.jpg');
   background-repeat: no-repeat;
   padding: 0 120px;
   position: relative;
+  opacity: 1;
 }
 
 .toolbar {
@@ -29,21 +29,6 @@
 @media (min-width: 1921px) and (max-width: 2560px)  {
   .container {
     padding: 0 150px;
-
-    &:before, &:after {
-      content: " ";
-      height: 100%;
-      position: absolute;
-      top: 0;
-      width: 0;
-      box-shadow: 0 0 20px 20px #0f0f0f;
-    }
-    &:before {
-      left: 0px;
-    }
-    &:after {
-      right: 0px;
-    }
   }
 }
 
