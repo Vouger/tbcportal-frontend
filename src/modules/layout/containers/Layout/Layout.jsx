@@ -17,10 +17,6 @@ function Layout(props) {
 
             <SideMenu open={open} setOpen={setOpen} isAuth={props.isAuth} role={props.role} />
 
-            <video autoPlay muted loop className={styles.video}>
-                <source src="/static/background.mp4" type="video/mp4" />
-            </video>
-
             <Container component="main" maxWidth={props.maxWidth || "lg"} className={styles.content}>
                 <div className={styles.appBarSpacer} />
 

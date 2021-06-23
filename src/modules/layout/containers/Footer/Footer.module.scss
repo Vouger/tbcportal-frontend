@@ -1,6 +1,51 @@
 .root {
-  padding: 24px 16px;
   margin-top: auto;
-  background-color: #1e2225;
-  border-top: 1px solid #2f3135;
+  z-index: 10;
+  background-color: #0f0f0f;
+}
+
+.topWrapper {
+  background-image: url('../../../../assets/top-footer.jpg');
+  background-repeat: no-repeat;
+}
+
+.top {
+  height: 211px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.title {
+  flex-grow: 1;
+  text-align: center;
+  padding-top: 75px;
+  font-family: Philosopher;
+  text-transform: uppercase;
+  font-size: 40px;
+}
+
+.social {
+  flex-grow: 1;
+  padding-top: 50px;
+}
+
+.bottomWrapper {
+  background-image: url('../../../../assets/bottom-footer.jpg');
+  background-repeat: no-repeat;
+}
+
+.bottom {
+  height: 503px;
+  position: relative;
+}
+
+@media only screen and (max-width: 768px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .social {
+    padding-top: 20px;
+  }
 }

@@ -1,32 +1,23 @@
 .root {
   display: flex;
-  background-color: #131850;
   min-height: 100vh;
   flex-direction: column;
+  background: center / 2560px 2593px url("../../../../assets/background.jpg") no-repeat #131850 fixed;
 }
 
 .appBarSpacer {
   min-height: 100px;
 }
 
-.video {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-}
-
 .content {
   flex-grow: 1;
-  //background: center / 1915px 2593px url("../../../../assets/body.jpg") no-repeat #131850 fixed ;
   position: relative;
-  padding: 24px 48px 12px 48px;
+  padding: 24px 48px 36px 48px;
   min-height: 85vh;
 }
 
 @media only screen and (max-width: 768px) {
   .content {
-    padding: 24px 24px 12px 24px;
+    padding: 24px;
   }
 }
