@@ -1,4 +1,5 @@
 .root {
+  margin-top: 10px;
   padding: 15px;
   display: flex;
 }
@@ -13,6 +14,7 @@
   margin-left: 35px;
 
   &:hover {
+    box-shadow: 0 0 12px 10px #8f131d;
     background: #0f0f0f;
   }
 }
