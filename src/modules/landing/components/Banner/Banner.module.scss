@@ -59,13 +59,18 @@
     display: none;
   }
   .header {
-    font-size: 7pt;
+    font-size: 11pt;
   }
   .description {
-    font-size: 7pt;
+    padding: 12px 0 8px 0;
+    font-size: 11pt;
   }
-
   .mainFeaturedPostContent {
-    padding: 8px;
+    padding: 12px;
+  }
+  .button {
+    margin: 0 auto;
+    display: block;
+    width: max-content;
   }
 }

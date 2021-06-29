@@ -22,7 +22,7 @@ function Banner({post}) {
                     {bannerText || ''}
                 </div>
                 {bannerLink && (
-                    <StyledButton to={bannerLink || ''}>
+                    <StyledButton to={bannerLink || ''} className={styles.button}>
                         {bannerLinkText || 'Go'}
                     </StyledButton>
                 )}
