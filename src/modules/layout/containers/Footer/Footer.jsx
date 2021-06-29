@@ -5,6 +5,7 @@ import YoutubeIcon from 'assets/social/youtube.png';
 import VkIcon from 'assets/social/vk.png';
 import RedditIcon from 'assets/social/reddit.png';
 import TwitterIcon from 'assets/social/twitter.png';
+import FooterLogo from 'assets/footer-logo.png';
 
 import SocialButton from "modules/layout/components/SocialButton/SocialButton";
 import styles from './Footer.module.scss'
@@ -35,7 +36,7 @@ function Footer() {
             </div>
             <div className={styles.bottomWrapper}>
                 <Container maxWidth="xl" className={styles.bottom}>
-                    <img alt="Vanilla LFG" src="/header_logo.png"/>
+                    <img alt="Vanilla LFG" src={FooterLogo}/>
                 </Container>
             </div>
         </footer>
