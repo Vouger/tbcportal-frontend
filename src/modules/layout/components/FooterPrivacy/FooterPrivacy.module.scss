@@ -1,0 +1,49 @@
+.root {
+  background-image: url('../../../../assets/bottom-footer.jpg');
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.container {
+  display: flex;
+  height: 300px;
+  position: relative;
+  padding: 80px;
+}
+
+.logo {
+  flex-grow: 1;
+  display: block;
+
+  img {
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.privacy {
+  flex-grow: 2;
+  font-family: Andika;
+  font-size: 18pt;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 80px 30px;
+    height: 200px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .privacy {
+    font-size: 12pt;
+  }
+}
