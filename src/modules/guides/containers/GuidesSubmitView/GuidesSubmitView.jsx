@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from "react";
-import {Grid, Paper, Typography} from "@material-ui/core";
+import {Grid, Typography} from "@material-ui/core";
 
 import GuideForm from "../../components/GuideForm/GuideForm";
 import GuideWrapper from "modules/guide/components/GuideWrapper/GuideWrapper";
+import StyledPaper from "modules/UI/components/StyledPaper/StyledPaper";
 
 import styles from "./GuidesSubmitView.module.scss";
 
@@ -17,13 +18,13 @@ export default function GuidesSubmitView() {
 
     return (
         <>
-            <Paper className={styles.paper}>
+            <StyledPaper className={styles.paper}>
                 <Typography component="h1" variant="h5" color="secondary">
                     Создать гайд
                 </Typography>
 
                 <GuideForm setGuide={setGuide} />
-            </Paper>
+            </StyledPaper>
 
 
             <Grid container spacing={6}>
