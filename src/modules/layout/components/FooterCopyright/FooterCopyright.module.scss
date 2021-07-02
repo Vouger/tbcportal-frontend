@@ -5,5 +5,31 @@
 
 .container {
   padding-top: 25px;
+  display: flex;
+}
+
+.copyright {
+  flex-grow: 1;
+}
+
+.privacy {
+  flex-grow: 1;
+  text-align: right;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .copyright , .privacy {
+    text-align: center;
+  }
 }
 
