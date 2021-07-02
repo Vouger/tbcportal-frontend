@@ -5,19 +5,19 @@ import {
     Typography,
     Grid,
     Link,
-    Container,
-    Paper
+    Container
 } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
 import {TRoutes} from "shared/types";
 
+import StyledPaper from "modules/UI/components/StyledPaper/StyledPaper";
 import LoginForm from '../../components/LoginForm/LoginForm'
 import styles from './LoginView.module.scss'
 
 export default function LoginView(props) {
     return (
-        <Container component={Paper} maxWidth='xs' className={styles.paper}>
+        <Container component={StyledPaper} maxWidth='xs' className={styles.paper}>
             <Avatar className={styles.avatar}>
                 <LockOutlinedIcon />
             </Avatar>

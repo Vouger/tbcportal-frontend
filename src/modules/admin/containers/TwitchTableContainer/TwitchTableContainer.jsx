@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
-import {IconButton, Paper, Toolbar, Tooltip, Typography} from "@material-ui/core";
+import {IconButton, Toolbar, Tooltip, Typography} from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import {toast} from "react-toastify";
 import {useMutation, useQuery} from "@apollo/client";
@@ -10,6 +10,8 @@ import queries from "@queries";
 import {TRoutes} from "shared/types";
 import TwitchTable from "modules/admin/components/TwitchTable/TwitchTable";
 import ConfirmationDialog from "modules/UI/components/ConfirmationDialog/ConfirmationDialog";
+import StyledPaper from "modules/UI/components/StyledPaper/StyledPaper";
+
 import styles from "./TwitchTableContainer.module.scss";
 
 export default function TwitchTableContainer() {
@@ -45,7 +47,7 @@ export default function TwitchTableContainer() {
     }
 
     return (
-        <Paper>
+        <StyledPaper>
             <Toolbar>
                 <div className={styles.header}>
                     <Typography variant="h4" component="div">
@@ -73,6 +75,6 @@ export default function TwitchTableContainer() {
             >
                 Are you sure ?
             </ConfirmationDialog>
-        </Paper>
+        </StyledPaper>
     )
 }

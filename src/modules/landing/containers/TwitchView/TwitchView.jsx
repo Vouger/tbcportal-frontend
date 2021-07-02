@@ -1,9 +1,10 @@
 import React from "react";
-import { LinearProgress, Paper } from "@material-ui/core";
+import { LinearProgress } from "@material-ui/core";
 import {useQuery} from "@apollo/client";
 
 import queries from "@queries";
 import TwitchList from "../../components/TwitchList/TwitchList";
+import StyledPaper from "modules/UI/components/StyledPaper/StyledPaper";
 
 import StreamsIcon from 'assets/streams.png';
 
@@ -13,7 +14,7 @@ export default function TwitchView() {
     const { loading, data } = useQuery(queries.twitch.LIST);
 
     return (
-        <Paper className={styles.root}>
+        <StyledPaper>
             <div className={styles.header}>
                 <img src={StreamsIcon} alt='Стримы' />
                 <div className={styles.title}>Стримы</div>
@@ -22,6 +23,6 @@ export default function TwitchView() {
             {loading ? <LinearProgress /> : ""}
 
             {!loading && data && data.twitch.length === 0 ? "Нет активных стримов" : <TwitchList data={data}/>}
-        </Paper>
+        </StyledPaper>
     )
 }

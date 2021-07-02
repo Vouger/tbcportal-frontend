@@ -6,7 +6,7 @@ const PasswordView = lazy(() => import('modules/auth/containers/PasswordView/Pas
 
 export default function Password() {
     return (
-        <Page maxWidth='xs'>
+        <Page maxWidth='xl'>
             <PasswordView />
         </Page>
     )

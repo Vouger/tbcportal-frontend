@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from "react";
 import {connect} from "react-redux";
-import {Paper} from "@material-ui/core";
 
 import {TPagination, TRoutes} from "shared/types";
 
 import ListHeader from "modules/UI/components/ListHeader/ListHeader";
 import PostsList from "modules/posts/components/PostsList/PostsList";
 import GuidesPagination from "modules/guides/components/GuidesPagination/GuidesPagination";
+import StyledPaper from "modules/UI/components/StyledPaper/StyledPaper";
 
 function PostsWrapper(props) {
     const {isAuth, role, loading, list, total, fetchQuery} = props;
@@ -33,7 +33,7 @@ function PostsWrapper(props) {
     }, [variables.take, total])
 
     return (
-        <Paper>
+        <StyledPaper>
             <ListHeader title="Новости" link={TRoutes.ADD_POST} showButton={isAuth && role === "Admin"} />
 
             {!loading && list
@@ -46,7 +46,7 @@ function PostsWrapper(props) {
                     ? <GuidesPagination page={variables.page} pagesCount={pagesCount} setPage={setPage} />
                     : ""
             }
-        </Paper>
+        </StyledPaper>
     )
 }
 

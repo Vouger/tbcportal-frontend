@@ -6,7 +6,7 @@ const RegistrationView = lazy(() => import('modules/auth/containers/Registration
 
 export default function Registration() {
     return (
-        <Page maxWidth='xs'>
+        <Page maxWidth='xl'>
             <RegistrationView />
         </Page>
     )

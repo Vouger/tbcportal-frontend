@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from "react";
-import {LinearProgress, Paper, withWidth} from "@material-ui/core";
+import {LinearProgress, withWidth} from "@material-ui/core";
 
 import ListHeader from "modules/UI/components/ListHeader/ListHeader";
 import FilterView from "modules/guides/components/FilterView/FilterView";
 import GuidesList from "modules/guides/components/GuidesList/GuidesList";
 import GuidesPagination from "modules/guides/components/GuidesPagination/GuidesPagination";
+import StyledPaper from "modules/UI/components/StyledPaper/StyledPaper";
 
 import {TPagination, TRoutes} from "shared/types";
 
@@ -63,7 +64,7 @@ function GuidesWrapper(props) {
     }, [variables.filterClass, variables.filterContent, variables.keyword, variables.take])
 
     return (
-        <Paper>
+        <StyledPaper>
             <ListHeader title="Гайды" link={TRoutes.ADD_GUIDE} showButton={true} />
 
             <FilterView
@@ -82,7 +83,7 @@ function GuidesWrapper(props) {
                     ? <GuidesPagination page={variables.page} pagesCount={pagesCount} setPage={setPage} />
                     : ""
             }
-        </Paper>
+        </StyledPaper>
     )
 }
 

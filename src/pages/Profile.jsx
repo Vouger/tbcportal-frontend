@@ -6,7 +6,7 @@ const ProfileView = lazy(() => import('modules/profile/containers/ProfileView/Pr
 
 export default function Profile() {
     return (
-        <Page maxWidth='sm'>
+        <Page maxWidth='xl'>
             <ProfileView />
         </Page>
     )

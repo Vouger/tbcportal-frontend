@@ -1,20 +1,18 @@
 import React from "react";
 import {connect} from "react-redux";
-import {Paper} from "@material-ui/core";
 
 import {TPagination, TRoutes} from "shared/types";
 
 import ListHeader from "modules/UI/components/ListHeader/ListHeader";
 import PostsList from "modules/posts/components/PostsList/PostsList";
 import MoreNewsButton from "modules/landing/components/MoreNewsButton/MoreNewsButton";
-
-import styles from './LandingPostsWrapper.module.scss'
+import StyledPaper from "modules/UI/components/StyledPaper/StyledPaper";
 
 function LandingPostsWrapper(props) {
     const {list, total, loading, isAuth, role} = props;
 
     return (
-        <Paper className={styles.root}>
+        <StyledPaper>
             <ListHeader title="Новости" link={TRoutes.ADD_POST} showButton={isAuth && role === "Admin"} />
 
             {!loading && list && list.length === 0 ? "Ничего не найдено" : ""}
@@ -29,7 +27,7 @@ function LandingPostsWrapper(props) {
                 : ''
             }
 
-        </Paper>
+        </StyledPaper>
     )
 }
 
