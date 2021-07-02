@@ -47,7 +47,7 @@ export default function TwitchTableContainer() {
     }
 
     return (
-        <StyledPaper>
+        <StyledPaper className={styles.paper}>
             <Toolbar>
                 <div className={styles.header}>
                     <Typography variant="h4" component="div">
