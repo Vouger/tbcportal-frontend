@@ -1,6 +1,6 @@
 import React from "react";
 import {FormProvider, Controller, useForm} from "react-hook-form";
-import {Button, Grid} from "@material-ui/core";
+import {Grid} from "@material-ui/core";
 import {useMutation} from "@apollo/client";
 import {useHistory} from "react-router-dom";
 
@@ -12,6 +12,7 @@ import ContentEditor from "modules/UI/components/ContentEditor/ContentEditor";
 import styles from "modules/post/components/PostForm/PostForm.module.scss";
 import {zodResolver} from "@hookform/resolvers/zod";
 import * as z from "zod";
+import StyledButton from "modules/UI/components/StyledButton/StyledButton";
 
 export default function PostForm() {
     const history = useHistory()
@@ -79,14 +80,12 @@ export default function PostForm() {
                 </Grid>
 
 
-                <Button
+                <StyledButton
                     type="submit"
-                    variant="contained"
-                    color="primary"
                     className={styles.submit}
                 >
                     Создать
-                </Button>
+                </StyledButton>
             </form>
         </FormProvider>
     )

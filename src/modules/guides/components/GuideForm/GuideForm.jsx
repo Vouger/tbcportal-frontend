@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import {FormProvider, Controller, useForm, useWatch} from "react-hook-form";
-import {Button, Grid, MenuItem} from "@material-ui/core";
+import {Grid, MenuItem} from "@material-ui/core";
 import {useMutation} from "@apollo/client";
 import {useHistory} from "react-router-dom";
 import PropTypes from "prop-types";
@@ -15,6 +15,7 @@ import ContentEditor from "../../../UI/components/ContentEditor/ContentEditor";
 import SelectInput from "../../../UI/components/Field/SelectInput";
 
 import styles from "./GuideForm.module.scss";
+import StyledButton from "modules/UI/components/StyledButton/StyledButton";
 
 function GuideForm({setGuide}) {
     const history = useHistory()
@@ -124,14 +125,12 @@ function GuideForm({setGuide}) {
                     </Grid>
                 </Grid>
 
-                <Button
+                <StyledButton
                     type="submit"
-                    variant="contained"
-                    color="primary"
                     className={styles.submit}
                 >
                     Создать
-                </Button>
+                </StyledButton>
             </form>
         </FormProvider>
     )

@@ -4,8 +4,7 @@ import {
     CardActionArea,
     CardActions,
     CardContent,
-    CardMedia,
-    Typography
+    CardMedia
 } from "@material-ui/core";
 import {Visibility} from "@material-ui/icons";
 import {Link} from "react-router-dom";
@@ -36,12 +35,12 @@ function GuideCard({guide}) {
                     title={title}
                 />
                 <CardContent className={styles.content}>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <div className={styles.header}>
                         {title}
-                    </Typography>
-                    <Typography gutterBottom variant="body1">
+                    </div>
+                    <div className={styles.author}>
                         {nickname}
-                    </Typography>
+                    </div>
                 </CardContent>
                 <CardActions>
                     <Visibility className={styles.views}/> {views}

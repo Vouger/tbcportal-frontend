@@ -1,6 +1,8 @@
 import React, {useState} from "react";
-import {Button, Grid, TextField} from "@material-ui/core";
+import {Grid, TextField} from "@material-ui/core";
 import PropTypes from "prop-types";
+
+import StyledButton from "modules/UI/components/StyledButton/StyledButton";
 
 import styles from "./SearchBox.module.scss";
 
@@ -29,6 +31,7 @@ function SearchBox ({setKeyword}) {
         <Grid container spacing={1}>
             <Grid item xl={9} lg={10} md={9} sm={9} xs={12}>
                 <TextField
+                    className={styles.input}
                     variant="outlined"
                     margin="dense"
                     label="Поиск"
@@ -43,15 +46,13 @@ function SearchBox ({setKeyword}) {
                 />
             </Grid>
             <Grid item md={2} sm={3} xs={12}>
-                <Button
-                    variant="contained"
-                    color="primary"
-                    className={styles.button}
+                <StyledButton
+                    size="small"
                     onClick={handleClick}
-                    fullWidth
+                    className={styles.button}
                 >
                     Найти
-                </Button>
+                </StyledButton>
             </Grid>
         </Grid>
     )

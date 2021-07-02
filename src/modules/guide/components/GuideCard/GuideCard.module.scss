@@ -1,10 +1,12 @@
 @import "styles/variables";
 
-.text {
-  max-height: 64px;
-  text-overflow: 'ellipsis';
-  overflow: hidden;
+.header {
+  font: bold 20pt Philosopher;
 }
+
+.author {
+   font: 15px Philosopher;
+ }
 
 .content {
   border-bottom: 1px solid #2f3135;

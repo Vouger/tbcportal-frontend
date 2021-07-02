@@ -1,4 +1,3 @@
-import {Button} from "@material-ui/core";
 import React from "react";
 import {toast} from "react-toastify";
 import {useMutation} from "@apollo/client";
@@ -7,6 +6,8 @@ import PropTypes from "prop-types";
 
 import queries from "@queries";
 import {TRoutes} from "shared/types";
+
+import StyledButton from "modules/UI/components/StyledButton/StyledButton";
 
 function ButtonApprove({id}) {
     const history = useHistory();
@@ -24,9 +25,9 @@ function ButtonApprove({id}) {
     }
 
     return (
-        <Button onClick={handleApprove} variant="contained" color="primary">
+        <StyledButton onClick={handleApprove}>
             Подтвердить
-        </Button>
+        </StyledButton>
     )
 }
 

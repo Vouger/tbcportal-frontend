@@ -7,10 +7,24 @@ import clsx from "clsx";
 import styles from "./StyledButton.module.scss";
 
 function StyledButton(props) {
-    const {to, size, className} = props;
+    const {to, size, className, onClick, type} = props;
+
+    let propsObject = {
+        className : clsx(styles.root, className, styles[size]),
+        type: type
+    };
+
+    if (to) {
+        propsObject.to = to;
+        propsObject.component = Link;
+    }
+
+    if (onClick) {
+        propsObject.onClick = onClick;
+    }
 
     return (
-        <Button component={Link} to={to} className={clsx(styles.root, className,styles[size])}>
+        <Button {...propsObject}>
             {props.children}
         </Button>
     )

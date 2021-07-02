@@ -1,4 +1,3 @@
-import {Button} from "@material-ui/core";
 import React from "react";
 import {toast} from "react-toastify";
 import {useMutation} from "@apollo/client";
@@ -7,6 +6,7 @@ import PropTypes from "prop-types";
 
 import {TRoutes} from "shared/types";
 import queries from "@queries";
+import StyledButton from "modules/UI/components/StyledButton/StyledButton";
 
 function ButtonHide({id}) {
     const history = useHistory();
@@ -24,9 +24,9 @@ function ButtonHide({id}) {
     }
 
     return (
-        <Button onClick={handleHide} variant="contained" color="primary">
+        <StyledButton onClick={handleHide}>
             Скрыть
-        </Button>
+        </StyledButton>
     )
 }
 
