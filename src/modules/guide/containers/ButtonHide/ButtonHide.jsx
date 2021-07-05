@@ -24,7 +24,7 @@ function ButtonHide({id}) {
     }
 
     return (
-        <StyledButton onClick={handleHide}>
+        <StyledButton fullWidth onClick={handleHide}>
             Скрыть
         </StyledButton>
     )

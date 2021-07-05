@@ -16,11 +16,12 @@ export default function PostCard(props) {
     return (
         <Link to={TRoutes.POST(id, titleUrl)} className={styles.root}>
             <div className={styles.card}>
-                <img
-                    className={styles.cardMedia}
-                    src={thumbnailUrl || "/static/tpl.jpg"}
-                    alt={title}
-                />
+                <div className={styles.cardMedia}>
+                    <img
+                        src={thumbnailUrl || "/static/tpl.jpg"}
+                        alt={title}
+                    />
+                </div>
                 <div className={styles.cardDetails}>
                     <div className={styles.content}>
                         <div className={styles.title}>

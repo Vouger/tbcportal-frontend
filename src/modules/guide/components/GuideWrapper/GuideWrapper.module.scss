@@ -2,6 +2,8 @@
 
 .content {
   padding: 30px;
+  font-family: Philosopher;
+  background-color: #14183f;
 
   :global {
     .youtube-wrapper {
@@ -36,37 +38,46 @@
 }
 
 .druid {
+  border-color: $druidColor;
   box-shadow: 0 0 15px $druidColor;
 }
 
 .hunter {
+  border-color: $hunterColor;
   box-shadow: 0 0 15px $hunterColor;
 }
 
 .mage {
+  border-color: $mageColor;
   box-shadow: 0 0 15px $mageColor;
 }
 
 .paladin {
+  border-color: $paladinColor;
   box-shadow: 0 0 15px $paladinColor;
 }
 
 .priest {
+  border-color: $priestColor;
   box-shadow: 0 0 15px $priestColor;
 }
 
 .rogue {
+  border-color: $rogueColor;
   box-shadow: 0 0 15px $rogueColor;
 }
 
 .shaman {
+  border-color: $shamanColor;
   box-shadow: 0 0 15px $shamanColor;
 }
 
 .warlock {
+  border-color: $warlockColor;
   box-shadow: 0 0 15px $warlockColor;
 }
 
 .warrior {
+  border-color: $warriorColor;
   box-shadow: 0 0 15px $warriorColor;
 }

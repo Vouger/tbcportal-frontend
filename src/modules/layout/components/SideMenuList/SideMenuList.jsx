@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Else, If, Then } from "react-if";
 import { Divider, List } from "@material-ui/core";
-import { AccountCircle, Dashboard, ExitToApp, Home, SupervisorAccount } from "@material-ui/icons";
+import { AccountCircle, Dashboard, ExitToApp, Home, SupervisorAccount, ViewList, Settings, ThumbUp } from "@material-ui/icons";
 
 import { TRoles, TRoutes } from "shared/types";
 import { cleanAuth } from "shared/helpers";
@@ -17,6 +17,7 @@ export default function SideMenuList (props) {
     return (
         <List>
             <SideMenuItem component={Link} to={TRoutes.MAIN} label="Главная" icon={Home} />
+            <SideMenuItem component={Link} to={TRoutes.NEWS} label="Новости" icon={ViewList} />
             <SideMenuItem component={Link} to={TRoutes.GUIDES} label="Гайды" icon={Dashboard} />
 
             <Divider />
@@ -26,8 +27,8 @@ export default function SideMenuList (props) {
                     <If condition={props.role === TRoles.ADMIN}>
                         <Then>
                             <SideMenuItem component={Link} to={TRoutes.STREAMERS} label="Стримеры" icon={SupervisorAccount} />
-                            <SideMenuItem component={Link} to={TRoutes.ADMIN_SETTINGS} label="Настройки" icon={SupervisorAccount} />
-                            <SideMenuItem component={Link} to={TRoutes.ADMIN_APPROVE} label="Подтверждение" icon={SupervisorAccount} />
+                            <SideMenuItem component={Link} to={TRoutes.ADMIN_SETTINGS} label="Настройки" icon={Settings} />
+                            <SideMenuItem component={Link} to={TRoutes.ADMIN_APPROVE} label="Подтверждение" icon={ThumbUp} />
                             <Divider />
                         </Then>
                     </If>

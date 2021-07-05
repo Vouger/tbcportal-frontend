@@ -25,7 +25,7 @@ function ButtonApprove({id}) {
     }
 
     return (
-        <StyledButton onClick={handleApprove}>
+        <StyledButton fullWidth onClick={handleApprove}>
             Подтвердить
         </StyledButton>
     )

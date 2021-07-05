@@ -1,5 +1,4 @@
 import React from "react";
-import { Box, Typography } from "@material-ui/core";
 import { Visibility } from "@material-ui/icons";
 import PropTypes from "prop-types";
 
@@ -11,15 +10,15 @@ function DetailsHeader({guide}) {
     const { title, className, views, user } = guide;
 
     return (
-        <Box className={styles.root} style={{
+        <div className={styles.root} style={{
             backgroundImage: "url('/static/banner.jpg')"
         }}>
             <div className={styles.wrapper}>
                 <ClassAvatar title={className} folder="classes" name={className} />
 
-                <Typography component="h1" variant="h3" color="secondary" className={styles.title}>
+                <div className={styles.title}>
                     {title}
-                </Typography>
+                </div>
 
                 {user
                     ? (
@@ -35,7 +34,7 @@ function DetailsHeader({guide}) {
                     : ''
                 }
             </div>
-        </Box>
+        </div>
     )
 }
 

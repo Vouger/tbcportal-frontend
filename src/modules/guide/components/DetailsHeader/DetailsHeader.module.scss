@@ -13,7 +13,8 @@
 .title {
   margin: 0 auto;
   text-align: center;
-  font-family: Philosopher;
+  font: 28pt Philosopher;
+  color: #f8b700;
 }
 
 .views {
@@ -26,6 +27,7 @@
 }
 
 .author {
+  font: 21px Philosopher;
   padding: 5px;
 
   span {

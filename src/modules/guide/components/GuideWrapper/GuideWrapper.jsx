@@ -1,20 +1,20 @@
 import React from "react";
-import {Box, Paper} from "@material-ui/core";
 import PropTypes from "prop-types";
 
 import RawHtml from "modules/UI/components/RawHtml/RawHtml";
 import DetailsHeader from "modules/guide/components/DetailsHeader/DetailsHeader";
+import StyledPaper from "modules/UI/components/StyledPaper/StyledPaper";
 
 import styles from "./GuideWrapper.module.scss";
 
 function GuideWrapper({guide}) {
     return (
-        <Paper className={styles[guide.className]}>
+        <StyledPaper className={styles[guide.className]}>
             <DetailsHeader guide={guide} />
-            <Box className={styles.content}>
+            <div className={styles.content}>
                 <RawHtml>{guide.text}</RawHtml>
-            </Box>
-        </Paper>
+            </div>
+        </StyledPaper>
     )
 }
 

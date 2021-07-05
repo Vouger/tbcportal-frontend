@@ -14,13 +14,18 @@
 }
 
 .cardMedia {
-  width: 320px;
   max-width: 320px;
-  height: 230px;
   border-radius: 8px;
   box-shadow: 0 0 25px #3c5077;
   margin-left: 50px;
   flex-grow: 1;
+
+  img {
+    width: 320px;
+    max-width: 320px;
+    height: 230px;
+    border-radius: 8px;
+  }
 }
 
 .cardDetails {
@@ -75,6 +80,13 @@
     max-width: 290px;
     height: 208px;
     margin: 0 auto;
+
+
+    img {
+      width: 290px;
+      max-width: 290px;
+      height: 208px;
+    }
   }
   .content {
     text-align: center;
