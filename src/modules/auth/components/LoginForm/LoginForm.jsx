@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Button, FormControlLabel, Checkbox } from '@material-ui/core'
+import { FormControlLabel, Checkbox } from '@material-ui/core'
 import { useForm, FormProvider  } from 'react-hook-form'
 import { useMutation } from '@apollo/client'
 import {useHistory} from "react-router-dom";
@@ -9,11 +9,13 @@ import queries from "@queries";
 import { setAuth } from "shared/helpers"
 import * as userActions from 'redux/ducks/user'
 
+import DiscordButton from "modules/auth/components/SocialAuth/DiscordButton/DiscordButton";
+import StyledButton from "modules/UI/components/StyledButton/StyledButton";
 import FormInput from "../../../UI/components/Field/FormInput"
 import PasswordInput from "../../../UI/components/Field/PasswordInput"
 import GoogleButton from "../SocialAuth/GoogleButton/GoogleButton";
+
 import styles from './LoginForm.module.scss'
-import DiscordButton from "modules/auth/components/SocialAuth/DiscordButton/DiscordButton";
 
 function LoginForm (props) {
     const { state } = props.location;
@@ -75,15 +77,14 @@ function LoginForm (props) {
                     inputRef={register}
                 />
 
-                <Button
+                <StyledButton
                     type="submit"
-                    fullWidth
-                    variant="contained"
-                    color="primary"
                     className={styles.submit}
+                    fullWidth
+                    size="small"
                 >
                     Войти
-                </Button>
+                </StyledButton>
 
                 <GoogleButton
                     handleLogin={handleLogin}

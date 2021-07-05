@@ -7,10 +7,10 @@ import clsx from "clsx";
 import styles from "./StyledButton.module.scss";
 
 function StyledButton(props) {
-    const {to, size, className, onClick, type} = props;
+    const {to, size, className, onClick, type, fullWidth} = props;
 
     let propsObject = {
-        className : clsx(styles.root, className, styles[size]),
+        className : clsx(styles.root, className, styles[size], fullWidth && styles.fullWidth),
         type: type
     };
 

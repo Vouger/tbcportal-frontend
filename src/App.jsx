@@ -16,13 +16,13 @@ function App() {
     const theme = createMuiTheme({
         palette: {
             primary: {
-                main: '#5b1a10'
+                main: '#3c5077'
             },
             secondary: {
                 main: '#f8b700'
             },
             outlined: {
-                main: '#5b1a10'
+                main: '#3c5077'
             },
             text: {
                 default: '#fff',
@@ -52,7 +52,7 @@ function App() {
         overrides: {
             MuiOutlinedInput: {
                 notchedOutline: {
-                    borderColor: '#5b1a10',
+                    borderColor: '#3c5077',
                 },
             }
         }

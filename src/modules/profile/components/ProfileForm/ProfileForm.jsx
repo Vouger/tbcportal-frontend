@@ -1,11 +1,13 @@
 import React, {useEffect} from "react";
 import {FormProvider, useForm} from "react-hook-form";
-import {Button} from "@material-ui/core";
 import {toast} from "react-toastify";
 import {useMutation, useQuery} from "@apollo/client";
 
-import FormInput from "../../../UI/components/Field/FormInput";
 import queries from "@queries";
+
+import StyledButton from "modules/UI/components/StyledButton/StyledButton";
+import FormInput from "../../../UI/components/Field/FormInput";
+
 import styles from './ProfileForm.module.scss'
 
 export default function ProfileForm() {
@@ -47,14 +49,13 @@ export default function ProfileForm() {
                     defaultValue=""
                 />
 
-                <Button
+                <StyledButton
                     type="submit"
                     fullWidth
-                    variant="contained"
-                    color="primary"
+                    size="small"
                 >
                     Сохранить
-                </Button>
+                </StyledButton>
             </form>
         </FormProvider>
     )

@@ -2,14 +2,15 @@ import React, {useEffect} from "react";
 import {FormProvider, useForm} from "react-hook-form";
 import { useParams, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
-import { Button } from "@material-ui/core";
 import {useMutation, useLazyQuery} from "@apollo/client";
 
 import queries from "@queries";
 
+import StyledButton from "modules/UI/components/StyledButton/StyledButton";
 import FormInput from "modules/UI/components/Field/FormInput";
-import styles from "./TwitchForm.module.scss";
 import {TRoutes} from "shared/types";
+
+import styles from "./TwitchForm.module.scss";
 
 export default function TwitchForm() {
     const { id } = useParams()
@@ -96,15 +97,14 @@ export default function TwitchForm() {
                     }}
                 />
 
-                <Button
+                <StyledButton
                     type="submit"
-                    fullWidth
-                    variant="contained"
-                    color="primary"
                     className={styles.submit}
+                    fullWidth
+                    size="small"
                 >
-                    Save
-                </Button>
+                    Сохранить
+                </StyledButton>
             </form>
         </FormProvider>
     )

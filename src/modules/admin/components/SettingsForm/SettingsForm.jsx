@@ -1,13 +1,14 @@
 import React, {useEffect} from "react";
 import {FormProvider, useForm, useWatch } from "react-hook-form";
-import {Button} from "@material-ui/core";
 import {useMutation} from "@apollo/client";
 import {toast} from "react-toastify";
 import PropTypes from "prop-types";
 
 import queries from "@queries";
 
+import StyledButton from "modules/UI/components/StyledButton/StyledButton";
 import FormInput from "modules/UI/components/Field/FormInput";
+
 import styles from "./SettingsForm.module.scss";
 
 function SettingsForm ({ data, setPost }) {
@@ -116,15 +117,14 @@ function SettingsForm ({ data, setPost }) {
                     type="text"
                 />
 
-                <Button
+                <StyledButton
                     type="submit"
-                    fullWidth
-                    variant="contained"
-                    color="primary"
                     className={styles.submit}
+                    fullWidth
+                    size="small"
                 >
-                    Save
-                </Button>
+                    Сохранить
+                </StyledButton>
             </form>
         </FormProvider>
     )

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Button } from '@material-ui/core'
 import { useForm, FormProvider  } from 'react-hook-form'
 import { useMutation } from '@apollo/client'
 import { useHistory } from "react-router-dom"
@@ -7,7 +6,9 @@ import { useHistory } from "react-router-dom"
 import queries from "@queries";
 import { TRoutes } from "shared/types";
 
+import StyledButton from "modules/UI/components/StyledButton/StyledButton";
 import FormInput from "../../../UI/components/Field/FormInput"
+
 import styles from './PasswordForm.module.scss'
 
 export default function PasswordForm() {
@@ -43,15 +44,14 @@ export default function PasswordForm() {
                     defaultValue=""
                 />
 
-                <Button
+                <StyledButton
                     type="submit"
-                    fullWidth
-                    variant="contained"
-                    color="primary"
                     className={styles.submit}
+                    fullWidth
+                    size="small"
                 >
                     Отправить имейл с инструкциями
-                </Button>
+                </StyledButton>
             </form>
         </FormProvider>
     );

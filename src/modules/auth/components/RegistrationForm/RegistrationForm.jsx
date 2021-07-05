@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import { Button } from '@material-ui/core'
 import { useForm, FormProvider  } from 'react-hook-form'
 import { useHistory } from 'react-router-dom'
 import { useMutation } from '@apollo/client'
@@ -7,9 +6,11 @@ import { useMutation } from '@apollo/client'
 import queries from "@queries";
 import { TRoutes } from "shared/types";
 
-import FormInput from "../../../UI/components/Field/FormInput"
-import styles from './RegistrationForm.module.scss'
 import PasswordInput from "../../../UI/components/Field/PasswordInput";
+import StyledButton from "modules/UI/components/StyledButton/StyledButton";
+import FormInput from "../../../UI/components/Field/FormInput"
+
+import styles from './RegistrationForm.module.scss'
 
 export default function RegistrationForm(props) {
     const [passErr, setPassErr] = useState('');
@@ -97,15 +98,14 @@ export default function RegistrationForm(props) {
                     ref={register()}
                 />
 
-                <Button
+                <StyledButton
                     type="submit"
-                    fullWidth
-                    variant="contained"
-                    color="primary"
                     className={styles.submit}
+                    fullWidth
+                    size="small"
                 >
                     Зарегистрироваться
-                </Button>
+                </StyledButton>
             </form>
         </FormProvider>
     );
