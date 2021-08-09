@@ -3,17 +3,29 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
         <loc>https://vanillalfg.com/</loc>
-        <lastmod>2021-06-02T15:12:27+00:00</lastmod>
+        <lastmod>2021-07-05T15:12:27+00:00</lastmod>
     </url>
     <url>
         <loc>https://vanillalfg.com/news</loc>
-        <lastmod>2021-06-02T15:12:27+00:00</lastmod>
+        <lastmod>2021-07-05T15:12:27+00:00</lastmod>
     </url>
     <url>
         <loc>https://vanillalfg.com/guides</loc>
-        <lastmod>2021-06-02T15:12:27+00:00</lastmod>
+        <lastmod>2021-07-05T15:12:27+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://vanillalfg.com/login</loc>
+        <lastmod>2021-07-05T15:12:27+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://vanillalfg.com/signup</loc>
+        <lastmod>2021-07-05T15:12:27+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://vanillalfg.com/password</loc>
+        <lastmod>2021-07-05T15:12:27+00:00</lastmod>
     </url>
 </urlset>
