@@ -14,7 +14,7 @@ function Header(props) {
             <Container maxWidth="xl" className={styles.container}>
                 <Toolbar className={styles.toolbar}>
 
-                    <Box display={{ xs: 'block', sm: 'none' }}>
+                    <Box display={{ md: 'block', lg: 'none' }}>
                         <IconButton
                             edge="start"
                             color="secondary"
@@ -28,11 +28,11 @@ function Header(props) {
 
                     <Logo title={props.title} />
 
-                    <Box className={styles.menu} display={{ xs: 'none', sm: 'block' }}>
+                    <Box className={styles.menu} display={{ xs: 'none', lg: 'block' }}>
                         <Navigation isAuth={props.isAuth} role={props.role} />
                     </Box>
 
-                    <Box display={{ xs: 'none', sm: 'block' }}>
+                    <Box display={{ xs: 'none', lg: 'block' }}>
                         <UserMenu isAuth={props.isAuth} />
                     </Box>
                 </Toolbar>

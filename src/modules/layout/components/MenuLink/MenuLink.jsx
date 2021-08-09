@@ -19,7 +19,6 @@ export default function MenuLink(props) {
             {...props}
         >
             <span>{props.children}</span>
-            <div className={styles.glow}></div>
         </Link>
     );
 }

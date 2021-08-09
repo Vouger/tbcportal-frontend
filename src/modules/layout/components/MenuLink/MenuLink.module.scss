@@ -14,22 +14,13 @@
 
 .current {
   color: #fff;
-  position: relative;
+  text-shadow: 1px 1px 15px #fff;
+}
 
-  span {
-    z-index: 5;
-    position: relative;
-  }
 
-  .glow {
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    width: 1px;
-    height: 1px;
-    border-radius: 50% 50% 0 0;
-    background-color: #8f131d;
-    box-shadow: 0 0 45px 40px #8f131d;
-    z-index: 4;
+@media only screen and (max-width: 1360px) {
+  .link {
+    font-size: 11pt;
+    margin: 8px 14px;
   }
 }
