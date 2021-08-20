@@ -3,6 +3,7 @@ import {FormProvider, Controller, useForm} from "react-hook-form";
 import {Grid} from "@material-ui/core";
 import {useMutation, useLazyQuery} from "@apollo/client";
 import {useParams, useHistory} from "react-router-dom";
+import { toast } from "react-toastify";
 
 import queries from "@queries";
 import {TRoutes} from "shared/types";
@@ -67,6 +68,7 @@ export default function PostForm() {
 
     const handleUpdate = data => {
         updatePost({ variables: data }).then(response => {
+            toast.success('Новость обновлена');
             history.push(TRoutes.MAIN)
         }).catch(e => {});
     }
