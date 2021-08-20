@@ -9,6 +9,7 @@ import LandingPostsWrapper from "modules/landing/components/LandingPostsWrapper/
 
 function LandingPostsView() {
     const { loading, data } = useQuery(queries.posts.LIST, {
+        fetchPolicy: "network-only",
         variables: {
             take: TPagination.POSTS_LANDING
         }

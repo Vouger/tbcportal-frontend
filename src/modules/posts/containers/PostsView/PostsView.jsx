@@ -8,7 +8,7 @@ import TwitchView from "modules/landing/containers/TwitchView/TwitchView";
 import PostsWrapper from "modules/posts/components/PostsWrapper/PostsWrapper";
 
 function PostsView() {
-    const [ fetchQuery, { loading, data } ] = useLazyQuery(queries.posts.LIST);
+    const [ fetchQuery, { loading, data } ] = useLazyQuery(queries.posts.LIST, { fetchPolicy:'network-only' });
 
     return (
         <Grid container spacing={6}>

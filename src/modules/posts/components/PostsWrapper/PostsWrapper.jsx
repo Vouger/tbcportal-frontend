@@ -29,6 +29,11 @@ function PostsWrapper(props) {
     }, [variables])
 
     useEffect(() => {
+        fetchQuery({variables})
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+    useEffect(() => {
         setPagesCount(total ? Math.ceil(total / variables.take) : 1);
     }, [variables.take, total])
 
