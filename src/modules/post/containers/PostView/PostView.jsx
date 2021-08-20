@@ -8,6 +8,7 @@ import queries from "@queries";
 import PostWrapper from "modules/post/components/PostWrapper/PostWrapper";
 import TwitchView from "modules/landing/containers/TwitchView/TwitchView";
 import MetaTags from "modules/seo/components/MetaTags/MetaTags";
+import PostButtons from "../PostButtons/PostButtons";
 
 export default function PostView() {
     const { id } = useParams()
@@ -34,6 +35,7 @@ export default function PostView() {
             </Grid>
 
             <Grid item lg={3} xs={12}>
+                {!loading && data ? <PostButtons post={data.post} />  : ""}
                 <TwitchView />
             </Grid>
         </Grid>

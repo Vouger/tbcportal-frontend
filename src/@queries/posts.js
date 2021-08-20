@@ -51,4 +51,10 @@ export default class Posts {
             }
         }
     `;
+
+    static DELETE = gql`
+        mutation DeletePost($id: String!) {
+            deletePost (id: $id)
+        }
+    `;
 }

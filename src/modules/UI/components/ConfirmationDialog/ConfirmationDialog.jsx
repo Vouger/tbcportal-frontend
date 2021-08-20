@@ -18,17 +18,17 @@ export default function ConfirmationDialog(props) {
             }}
             {...other}
         >
-            <DialogTitle id="confirmation-dialog-title">{title || 'Confirmation'}</DialogTitle>
+            <DialogTitle id="confirmation-dialog-title">{title || 'Подтверждение'}</DialogTitle>
             <DialogContent>
                 {children}
             </DialogContent>
 
             <DialogActions>
                 <Button autoFocus onClick={cancelAction} color="secondary">
-                    Cancel
+                    Отмена
                 </Button>
                 <Button onClick={() => confirmAction(valueProp)} color="secondary">
-                    Ok
+                    Да
                 </Button>
             </DialogActions>
         </Dialog>
