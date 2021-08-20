@@ -13,13 +13,13 @@ function SocialAuthButton(props) {
     const [ SocialAuth ] = useMutation(queries.auth.SOCIAL);
 
     const openPopup = () => {
-        const width = 600, height = 800
+        const width = 1000, height = 800
         const left = (window.innerWidth / 2) - (width / 2)
         const top = (window.innerHeight / 2) - (height / 2)
 
         return window.open(url, '',
-            `toolbar=no, location=no, directories=no, status=no, menubar=no, 
-             scrollbars=no, resizable=no, copyhistory=no, width=${width}, 
+            `toolbar=no, location=no, directories=no, status=no, menubar=no,
+             scrollbars=no, resizable=no, copyhistory=no, width=${width},
              height=${height}, top=${top}, left=${left}`
         )
     }
