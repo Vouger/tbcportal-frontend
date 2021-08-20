@@ -45,6 +45,7 @@ function Routes() {
                     <PrivateRoute exact path={TRoutes.ADMIN_SETTINGS} component={AdminSettings} />
                     <PrivateRoute exact path={TRoutes.ADMIN_APPROVE} component={AdminApprove} />
                     <PrivateRoute exact path={TRoutes.ADD_POST} component={PostAdd} />
+                    <PrivateRoute exact path={TRoutes.EDIT_POST()} component={PostAdd}/>
 
                     <Route exact path={TRoutes.MAIN} component={Landing} />
                     <Route exact path={TRoutes.GUIDES} component={Guides} />

@@ -13,6 +13,7 @@ import PostButtons from "../PostButtons/PostButtons";
 export default function PostView() {
     const { id } = useParams()
     const { loading, data } = useQuery(queries.posts.GET, {
+        fetchPolicy: "network-only",
         variables: { id }
     });
 

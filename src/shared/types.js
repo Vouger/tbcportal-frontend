@@ -16,6 +16,7 @@ export class TRoutes {
     static PROFILE = '/profile'
 
     static ADD_POST = '/posts/add'
+    static EDIT_POST = (id = ':id') => `/posts/edit/${id}`
 
     static STREAMERS = '/admin/twitch'
     static ADD_STREAMER = '/admin/twitch/add'

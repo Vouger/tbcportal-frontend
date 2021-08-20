@@ -52,6 +52,26 @@ export default class Posts {
         }
     `;
 
+    static UPDATE = gql`
+        mutation UpdatePost(
+            $id: String!,
+            $title: String!,
+            $text: String!,
+            $thumbnailUrl: String!
+        ) {
+            updatePost (
+                data: {
+                    id: $id,
+                    title: $title,
+                    text: $text,
+                    thumbnailUrl: $thumbnailUrl
+                }
+            ) {
+                text
+            }
+        }
+    `;
+
     static DELETE = gql`
         mutation DeletePost($id: String!) {
             deletePost (id: $id)

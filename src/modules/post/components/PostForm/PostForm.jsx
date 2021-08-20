@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {FormProvider, Controller, useForm} from "react-hook-form";
 import {Grid} from "@material-ui/core";
-import {useMutation} from "@apollo/client";
-import {useHistory} from "react-router-dom";
+import {useMutation, useLazyQuery} from "@apollo/client";
+import {useParams, useHistory} from "react-router-dom";
 
 import queries from "@queries";
 import {TRoutes} from "shared/types";
@@ -15,7 +15,13 @@ import * as z from "zod";
 import StyledButton from "modules/UI/components/StyledButton/StyledButton";
 
 export default function PostForm() {
+    const { id } = useParams()
     const history = useHistory()
+    const [text, setText] = useState('');
+    const [ fetchQuery, { loading, data } ] = useLazyQuery(queries.posts.GET, { fetchPolicy:'network-only' });
+    const [ createPost ] = useMutation(queries.posts.CREATE);
+    const [ updatePost ] = useMutation(queries.posts.UPDATE);
+
     const methods = useForm({
         resolver: zodResolver(
             z.object({
@@ -25,12 +31,42 @@ export default function PostForm() {
             })
         ),
     });
-    const { handleSubmit, control, errors } = methods;
+    const { handleSubmit, control, errors, setValue } = methods;
 
-    const [ createPost ] = useMutation(queries.posts.CREATE);
+    useEffect(() => {
+        if (id) {
+            fetchQuery({variables: { id }})
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [id])
+
+    useEffect(() => {
+        if (!loading && data) {
+            setValue('title', data.post.title);
+            if (data.post.thumbnailUrl) {
+                setValue('thumbnailUrl', data.post.thumbnailUrl);
+            }
+            setText(data.post.text);
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [loading, data])
 
     const onSubmit = data => {
+        if (id) {
+            handleUpdate({...data, id});
+        } else {
+            handleCreate(data);
+        }
+    }
+
+    const handleCreate = data => {
         createPost({ variables: data }).then(response => {
+            history.push(TRoutes.MAIN)
+        }).catch(e => {});
+    }
+
+    const handleUpdate = data => {
+        updatePost({ variables: data }).then(response => {
             history.push(TRoutes.MAIN)
         }).catch(e => {});
     }
@@ -69,7 +105,7 @@ export default function PostForm() {
 
                     <Grid item xs={12}>
                         <Controller
-                            as={<ContentEditor />}
+                            as={<ContentEditor editorText={text} />}
                             name="text"
                             control={control}
                             defaultValue=''
@@ -84,7 +120,7 @@ export default function PostForm() {
                     type="submit"
                     className={styles.submit}
                 >
-                    Создать
+                    {id ? 'Сохранить' : 'Создать'}
                 </StyledButton>
             </form>
         </FormProvider>

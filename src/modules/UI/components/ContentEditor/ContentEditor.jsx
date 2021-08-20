@@ -1,5 +1,10 @@
-import React, {useState} from "react";
-import {convertToRaw, EditorState} from 'draft-js';
+import React, {useState, useLayoutEffect} from "react";
+import {
+    EditorState,
+    ContentState,
+    convertToRaw,
+    convertFromHTML,
+} from 'draft-js'
 import draftToHtml from 'draftjs-to-html'
 import {Editor} from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
@@ -14,6 +19,18 @@ import clsx from "clsx";
 export default function ContentEditor(props) {
     const [editorState, setEditorState] = useState(EditorState.createEmpty());
     const {error, helperText} = props;
+
+    useLayoutEffect(() => {
+        setEditorState(
+            EditorState.createWithContent(
+                ContentState.createFromBlockArray(
+                    convertFromHTML(props.editorText)
+                )
+            )
+        )
+        props.onChange(props.editorText)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [props.editorText])
 
     const handleChange = (editorState) => {
         setEditorState(editorState);
