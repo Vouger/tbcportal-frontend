@@ -38,6 +38,32 @@
   }
 }
 
+@media only screen and (min-width: 769px) and (max-width: 1280px) {
+  .root {
+    padding: 5px;
+  }
+
+  .avatar {
+    width: 35px;
+    height: 35px;
+  }
+
+  .avatarWrapper {
+    margin-right: 5px;
+    min-width: 41px;
+  }
+  .name {
+    font-size: 13pt;
+  }
+  .game {
+    font-size: 9pt;
+  }
+
+  .online {
+    font-size: 7pt;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .root {
     padding-left: 8px;

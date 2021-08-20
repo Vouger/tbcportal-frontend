@@ -20,8 +20,15 @@
   border-bottom: 1px solid #ebdec3;
 }
 
-@media only screen and (max-width: 768px) {
-  .title {
-    font-size: 25pt;
+@media only screen and (max-width: 1280px) {
+  .header {
+    img {
+      max-width: 70px;
+    }
   }
+
+  .title {
+      font-size: 25pt;
+      padding-bottom: 10px;
+    }
 }
